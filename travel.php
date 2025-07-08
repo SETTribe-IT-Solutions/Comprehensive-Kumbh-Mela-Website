@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel & Stay - Kumbh Mela 2027 By Mayuresh Bhagat</title>
+    <title>Travel & Stay - Kumbh Mela 2027</title>
     <!-- Links are identical to index.html -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -24,7 +24,7 @@
         <section id="travel-hero" class="text-center text-white">
             <div class="hero-overlay"></div>
             <div class="container position-relative">
-                <h1 class="hero-title" id="travel-hero-title">Travel & Stay Planner By Mayuresh</h1>
+                <h1 class="hero-title" id="travel-hero-title">Travel & Stay Planner</h1>
                 <p class="hero-announcement" id="travel-hero-subtitle">Your complete guide to reaching and staying at
                     Kumbh Mela 2027.</p>
             </div>
