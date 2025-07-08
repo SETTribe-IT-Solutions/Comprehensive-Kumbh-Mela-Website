@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +13,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This new link imports Montserrat (for headings) and Poppins (for body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=71">
 </head>
+
 <body>
 
-    
+
 
     <!-- ALERTS TICKER -->
     <div class="alert-ticker-container">
-        <div class="helpline"><i class="bi bi-telephone-fill"></i> <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span></div>
-        <div class="ticker-wrap"><div class="ticker"><p><i class="bi bi-exclamation-triangle-fill"></i> <span id="alert-text">ALERT: Please follow all safety guidelines. Beware of unauthorized agents.</span></p></div></div>
+        <div class="helpline"><i class="bi bi-telephone-fill"></i> <span id="helpline-text">Emergency Helpline:
+                +91-123-456-7890</span></div>
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <p><i class="bi bi-exclamation-triangle-fill"></i> <span id="alert-text">ALERT: Please follow all safety
+                        guidelines. Beware of unauthorized agents.</span></p>
+            </div>
+        </div>
     </div>
 
     <main>
@@ -31,7 +41,8 @@
             <div class="hero-overlay"></div>
             <div class="hero-content text-center text-white">
                 <h1 class="hero-title" id="hero-title">Kumbh Mela 2027, Nashik</h1>
-                <p class="hero-announcement" id="hero-announcement">The sacred confluence awaits. Official dates for the Shahi Snan are 18th March 2027 to 20th March 2027.</p>
+                <p class="hero-announcement" id="hero-announcement">The sacred confluence awaits. Official dates for the
+                    Shahi Snan are 18th March 2027 to 20th March 2027.</p>
                 <div id="countdown-timer" class="d-flex justify-content-center gap-3">
                     <div class="time-unit"><span id="days">000</span><label>Days</label></div>
                     <div class="time-unit"><span id="hours">00</span><label>Hours</label></div>
@@ -78,87 +89,89 @@
         </section>
 
         <!-- ================== PHOTO GALLERY (SCROLLABLE) ================== -->
-<!-- ================== SCROLLING PHOTO & VIDEO GALLERY ================== -->
-<section id="gallery" class="section-padding">
-    <div class="container-fluid text-center">
-        <h2 class="section-title" id="gallery-title">Gallery</h2>
-        
-        <div class="gallery-scroll-container">
-            <div class="gallery-track">
-                <!-- PRIMARY SET: VIDEOS FIRST, THEN PHOTOS -->
-                <!-- Video 1 -->
-                <div class="gallery-item" data-type="video" data-video-id="a2TewFBa_yw">
-                    <img src="https://img.youtube.com/vi/a2TewFBa_yw/hqdefault.jpg" alt="Kumbh Video 1">
-                    <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
-                </div>
-                <!-- Video 2 -->
-                <div class="gallery-item" data-type="video" data-video-id="y1EIDpLLahA">
-                    <img src="https://img.youtube.com/vi/y1EIDpLLahA/hqdefault.jpg" alt="Kumbh Video 2">
-                    <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery1.jpg" alt="Kumbh Photo 1">
-                </div>
-                <!-- Photo 2 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery2.jpg" alt="Kumbh Photo 2">
-                </div>
-                 <!-- Video 3 -->
-                <div class="gallery-item" data-type="video" data-video-id="cEcc7_BIh4Q">
-                    <img src="https://img.youtube.com/vi/cEcc7_BIh4Q/hqdefault.jpg" alt="Kumbh Video 3">
-                    <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
-                </div>
-                <!-- Photo 3 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery3.jpg" alt="Kumbh Photo 3">
-                </div>
-                <!-- Photo 4 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery4.jpg" alt="Kumbh Photo 4">
-                </div>
+        <!-- ================== SCROLLING PHOTO & VIDEO GALLERY ================== -->
+        <section id="gallery" class="section-padding">
+            <div class="container-fluid text-center">
+                <h2 class="section-title" id="gallery-title">Gallery</h2>
+
+                <div class="gallery-scroll-container">
+                    <div class="gallery-track">
+                        <!-- PRIMARY SET: VIDEOS FIRST, THEN PHOTOS -->
+                        <!-- Video 1 -->
+                        <div class="gallery-item" data-type="video" data-video-id="a2TewFBa_yw">
+                            <img src="https://img.youtube.com/vi/a2TewFBa_yw/hqdefault.jpg" alt="Kumbh Video 1">
+                            <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="gallery-item" data-type="video" data-video-id="y1EIDpLLahA">
+                            <img src="https://img.youtube.com/vi/y1EIDpLLahA/hqdefault.jpg" alt="Kumbh Video 2">
+                            <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
+                        </div>
+                        <!-- Photo 1 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery1.jpg" alt="Kumbh Photo 1">
+                        </div>
+                        <!-- Photo 2 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery2.jpg" alt="Kumbh Photo 2">
+                        </div>
+                        <!-- Video 3 -->
+                        <div class="gallery-item" data-type="video" data-video-id="cEcc7_BIh4Q">
+                            <img src="https://img.youtube.com/vi/cEcc7_BIh4Q/hqdefault.jpg" alt="Kumbh Video 3">
+                            <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
+                        </div>
+                        <!-- Photo 3 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery3.jpg" alt="Kumbh Photo 3">
+                        </div>
+                        <!-- Photo 4 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery4.jpg" alt="Kumbh Photo 4">
+                        </div>
 
 
-                <!-- DUPLICATE SET FOR INFINITE SCROLL EFFECT -->
-                <!-- Video 1 -->
-                <div class="gallery-item" data-type="video" data-video-id="a2TewFBa_yw">
-                    <img src="https://img.youtube.com/vi/a2TewFBa_yw/hqdefault.jpg" alt="Kumbh Video 1">
-                    <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
-                </div>
-                <!-- Video 2 -->
-                <div class="gallery-item" data-type="video" data-video-id="y1EIDpLLahA">
-                    <img src="https://img.youtube.com/vi/y1EIDpLLahA/hqdefault.jpg" alt="Kumbh Video 2">
-                    <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
-                </div>
-                <!-- Photo 1 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery1.jpg" alt="Kumbh Photo 1">
-                </div>
-                <!-- Photo 2 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery2.jpg" alt="Kumbh Photo 2">
-                </div>
-                 <!-- Video 3 -->
-                <div class="gallery-item" data-type="video" data-videoYou are absolutely right. I am so sorry. I completely misunderstood your request and went in the wrong direction. You want a **single, continuous scrolling gallery** that contains both videos and photos, exactly like the design in the reference image you provided.
-
-My apologies for the confusion. Let's build that precise design now. We will abandon the tabs and create the seamless scrolling experience you want.
-
-This will require restoring a similar HTML structure to the original scrolling gallery, but-id="cEcc7_BIh4Q">
-                    <img src="https://img.youtube.com/vi/cEcc7_BIh4Q/hqdefault.jpg" alt="Kumbh Video 3">
-                    <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
-                </div>
-                <!-- Photo 3 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery3.jpg" alt="Kumbh Photo 3">
-                </div>
-                <!-- Photo 4 -->
-                <div class="gallery-item" data-type="photo">
-                    <img src="assets/images/gallery4.jpg" alt="Kumbh Photo 4">
+                        <!-- DUPLICATE SET FOR INFINITE SCROLL EFFECT -->
+                        <!-- Video 1 -->
+                        <div class="gallery-item" data-type="video" data-video-id="a2TewFBa_yw">
+                            <img src="https://img.youtube.com/vi/a2TewFBa_yw/hqdefault.jpg" alt="Kumbh Video 1">
+                            <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="gallery-item" data-type="video" data-video-id="y1EIDpLLahA">
+                            <img src="https://img.youtube.com/vi/y1EIDpLLahA/hqdefault.jpg" alt="Kumbh Video 2">
+                            <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
+                        </div>
+                        <!-- Photo 1 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery1.jpg" alt="Kumbh Photo 1">
+                        </div>
+                        <!-- Photo 2 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery2.jpg" alt="Kumbh Photo 2">
+                        </div>
+                        <!-- Video 3 -->
+                        <div class="gallery-item" data-type="video" data-videoYou are absolutely right. I am so sorry. I
+                            completely misunderstood your request and went in the wrong direction. You want a **single,
+                            continuous scrolling gallery** that contains both videos and photos, exactly like the design
+                            in the reference image you provided. My apologies for the confusion. Let's build that
+                            precise design now. We will abandon the tabs and create the seamless scrolling experience
+                            you want. This will require restoring a similar HTML structure to the original scrolling
+                            gallery, but-id="cEcc7_BIh4Q">
+                            <img src="https://img.youtube.com/vi/cEcc7_BIh4Q/hqdefault.jpg" alt="Kumbh Video 3">
+                            <div class="play-button-overlay"><i class="bi bi-play-circle-fill"></i></div>
+                        </div>
+                        <!-- Photo 3 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery3.jpg" alt="Kumbh Photo 3">
+                        </div>
+                        <!-- Photo 4 -->
+                        <div class="gallery-item" data-type="photo">
+                            <img src="assets/images/gallery4.jpg" alt="Kumbh Photo 4">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- ================== TRUSTEES SECTION (FINAL PROFILE CARD) ================== -->
         <section id="trustees" class="section-padding bg-light">
@@ -170,7 +183,8 @@ This will require restoring a similar HTML structure to the original scrolling g
                     <!-- Trustee 1 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="profile-card">
-                            <img src="assets/images/trustee1.png" alt="Photo of Devendra Fadnavis" class="profile-card-img">
+                            <img src="assets/images/trustee1.png" alt="Photo of Devendra Fadnavis"
+                                class="profile-card-img">
                             <div class="profile-card-body">
                                 <p class="profile-card-role" id="trustee-1-role">Chairman</p>
                                 <h3 class="profile-card-name" id="trustee-1-name">Shri. Devendra Fadnavis</h3>
@@ -188,7 +202,7 @@ This will require restoring a similar HTML structure to the original scrolling g
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Trustee 3 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="profile-card">
@@ -199,7 +213,7 @@ This will require restoring a similar HTML structure to the original scrolling g
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -218,5 +232,5 @@ This will require restoring a similar HTML structure to the original scrolling g
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js?v=42" defer></script>
 </body>
-</html>
 
+</html>
