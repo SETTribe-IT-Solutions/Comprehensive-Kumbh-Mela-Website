@@ -94,58 +94,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 3. IMAGE & VIDEO LIGHTBOX LOGIC (FOR TABS) ---
-
-       // =========================================================
-    // --- 3. SCROLLING GALLERY LIGHTBOX LOGIC ---
-    // =========================================================
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    // --- 3. FINAL IMAGE & VIDEO LIGHTBOX LOGIC ---
+    const mediaCards = document.querySelectorAll('.media-card');
     const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const closeBtn = document.querySelector('.lightbox-close');
 
-    if (galleryItems.length > 0 && lightbox) {
-        
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxVideo = document.getElementById('lightbox-video');
-        const closeBtn = document.querySelector('.lightbox-close');
+    if (mediaCards.length > 0 && lightbox && lightboxImg && lightboxVideo && closeBtn) {
 
-        if (lightboxImg && lightboxVideo && closeBtn) {
+        const openLightbox = (e) => {
+            const card = e.currentTarget;
+            const type = card.dataset.type;
 
-            const openLightbox = (e) => {
-                const item = e.currentTarget; // The .gallery-item div
-                const type = item.dataset.type;
-                
-                if (type === 'video') {
-                    const videoId = item.dataset.videoId;
-                    lightboxImg.style.display = 'none';
-                    lightboxVideo.style.display = 'block';
-                    lightboxVideo.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-                } else { // Assumes it's a photo if not a video
-                    const imgSrc = item.querySelector('img').src;
-                    lightboxVideo.style.display = 'none';
-                    lightboxImg.style.display = 'block';
-                    lightboxImg.src = imgSrc;
-                }
-                lightbox.classList.add('lightbox-active');
-            };
+            if (type === 'image') {
+                const imgSrc = card.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightboxImg.style.display = 'block';
+                lightboxVideo.style.display = 'none';
+                lightboxVideo.pause();
+                lightboxVideo.removeAttribute('src');
+            } else if (type === 'video') {
+                const videoSrc = card.querySelector('video source').src;
+                lightboxVideo.src = videoSrc;
+                lightboxVideo.style.display = 'block';
+                lightboxImg.style.display = 'none';
+                lightboxVideo.play();
+            }
 
-            const closeLightbox = () => {
-                lightbox.classList.remove('lightbox-active');
-                // IMPORTANT: Stop the video when closing
-                lightboxVideo.innerHTML = '';
-            };
+            lightbox.classList.add('lightbox-active');
+        };
 
-            galleryItems.forEach(item => {
-                item.addEventListener('click', openLightbox);
-            });
+        const closeLightbox = () => {
+            lightbox.classList.remove('lightbox-active');
+            lightboxImg.src = '';
+            lightboxVideo.pause();
+            lightboxVideo.removeAttribute('src');
+            lightboxVideo.style.display = 'none';
+            lightboxImg.style.display = 'none';
+        };
 
-            closeBtn.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-        }
+        mediaCards.forEach(card => {
+            card.addEventListener('click', openLightbox);
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
     }
+
 
     
     // =========================================================
@@ -236,5 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    
 
 }); // This is the closing brace of the main DOMContentLoaded listener

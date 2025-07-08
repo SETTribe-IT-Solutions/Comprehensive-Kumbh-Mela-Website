@@ -11,8 +11,8 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" id="nav-home" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-travel" href="travel.php">Travel</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-darshan" href="darshan.html">Darshan</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-health-safety" href="health.html">Health & Safety</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-darshan" href="darshan.php">Darshan</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-health-safety" href="health.php">Health & Safety</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.html?page=Culture">Culture</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.html?page=Shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.html?page=Donate">Donate</a></li>
