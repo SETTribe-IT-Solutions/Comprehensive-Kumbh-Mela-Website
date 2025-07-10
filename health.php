@@ -69,7 +69,7 @@ $activePage = "health";
     </div>
   </div>
 
-  <!-- Main Section -->
+  
   <div class="container section-padding">
     <!-- SOS BUTTON -->
     <div class="row mb-5">
