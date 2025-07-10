@@ -262,6 +262,11 @@ document.getElementById('doctorForm').addEventListener('submit', function (e) {
   const mobile = document.getElementById('mobile').value.trim();
   const symptoms = document.getElementById('symptoms').value.trim();
 
+  const isValidIndianMobile = (number) => {
+  // Must be 10 digits, start with 6-9, and not all digits the same
+  return /^[6-9]\d{9}$/.test(number) && !/^(\d)\1{9}$/.test(number);
+};
+
   let valid = true;
 
   if (!/^[a-zA-Z\s]{3,}$/.test(name)) {
@@ -269,7 +274,7 @@ document.getElementById('doctorForm').addEventListener('submit', function (e) {
     valid = false;
   }
 
-  if (!/^[6-9]\d{9}$/.test(mobile)) {
+  if (!isValidIndianMobile(mobile)) {
     document.getElementById('mobile').classList.add('is-invalid');
     valid = false;
   }
