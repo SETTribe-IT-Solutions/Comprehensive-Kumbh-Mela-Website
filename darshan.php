@@ -370,4 +370,3 @@ populateTimeDropdowns();
 <script src="js/main.js" defer></script>
 </body>
 </html>
-```
