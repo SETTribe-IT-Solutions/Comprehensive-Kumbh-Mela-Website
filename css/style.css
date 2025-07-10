@@ -173,12 +173,12 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 .gallery-wrapper {
   overflow: hidden;
   width: 100%;
-  padding: 2rem 1rem; /* Balanced spacing */
+  padding: 2rem 1rem;
 }
 
 .auto-scroll-gallery {
   display: flex;
-  gap: 1.5rem; /* Spacing between cards */
+  gap: 1.5rem;
   animation: scroll-left 60s linear infinite;
   width: max-content;
 }
@@ -228,7 +228,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 
 /* Hover zoom effect (image only) */
-.media-card:hover .media-card-img {
+.media-card[data-type="image"]:hover .media-card-img {
   transform: scale(1.1);
 }
 
@@ -237,7 +237,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   cursor: pointer;
 }
 
-/* Image overlay (search/play icon) */
+/* Overlay (play/search icons) */
 .media-card-overlay {
   position: absolute;
   top: 0;
@@ -248,14 +248,26 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
   color: rgba(255, 255, 255, 0.9);
-  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.media-card:hover .media-card-overlay {
+/* Show overlay permanently for videos */
+.media-card[data-type="video"] .media-card-overlay {
   opacity: 1;
+}
+
+/* Show overlay only on hover for images */
+.media-card[data-type="image"] .media-card-overlay {
+  opacity: 0;
+}
+.media-card[data-type="image"]:hover .media-card-overlay {
+  opacity: 1;
+}
+
+/* ENLARGED ICONS */
+.media-card-overlay i {
+  font-size: 4rem !important;
 }
 
 /* Card text content */
@@ -319,7 +331,6 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   cursor: pointer;
   z-index: 99999;
 }
-
 
 
 /* ================== 8. TRUSTEES SECTION (VIBRANT BLUE) ================== */
