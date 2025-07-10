@@ -1,4 +1,3 @@
-    <?php include 'include/header.php'; ?>
 <?php include 'include/navbar.php'; ?>
 
 <!DOCTYPE html>
@@ -12,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This new link imports Montserrat (for headings) and Poppins (for body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=91">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Merienda:wght@300..900&family=Rowdies:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=92">
 </head>
 <body> 
 
@@ -57,7 +56,10 @@
             <div class="container">
                 <!-- THIS IS THE NEW HEADING -->
                 <h2 class="section-title" id="quick-links-title">Essential Services</h2>
-
+                <div class="underline-wrapper">
+                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+                </div>
+                
                 <div class="row g-4">
                     <div class="col-6 col-md-3">
                         <a href="travel.php?page=Book-Travel" class="quick-link-card">
@@ -92,7 +94,11 @@
     <section id="gallery" class="section-padding bg-light">
     <div class="container text-center">
         <h2 class="section-title" id="gallery-title">Gallery</h2>
+        <div class="underline-wrapper">
+            <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
     </div>
+    
 
     <div class="gallery-wrapper">
         <div class="auto-scroll-gallery">
@@ -354,6 +360,9 @@
         <section id="trustees" class="section-padding bg-light">
             <div class="container text-center">
                 <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
+                 <div class="underline-wrapper">
+                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+                </div>
 
                 <div class="row justify-content-center g-4">
 
