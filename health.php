@@ -63,7 +63,6 @@ $activePage = "health";
     </div>
     <div class="ticker-wrap">
       <div class="ticker" onmouseover="this.style.animationPlayState='paused'" onmouseout="this.style.animationPlayState='running'">
-        <i class="bi bi-exclamation-triangle-fill"></i>
         <p> <i class="bi bi-exclamation-triangle-fill"></i> Emergency: 108 | Ambulance: 102 | Police: 100 | Women's Helpline: 1091 | Mental Health: 1800-599-0019</p>
       </div>
     </div>
