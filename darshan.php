@@ -2,7 +2,6 @@
 require_once 'include/connect.php';
 include 'include/header.php';
 include 'include/navbar.php';
-
 $message = '';
 $status = '';
 
