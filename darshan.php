@@ -1,0 +1,187 @@
+<?php
+require_once 'include/connect.php';
+include 'include/header.php'; 
+include 'include/navbar.php'; 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rituals</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=33">
+  <style>
+    .feature-video { background: #f9f9f9; padding: 30px; border-radius: 10px; text-align: center; }
+    .feature-video iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
+  </style>
+</head>
+<body>
+ 
+<main>
+  <section id="darshan-hero" class="text-center text-white">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+      <h1 class="hero-title">Rituals & Darshan Services</h1>
+      <p class="hero-announcement">Connect with the divine. Book your sacred services online.</p>
+    </div>
+  </section>
+
+  <div class="container section-padding">
+    <div class="feature-video mb-5">
+      <h2 class="mb-3">Live Darshan & Virtual Pooja</h2>
+      <iframe width="560" height="560" src="https://www.youtube.com/embed/vJY1Nn9xc-U?si=uQYWgLqc_5S50Cqa&amp;controls=0&amp;start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p class="mt-3">Watch the sacred rituals live and feel spiritually connected.</p>
+    </div>
+
+    
+     <!-- Holy Dip Booking -->
+    <div class="booking-module">
+      <h2 class="section-title text-start">Holy Dip (Snan) Slot Booking</h2>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Select Ghat</label>
+          <select class="form-select" id="ghat-select">
+            <option disabled selected>Select a Ghat</option>
+            <option value="Ramkund">Ramkund</option>
+            <option value="Trimbakeshwar">Kushavarta Tirtha (Trimbakeshwar)</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Number of Devotees</label>
+          <input type="number" class="form-control" id="devotee-count" min="1">
+        </div>
+        <div class="col-12" id="devotee-names-container"></div>
+        <div class="col-md-6">
+          <label class="form-label">Select Date</label>
+          <input type="date" class="form-control" id="snan-date">
+        </div>
+       <div class="col-md-6">
+  <label class="form-label">Select Time Slot</label>
+  <div class="d-flex gap-2">
+    <input type="time" class="form-control" id="start-time">
+    <span class="align-self-center">to</span>
+    <input type="time" class="form-control" id="end-time">
+  </div>
+</div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">Book Slot & Get QR Code</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- E-Pandit Booking -->
+    <div class="booking-module mt-5">
+      <h2 class="section-title text-start">E-Pandit Booking</h2>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Type of Pooja</label>
+          <input list="pooja-types" class="form-control" placeholder="Search Pooja">
+          <datalist id="pooja-types">
+            <option value="Kalsarpa Shanti">
+            <option value="Narayan Nagbali">
+            <option value="Tripindi Shraddha">
+            <option value="General Sankalp">
+          </datalist>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Pandit's Language</label>
+          <select class="form-select">
+            <option disabled selected>Select Language</option>
+            <option>Marathi</option>
+            <option>Hindi</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Date for Pooja</label>
+          <input type="date" class="form-control" id="pooja-date-input">
+        </div>
+        <div class="col-md-6 align-self-end">
+          <button type="submit" class="btn btn-primary w-100">Search for Pandits</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Prasad Delivery -->
+    <div class="booking-module mt-5">
+      <h2 class="section-title text-start">Prasad Delivery</h2>
+      <form class="row g-3">
+        <div class="col-md-6"><label class="form-label">Devotee Name</label><input type="text" class="form-control"></div>
+        <div class="col-md-6"><label class="form-label">Address</label><input type="text" class="form-control"></div>
+        <div class="col-md-4"><label class="form-label">Pincode</label><input type="text" class="form-control"></div>
+        <div class="col-md-4"><label class="form-label">District</label><input type="text" class="form-control"></div>
+        <div class="col-md-4"><label class="form-label">Taluka</label><input type="text" class="form-control"></div>
+        <div class="col-md-12"><label class="form-label">Google Map Link(Paste Your URL)</label><input type="url" class="form-control"></div>
+        <div class="col-md-6"><label class="form-label">Quantity (Boxes)</label><input type="number" class="form-control" id="box-count" min="1"></div>
+        <div class="col-md-6"><label class="form-label">Total Price (₹)</label><input type="text" class="form-control" id="total-price" readonly></div>
+        <div class="col-12"><button class="btn btn-primary w-100">Order Prasad</button></div>
+      </form>
+    </div>
+
+    <!-- Sankalp & Donation -->
+    <div class="booking-module mt-5">
+      <h2 class="section-title text-start">Sankalp & Donation Seva</h2>
+      <form class="row g-3">
+        <div class="col-md-6"><label class="form-label">Devotee Name</label><input type="text" class="form-control"></div>
+        <div class="col-md-6"><label class="form-label">Donation Amount (₹)</label><input type="number" class="form-control"></div>
+        <div class="col-12"><label class="form-label">Address</label><input type="text" class="form-control"></div>
+        <div class="col-md-6"><button class="btn btn-primary w-100">Submit</button></div>
+        <div class="col-md-6 text-center">
+          <label class="form-label">Scan & Donate</label>
+          <img src="assets/images/qr-code.png" alt="QR Code" style="max-width:100%; height:auto;">
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<?php include 'include/footer.php'; ?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const countInput = document.getElementById('devotee-count');
+  const container = document.getElementById('devotee-names-container');
+  const dateInput = document.getElementById('snan-date');
+  const poojaDate = document.getElementById('pooja-date-input');
+  const boxCount = document.getElementById('box-count');
+  const totalPrice = document.getElementById('total-price');
+
+ countInput?.addEventListener('input', () => {
+    container.innerHTML = ''; // Clear previous
+    const count = parseInt(countInput.value);
+    
+    if (!isNaN(count) && count > 0) {
+      for (let i = 1; i <= count; i++) {
+        const row = document.createElement('div');
+        row.className = 'row g-2 mb-2';
+
+        row.innerHTML = `
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Devotee ${i} Name" name="devotee_name_${i}">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Gotra of Devotee ${i}" name="gotra_${i}">
+          </div>
+        `;
+
+        container.appendChild(row);
+      }
+    }
+  });
+
+  const today = new Date().toISOString().split("T")[0];
+  if (dateInput) dateInput.min = today;
+  if (poojaDate) poojaDate.min = today;
+
+  boxCount?.addEventListener('input', () => {
+    const count = parseInt(boxCount.value) || 0;
+    totalPrice.value = count * 100;
+  });
+</script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
