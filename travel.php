@@ -41,37 +41,51 @@
                         
                         <div class="tab-content p-4 border border-top-0 rounded-bottom">
 
-                            <!-- Bus Panel -->
-                            <div class="tab-pane fade show active" id="bus-panel" role="tabpanel" aria-labelledby="bus-tab">
-                                <form class="row g-4">
-                                    <div class="col-md-6">
-                                        <label for="bus-from" class="form-label" id="form-label-from">From</label>
-                                        <input type="text" class="form-control" id="bus-from" placeholder="e.g., Mumbai">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="bus-to" class="form-label" id="form-label-to">To</label>
-                                        <input type="text" class="form-control" id="bus-to" value="Nashik" disabled>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Date of Journey</label>
-                                        <div class="d-flex align-items-center gap-3">
-                                        <div class="d-flex align-items-center border rounded px-3 py-2 flex-grow-1">
-                                            <i class="bi bi-calendar2-event me-2 text-muted"></i>
-                                            <span id="selected-date-bus" class="fw-semibold">03 Jul, 2025</span>
-                                            <input type="date" class="form-control d-none" id="journey-date-bus" />
-                                        </div>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-light border" id="btn-today-bus">Today</button>
-                                            <button type="button" class="btn btn-light border" id="btn-tomorrow-bus">Tomorrow</button>
-                                        </div>
-                                        </div>
-                                    </div>
+                          <!-- Bus Panel -->
+<div class="tab-pane fade show active" id="bus-panel" role="tabpanel" aria-labelledby="bus-tab">
+    <!-- Use a <form> tag and add the `needs-validation` class for Bootstrap styles -->
+    <form class="row g-4 needs-validation" id="bus-search-form" novalidate>
+        
+        <!-- From Field with Suggestions Container -->
+        <div class="col-md-6">
+            <label for="bus-from" class="form-label" id="form-label-from">From</label>
+            <!-- This wrapper is crucial for positioning the suggestions -->
+            <div class="position-relative">
+                <input type="text" class="form-control" id="bus-from" placeholder="e.g., Mumbai" autocomplete="off" required>
+                <!-- This is where suggestions will appear -->
+                <div id="from-suggestions" class="list-group position-absolute w-100" style="z-index: 1000;"></div>
+                <!-- Bootstrap validation message -->
+                <div class="invalid-feedback">
+                    Please select a valid city from the list.
+                </div>
+            </div>
+        </div>
 
-                                    <div class="col-md-6 align-self-end">
-                                        <button type="submit" class="btn btn-primary w-100" id="form-btn-search-buses">Search Buses</button>
-                                    </div>
-                                </form>
-                            </div>
+        <div class="col-md-6">
+            <label for="bus-to" class="form-label" id="form-label-to">To</label>
+            <input type="text" class="form-control" id="bus-to" value="Nashik" disabled>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Date of Journey</label>
+            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center border rounded px-3 py-2 flex-grow-1">
+                <i class="bi bi-calendar2-event me-2 text-muted"></i>
+                <span id="selected-date-bus" class="fw-semibold">03 Jul, 2025</span>
+                <input type="date" class="form-control d-none" id="journey-date-bus" />
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-light border" id="btn-today-bus">Today</button>
+                <button type="button" class="btn btn-light border" id="btn-tomorrow-bus">Tomorrow</button>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 align-self-end">
+            <button type="submit" class="btn btn-primary w-100" id="form-btn-search-buses">Search Buses</button>
+        </div>
+    </form>
+</div>
 
                             <!-- Train Panel -->
                             <div class="tab-pane fade" id="train-panel" role="tabpanel" aria-labelledby="train-tab">
