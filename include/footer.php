@@ -25,12 +25,13 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="footer-heading"><i class="bi bi-lightning-charge me-2"></i>Quick Links</h5>
                 <ul class="footer-links">
-                    <li><a href="#" class="text-white"><i class="bi bi-newspaper me-2"></i>Press & Media</a></li>
-                    <li><a href="#" class="text-white"><i class="bi bi-envelope-paper me-2"></i>News Letter</a></li>
-                    <li><a href="#" class="text-white"><i class="bi bi-map me-2"></i>Interactive Map</a></li>
-                    <li><a href="#" class="text-white"><i class="bi bi-cloud-sun me-2"></i>Weather</a></li>
-                    <li><a href="#" class="text-white"><i class="bi bi-file-earmark-pdf me-2"></i>E-Brochure</a></li>
-                    <li><a href="#" class="text-white"><i class="bi bi-patch-question me-2"></i>FAQs</a></li>
+                    <li><a href="travel.php" class="text-white"><i class="bi bi-newspaper me-2"></i>Travel</a></li>
+                    <li><a href="darshan.php" class="text-white"><i class="bi bi-envelope-paper me-2"></i>Darshan</a></li>
+                    <li><a href="health.php" class="text-white"><i class="bi bi-map me-2"></i>Health & Safety</a></li>
+                    <li><a href="#" class="text-white"><i class="bi bi-cloud-sun me-2"></i>Culture</a></li>
+                    <li><a href="#" class="text-white"><i class="bi bi-file-earmark-pdf me-2"></i>Shop</a></li>
+                    <li><a href="#" class="text-white"><i class="bi bi-patch-question me-2"></i>Donate</a></li>
+                    <li><a href="#" class="text-white"><i class="bi bi-tree me-2"></i>Sustainability</a></li>
                 </ul>
             </div>
 
@@ -67,7 +68,7 @@
                         </p>
                     <p class="mb-0">
                         <a href="https://settribe.com/" target="_blank" class="text-decoration-underline text-sky-blue">
-                            <i class="bi bi-code-square me-2"></i>Developed by SETTribe
+                            <i class="bi bi-code-square me-2"></i>Developed & Maintained by SETTribe
                         </a>
                     </p>
                 </div>

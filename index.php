@@ -57,6 +57,9 @@
             <div class="container">
                 <!-- THIS IS THE NEW HEADING -->
                 <h2 class="section-title" id="quick-links-title">Essential Services</h2>
+                <div class="underline-wrapper">
+                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+                </div>
 
                 <div class="row g-4">
                     <div class="col-6 col-md-3">
@@ -92,8 +95,11 @@
     <section id="gallery" class="section-padding bg-light">
     <div class="container text-center">
         <h2 class="section-title" id="gallery-title">Gallery</h2>
+        <div class="underline-wrapper">
+            <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
     </div>
-
+    
     <div class="gallery-wrapper">
         <div class="auto-scroll-gallery">
  
@@ -348,15 +354,15 @@
     </div>
     </section>
 
-
-
         <!-- ================== TRUSTEES SECTION (FINAL PROFILE CARD) ================== -->
         <section id="trustees" class="section-padding bg-light">
             <div class="container text-center">
                 <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
+                <div class="underline-wrapper">
+    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+                </div>
 
                 <div class="row justify-content-center g-4">
-
                     <!-- Trustee 1 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="profile-card">
