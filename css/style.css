@@ -433,7 +433,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 /* Darshan Page Hero Banner */
 #darshan-hero {
     padding: 6rem 0;
-    background: url('../assets/images/darshan-hero.jpg') no-repeat center center/cover;
+    
     position: relative;
 }
 
