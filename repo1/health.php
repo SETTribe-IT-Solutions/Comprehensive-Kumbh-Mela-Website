@@ -46,7 +46,14 @@ $activePage = "health";
 </div>
 
 <main>
- 
+  <!-- HERO SECTION -->
+  <section id="health-hero" class="text-center text-white">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+      <h1 class="hero-title" id="health-hero-title">Health & Safety</h1>
+      <p class="hero-announcement" id="health-hero-subtitle">Your well-being is our utmost priority. Access essential services here.</p>
+    </div>
+  </section>
 
   <!-- Helpline Ticker -->
   <div class="alert-ticker-container">
@@ -60,12 +67,6 @@ $activePage = "health";
       </div>
     </div>
   </div>
-
-   <!-- HERO SECTION -->
-  <section id="health-hero" class="text-center text-white">
-      <h1 class="hero-title" id="health-hero-title">Health & Safety</h1>
-      <p class="hero-announcement" id="health-hero-subtitle">Your well-being is our utmost priority. Access essential services here.</p>
-  </section>
 
   
   <div class="container section-padding">
