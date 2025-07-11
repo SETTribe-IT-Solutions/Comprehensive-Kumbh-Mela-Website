@@ -5,7 +5,6 @@ session_start();
 
 // Include the database connection
 require 'include/connect.php';
-include 'include/header.php';
 include 'include/navbar.php';
 
 // --- 1. GET SEARCH, FILTER & SORT PARAMETERS ---
