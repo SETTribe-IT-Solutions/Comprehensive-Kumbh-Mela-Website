@@ -76,18 +76,7 @@
         </div>
     </nav>
     
-    <!-- Alert ticker -->
-    <div class="alert-ticker-container">
-        <div class="helpline">
-            <i class="bi bi-telephone-fill"></i>
-            <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span>
-        </div>
-        <div class="ticker-wrap">
-            <div class="ticker">
-                <p><i class="bi bi-exclamation-triangle-fill"></i> ALERT: Please follow all safety guidelines. Beware of unauthorized agents.</p>
-            </div>
-        </div>
-    </div>
+    
 </header>
 
 <style>
