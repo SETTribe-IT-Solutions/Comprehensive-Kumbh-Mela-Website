@@ -23,7 +23,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     background-color: white !important;
 }
 
-.underline-wrapper {
+/* .underline-wrapper {
     margin: 0 auto 2rem auto;
     text-align: center;
     width: 100%;
@@ -35,7 +35,45 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     width: 200px;
     max-width: 80%;
     height: auto;
+} */
+
+
+/* Essential Services underline styling */
+.underline-essential {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;   /* Increased top spacing */
+  margin-bottom: 25px; /* Increased bottom spacing */
 }
+
+/* Gallery underline styling (already looks good) */
+.underline-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* Board of Trustees underline styling (center fix) */
+.underline-trustees {
+  display: flex;
+  justify-content: flex-start; /* aligns left */
+  margin-left: 30px;           /* shifts it slightly to right */
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.section-underline {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 
 
@@ -158,11 +196,11 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 /* ================== 4. HERO SECTION (HOMEPAGE & TRAVEL) ================== */
 #hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center; }
 #hero { height: 75vh; background: url('../assets/images/hero-background-new1.jpg') no-repeat center center/cover; align-items: flex-start; padding-top: 10vh; }
-#travel-hero { padding: 6rem 0; background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover; align-items: center; }
+
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
 .hero-content, #travel-hero .container { position: relative; z-index: 2; color: var(--white); }
-.hero-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 3rem); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
-.hero-announcement { font-size: 1.1rem; margin-top: 1rem; color: var(--sky-blue); font-weight: 500; }
+.hero-title { font-family:  "Vollkorn", serif; font-size: clamp(2.5rem, 6vw, 3rem); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
+.hero-announcement {font-family: "Merienda", cursive; font-size: 1.1rem; margin-top: 1rem; color: var(--sky-blue); font-weight: 500; }
 #countdown-timer .time-unit { background: rgba(0, 0, 0, 0.4); border: 1px solid var(--saffron); border-radius: 8px; padding: 1rem; min-width: 90px; margin-top: 4rem; }
 #countdown-timer .time-unit span { display: block; font-size: 2.5rem; font-weight: 700; }
 #countdown-timer .time-unit label { font-size: 0.8rem; text-transform: uppercase; }
@@ -181,7 +219,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 700;
     color: var(--dark-text);
-    margin-bottom: 1.5rem; /* Reduced from 4rem */
+    margin-bottom: 0.5rem; /* Reduced from 4rem */
 }
 
 
@@ -446,7 +484,10 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 /* Health Page Hero Banner */
 #health-hero {
-    padding: 3rem 0;
+
+    padding: 6rem 0;
+    background: url('../assets/images/health-hero.jpg') no-repeat center center/cover;
+
     position: relative;
 }
 

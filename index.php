@@ -1,4 +1,4 @@
-    <?php include 'include/header.php'; ?>
+
 <?php include 'include/navbar.php'; ?>
 
 <!DOCTYPE html>
@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This new link imports Montserrat (for headings) and Poppins (for body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=91">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Signika:wght@300..700&family=Merienda:wght@300..900&family=Russo+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=92">
 </head>
 <body> 
 
@@ -57,7 +57,7 @@
             <div class="container">
                 <!-- THIS IS THE NEW HEADING -->
                 <h2 class="section-title" id="quick-links-title">Essential Services</h2>
-                <div class="underline-wrapper">
+                <div class="underline-essential">
                     <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
                 </div>
 
@@ -95,7 +95,7 @@
     <section id="gallery" class="section-padding bg-light">
     <div class="container text-center">
         <h2 class="section-title" id="gallery-title">Gallery</h2>
-        <div class="underline-wrapper">
+        <div class="underline-gallery">
             <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
         </div>
     </div>
@@ -113,7 +113,7 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Pooja Procession - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
@@ -129,7 +129,7 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Heritage Walk - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
@@ -238,12 +238,12 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Pooja Procession - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
 
-
+        <!-- hi -->
 
         <!-- Local Video 2 -->
        <div class="media-card" data-type="video">
@@ -254,7 +254,7 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Heritage Walk - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
@@ -358,8 +358,8 @@
         <section id="trustees" class="section-padding bg-light">
             <div class="container text-center">
                 <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
-                <div class="underline-wrapper">
-    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+                <div class="underline-trustees">
+                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
                 </div>
 
                 <div class="row justify-content-center g-4">
