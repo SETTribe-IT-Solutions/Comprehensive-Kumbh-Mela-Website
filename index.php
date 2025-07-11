@@ -1,6 +1,8 @@
     <?php include 'include/header.php'; ?>
 <?php include 'include/navbar.php'; ?>
     <!-- just a comment -->
+    <!-- again a comment -->
+
 
 <!DOCTYPE html>
 <html lang="en">
