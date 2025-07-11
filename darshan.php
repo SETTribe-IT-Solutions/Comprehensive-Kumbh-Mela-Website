@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $formType = $_POST['form_type'];
 
         try {
+          
             switch ($formType) {
                 case 'snan':
                     $ghat = $_POST['ghat'] ?? '';
