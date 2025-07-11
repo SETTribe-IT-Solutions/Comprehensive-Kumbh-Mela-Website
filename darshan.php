@@ -199,7 +199,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="col-md-4"><label class="form-label">Pincode</label><input type="text" class="form-control" id="pincode" name="pincode" required></div>
                 <div class="col-md-4"><label class="form-label">District</label><input type="text" class="form-control" id="district" name="district" required></div>
                 <div class="col-md-4"><label class="form-label">Taluka</label><input type="text" class="form-control" id="taluka" name="taluka" required></div>
-                <div class="col-md-12"><label class="form-label">Google Map Link(Paste Your URL.)</label><input type="url" class="form-control" name="map_link"></div>
+                <div class="col-md-12"><label class="form-label">Google Map Link(Paste Your URL)</label><input type="url" class="form-control" name="map_link"></div>
                 <div class="col-md-6"><label class="form-label">Quantity (Boxes)</label><input type="number" class="form-control" id="box-count" name="quantity" min="1" value="1" required></div>
                 <div class="col-md-6"><label class="form-label">Total Price (₹)</label><input type="text" class="form-control" id="total-price" readonly name="total_price"></div>
                 <div class="col-12"><button class="btn btn-primary w-100" type="submit">Order Prasad</button></div>
