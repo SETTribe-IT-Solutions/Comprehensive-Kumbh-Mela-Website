@@ -13,11 +13,11 @@
                     <li class="nav-item"><a class="nav-link" id="nav-travel" href="travel.php">Travel</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-darshan" href="darshan.php">Darshan</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-health-safety" href="health.php">Health & Safety</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.html?page=Culture">Culture</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.html?page=Shop">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.html?page=Donate">Donate</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.html?page=Sustainability">Sustainability</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-login" href="under-construction.html?page=Login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.php">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.php">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.php">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.php">Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-login" href="under-construction.php">Login</a></li>
                 </ul>
 
                 <div class="dropdown">
