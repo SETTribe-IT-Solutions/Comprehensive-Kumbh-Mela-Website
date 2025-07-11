@@ -1,3 +1,44 @@
+<?php
+// header.php content merged into navbar.php
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumbh Mela 2027 - Nashik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+    /* ================== GLOBAL VARIABLES & FONT LOADING ================== */
+    :root {
+        --saffron: #FF9933;
+        --sky-blue: #87CEEB;
+        --white: #FFFFFF;
+        --dark-text: #333333;
+        --light-bg: #eef5f9;
+        --font-heading: 'Montserrat', sans-serif;
+        --font-body: 'Poppins', sans-serif;
+    }
+    
+    /* Font face definitions to prevent FOUT (Flash of Unstyled Text) */
+    body { 
+        font-family: var(--font-body);
+        color: var(--dark-text);
+        /* Fallback font while Poppins loads */
+        font-display: swap;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-display: swap;
+    }
+    </style>
+</head>
+<body>
 <header class="main-header sticky-top shadow-sm">
     <nav class="navbar navbar-expand-lg bg-white custom-navbar">
         <div class="container">
@@ -13,11 +54,11 @@
                     <li class="nav-item"><a class="nav-link" id="nav-travel" href="travel.php">Travel</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-darshan" href="darshan.php">Darshan</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-health-safety" href="health.php">Health & Safety</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.php">Culture</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.php">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.php">Donate</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.php">Sustainability</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-login" href="under-construction.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.html?page=Culture">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.html?page=Shop">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.html?page=Donate">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.html?page=Sustainability">Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-login" href="under-construction.html?page=Login">Login</a></li>
                 </ul>
 
                 <div class="dropdown">
@@ -34,18 +75,30 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Alert ticker -->
+    <div class="alert-ticker-container">
+        <div class="helpline">
+            <i class="bi bi-telephone-fill"></i>
+            <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span>
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <p><i class="bi bi-exclamation-triangle-fill"></i> ALERT: Please follow all safety guidelines. Beware of unauthorized agents.</p>
+            </div>
+        </div>
+    </div>
 </header>
 
 <style>
 /* ================== NAVBAR STYLES ================== */
-:root {
-    --saffron: #FF9933;
-    --dark-text: #333;
-    --white: #ffffff;
-}
-
 .logo img { 
     height: 45px; 
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
 }
 
 .main-header {
@@ -56,16 +109,16 @@
     background-color: white !important;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .nav-link {
+    font-family: var(--font-body);
     font-weight: 600;
     padding: 0.5rem 1.2rem !important;
     color: var(--dark-text) !important;
     position: relative;
     transition: color 0.3s ease;
-    
-
 }
 
 .nav-link:hover {
@@ -86,15 +139,18 @@
     height: 2px;
     background-color: var(--saffron);
     border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* Dropdown styles */
 .dropdown .btn {
+    font-family: var(--font-body);
     border-color: #ddd;
     color: #000;
     background-color: transparent;
     font-weight: 600;
     padding: 0.375rem 0.75rem;
+    transition: all 0.3s ease;
 }
 
 .dropdown .btn:hover {
@@ -103,14 +159,16 @@
 }
 
 .dropdown-menu {
+    font-family: var(--font-body);
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     padding: 0.5rem 0;
 }
 
 .dropdown-item {
+    font-family: var(--font-body);
     color: #000;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     padding: 0.5rem 1.5rem;
     font-weight: 500;
 }
@@ -140,6 +198,7 @@
     background-color: #800000;
     color: var(--white);
     font-size: 0.9rem;
+    font-family: var(--font-body);
 }
 
 .helpline { 
@@ -166,6 +225,7 @@
     animation: ticker-scroll 20s linear infinite;
     display: flex;
     align-items: center;
+    padding-left: 100%;
 }
 
 .ticker i { 
@@ -181,7 +241,7 @@
 }
 
 @keyframes ticker-scroll { 
-    0% { transform: translateX(100%); } 
+    0% { transform: translateX(0); } 
     100% { transform: translateX(-100%); } 
 }
 
@@ -204,12 +264,34 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
+    
+    .alert-ticker-container {
+        flex-direction: column;
+    }
+    
+    .helpline {
+        width: 100%;
+        text-align: center;
+    }
 }
 </style>
 
 <script>
 // Activate the current nav link based on current page
 document.addEventListener('DOMContentLoaded', function() {
+    // Preload fonts to prevent FOUT
+    if (typeof FontFaceObserver !== 'undefined') {
+        const poppins = new FontFaceObserver('Poppins');
+        const montserrat = new FontFaceObserver('Montserrat');
+        
+        Promise.all([
+            poppins.load(),
+            montserrat.load()
+        ]).then(function() {
+            document.documentElement.classList.add('fonts-loaded');
+        });
+    }
+    
     // Get current page URL
     const currentUrl = window.location.pathname.split('/').pop() || 'index.php';
     
