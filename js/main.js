@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================
-    // --- 1. COUNTDOWN TIMER LOGIC ---
-    // =========================================================
+    // --- 1. COUNTDOWN TIMER LOGIC (CORRECTED & SAFE) ---
+
     const countdownTimerEl = document.getElementById('countdown-timer');
-    // ** THE FIX IS HERE: Only run the countdown code if the timer exists on the page **
+    
+    // This 'if' statement is the main gatekeeper.
+    // It prevents this entire block from running on pages without a countdown timer.
     if (countdownTimerEl) {
+        
         const countdown = () => {
             const targetDate = new Date('July 14, 2027 00:00:00').getTime();
             const now = new Date().getTime();
@@ -17,25 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                // These elements are only searched for if the main timer exists
-                document.getElementById('days').innerText = String(days).padStart(3, '0');
-                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+                // These elements are now safely inside the main 'if' block.
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                // This second layer of checks ensures we don't get an error
+                // even if one of the inner elements is missing.
+                if (daysEl && hoursEl && minutesEl && secondsEl) {
+                    daysEl.innerText = String(days).padStart(3, '0');
+                    hoursEl.innerText = String(hours).padStart(2, '0');
+                    minutesEl.innerText = String(minutes).padStart(2, '0');
+                    secondsEl.innerText = String(seconds).padStart(2, '0');
+                }
+
             } else {
+                // This part is also safe because countdownTimerEl is guaranteed to exist here.
                 clearInterval(interval);
                 countdownTimerEl.innerHTML = "<h3 class='text-white'>The event has started!</h3>";
             }
         };
+        
         const interval = setInterval(countdown, 1000);
         countdown();
     }
 
-
-    // =========================================================
     // --- UNIVERSAL API-DRIVEN TRANSLATION ENGINE ---
     // This code will run on every page.
-    // =========================================================
+
     const languageOptions = document.querySelectorAll('.lang-option');
 
     // Only set up the engine if language options exist in the navbar

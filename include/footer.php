@@ -199,3 +199,21 @@
     });
     </script>
 </footer>
+
+
+<!-- ... your entire existing <footer> code is above this ... -->
+</footer>
+
+<!-- ================== LIGHTBOX & SCRIPT TAGS (Loaded on every page) ================== -->
+
+<div id="lightbox">
+    <span class="lightbox-close">×</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-video-container" id="lightbox-video"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js?" defer></script> <!-- Use your latest version number -->
+
+</body>
+</html>
