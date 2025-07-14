@@ -1,6 +1,8 @@
 /* KUMBH MELA 2027 - MASTER STYLESHEET */
 /* new comment added for trial */
+
 /* ================== 1. VARIABLES & GLOBAL STYLES ================== */
+
 :root {
     --saffron: #FF9933;
     --sky-blue: #87CEEB;
@@ -693,4 +695,52 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 .card-footer-links a:hover {
     color: var(--saffron);
+}
+
+
+
+/* ================== 13. CULTURE PAGE STYLES ================== */
+/* ================== 13. CULTURE PAGE STYLES ================== */
+
+/* Culture Page Hero Banner */
+#culture-hero {
+    padding: 6rem 0;
+    /* This path assumes culture-hero.jpg is in your assets/images folder */
+    background: url('../assets/images/culture-hero.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+}
+
+#culture-hero .hero-title, 
+#culture-hero .hero-announcement {
+    position: relative;
+    z-index: 2; /* Ensures text is on top of the overlay */
+}
+
+/* Styling for the list items in the sidebars to make them look more premium */
+.list-group-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* Use a light border color or remove it if using list-group-flush */
+    border-color: #f0f0f0; 
+}
+
+.list-group-item h5, .list-group-item h6 {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.list-group-item .badge.bg-primary {
+    background-color: var(--saffron) !important;
+    padding: 0.5em 0.75em;
+    font-size: 0.8rem;
+}
+
+/* Ensures the video player is responsive */
+.ratio.ratio-16x9 video {
+    width: 100%;
+    height: 100%;
 }

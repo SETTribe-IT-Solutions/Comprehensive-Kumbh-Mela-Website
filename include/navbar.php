@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=998">
     <style>
     /* ================== GLOBAL VARIABLES & FONT LOADING ================== */
     :root {
@@ -54,7 +55,7 @@
                     <li class="nav-item"><a class="nav-link" id="nav-travel" href="travel.php">Travel</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-darshan" href="darshan.php">Darshan</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-health-safety" href="health.php">Health & Safety</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.html?page=Culture">Culture</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-culture" href="culture.php?v=1">Culture</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.html?page=Shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.html?page=Donate">Donate</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.html?page=Sustainability">Sustainability</a></li>
