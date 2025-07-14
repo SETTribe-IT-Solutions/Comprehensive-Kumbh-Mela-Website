@@ -199,7 +199,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 #hero { height: 75vh; background: url('../assets/images/hero-background-new1.jpg') no-repeat center center/cover; align-items: flex-start; padding-top: 10vh; }
 
 /* === Override: Apply Inter font only to Travel page === */
-#travel-hero .hero-title {
+#travel-hero .container .hero-title {
   font-family: 'Inter', sans-serif !important;
   font-size: clamp(1.2rem, 3vw, 2.0rem); /* Smaller than before */
   font-weight: 700;
@@ -209,7 +209,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   text-shadow: none;
 }
 
-#travel-hero .hero-announcement {
+#travel-hero .container .hero-announcement {
   font-family: 'Inter', sans-serif !important;
   font-size: 0.9rem; /* Reduced from 1.1rem */
   font-weight: 400;
