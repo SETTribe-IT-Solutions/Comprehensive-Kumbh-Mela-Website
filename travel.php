@@ -240,7 +240,7 @@
     <!-- <footer class="bg-dark text-white text-center py-4">
         <div class="container"><p class="mb-0" id="footer-text">© 2025 Ministry of Culture. Govt of India. All Rights Reserved.</p></div>
     </footer> -->
-
+    <?php include 'include/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script src="js/main2.js?v=4" defer></script>
@@ -250,4 +250,4 @@
 
 </body>
 </html>
-<?php include 'include/footer.php'; ?>
+

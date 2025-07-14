@@ -1,5 +1,8 @@
 
 <?php include 'include/navbar.php'; ?>
+    <!-- just a comment -->
+    <!-- again a comment -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +116,7 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Pooja Procession - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
@@ -129,7 +132,7 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Heritage Walk - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
@@ -238,12 +241,12 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Pooja Procession - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
 
-
+        <!-- hi -->
 
         <!-- Local Video 2 -->
        <div class="media-card" data-type="video">
@@ -254,7 +257,7 @@
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
-                <h3 class="media-card-title">Heritage Walk</h3>
+                <h3 class="media-card-title">Heritage Walk - Video</h3>
                 <p class="media-card-link"><i class="bi bi-box-arrow-up-right"></i> Click here for view</p>
             </div>
         </div>
