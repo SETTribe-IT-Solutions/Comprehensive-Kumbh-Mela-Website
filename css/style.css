@@ -25,19 +25,8 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     background-color: white !important;
 }
 
-/* .underline-wrapper {
-    margin: 0 auto 2rem auto;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-.section-underline {
-    width: 200px;
-    max-width: 80%;
-    height: auto;
-} */
+
 
 
 /* Essential Services underline styling */
@@ -195,12 +184,37 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   100% { transform: translateX(-100%); }
 }
 
+
 /* ================== 4. HERO SECTION (HOMEPAGE & TRAVEL) ================== */
-#hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center; }
+#hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center;  margin-top: 2rem; /* Add spacing below navbar */
+  padding-top: 2rem; /* Optional, for smoother spacing */}
 #hero { height: 75vh; background: url('../assets/images/hero-background-new1.jpg') no-repeat center center/cover; align-items: flex-start; padding-top: 10vh; }
 
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
-.hero-content, #travel-hero .container { position: relative; z-index: 2; color: var(--white); }
+/* === Override: Apply Inter font only to Travel page === */
+#travel-hero .container .hero-title {
+  font-family: 'Inter', sans-serif !important;
+  font-size: clamp(1.2rem, 3vw, 2.0rem); /* Smaller than before */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+#travel-hero .container .hero-announcement {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem; /* Reduced from 1.1rem */
+  font-weight: 400;
+  color: var(--sky-blue);
+}
+
+#travel-hero {
+  background: none; 
+  height: auto;     
+}
+
+/* .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); } */
+.hero-content, #travel-hero .container { position: relative; z-index: 2; color: #333333; }
 .hero-title { font-family:  "Vollkorn", serif; font-size: clamp(2.5rem, 6vw, 3rem); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
 .hero-announcement {font-family: "Merienda", cursive; font-size: 1.1rem; margin-top: 1rem; color: var(--sky-blue); font-weight: 500; }
 #countdown-timer .time-unit { background: rgba(0, 0, 0, 0.4); border: 1px solid var(--saffron); border-radius: 8px; padding: 1rem; min-width: 90px; margin-top: 4rem; }
@@ -447,6 +461,19 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 
 /* ================== 9. TRAVEL PAGE STYLES ================== */
+
+
+#travel-hero {
+ padding: 6rem 0; background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
+       position: relative; 
+       
+}
+
+#travel-hero .hero-title {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+
 .booking-module {
     background-color: var(--white);
     border-radius: 15px;
@@ -471,77 +498,49 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 /* ================== 10. DARSHAN PAGE STYLES ================== */
 
 /* Darshan Page Hero Banner */
-#darshan-hero {
+/* #darshan-hero {
     padding: 6rem 0;
-    background: url('../assets/images/darshan-hero.jpg') no-repeat center center/cover;
+
     position: relative;
 }
 
 #darshan-hero .hero-title {
     font-size: clamp(2.5rem, 7vw, 4rem);
+} */
+
+
+
+/* .darshan-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  
 }
 
-
-/* ================== 11. HEALTH & SAFETY PAGE STYLES ================== */
-
-/* Health Page Hero Banner */
-#health-hero {
-
-    padding: 6rem 0;
-    background: url('../assets/images/health-hero.jpg') no-repeat center center/cover;
-
-    position: relative;
+.darshan-title {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
 }
 
-#health-hero .hero-title {
-    font-size: clamp(2.5rem, 7vw, 4rem);
+.underline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* SOS Button */
-.btn-sos {
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 1.5rem 3rem;
-    border-radius: 50px;
-    animation: pulse 2s infinite;
-}
+.section-underline {
+  width: 200px;
+  max-width: 80%;
+  height: auto;
+} */
 
-.btn-sos i {
-    margin-right: 1rem;
-}
 
-.btn-sos small {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin-top: 0.5rem;
-    opacity: 0.9;
-}
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(220, 53, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
-}
-
-/* Map Placeholder */
-.map-placeholder {
-    width: 100%;
-    height: 300px;
-    background-color: #e9ecef;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #6c757d;
-    border: 1px dashed #ced4da;
-}
-
-.map-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
 
 /* ================== 11. FOOTER STYLES ================== */
 .main-footer-bottom {

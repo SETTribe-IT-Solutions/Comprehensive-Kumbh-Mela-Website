@@ -1,0 +1,178 @@
+
+.sustainability-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  /* background-color: #fff7ec; light orange shade */
+}
+
+.sus-title {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.underline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-underline {
+  width: 200px; /* adjust as needed */
+  max-width: 80%;
+  height: auto;
+}
+
+/* ================== 2. SUSTAINABILITY INFO CARDS ================== */
+
+.sus-section{
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem; /* Reduced from 4rem */
+    margin-top: -5rem;
+}
+/* Used for "Eco-Friendly Travel & Stay" section */
+
+.sustainability-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fff7ec; /* Light orange background */
+    /* Optional: Add a subtle gradient for depth */
+    background-image: linear-gradient(to bottom right, #fff7ec, #ffeedd);
+}
+
+.sustainability-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: #ffeedd; /* Slightly darker orange on hover */
+}
+
+/* Keep all other card styles the same */
+.sustainability-card .card-icon {
+    font-size: 3rem;
+    color: var(--saffron);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.sustainability-card .card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.sustainability-card .card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+/* ================== 3. DONATION & WASTE SECTION ================== */
+
+/* Donation Guidelines List */
+.list-group-item {
+    background-color: transparent; /* Makes list items blend with the background */
+    border: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+}
+
+.list-group-item i {
+    font-size: 1.5rem; /* Makes icons slightly larger */
+}
+
+/* Waste Disposal Map Placeholder */
+/* This is the new, corrected code */
+.map-placeholder {
+    background-color: #f8f9fa;
+    border: 2px dashed #ced4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 250px; /* This ensures the box has a good size */
+    /* The height: 100%; line has been removed. */
+    border-radius: .375rem;
+    text-align: center;
+    padding: 1.5rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.map-placeholder:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* ================== 4. SUSTAINABLE PRACTICES ACCORDION ================== */
+.accordion-item {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 0.5rem;
+    border-radius: 8px !important; /* Force radius on all corners */
+    overflow: hidden;
+}
+.accordion-item:first-of-type, .accordion-item:last-of-type {
+     border-radius: 8px !important;
+}
+
+.accordion-header .accordion-button {
+    font-weight: 500;
+    color: var(--dark-text);
+    background-color: #fdfdfd;
+    box-shadow: none;
+}
+
+.accordion-header .accordion-button:not(.collapsed) {
+    color: var(--saffron);
+    background-color: #fff8e1; /* Light saffron background for active state */
+    font-weight: 700;
+    box-shadow: inset 0 -2px 0 var(--saffron); /* Bottom border effect */
+}
+
+/* Style the icon inside the button */
+.accordion-button i {
+    color: var(--saffron);
+    transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) i {
+    transform: rotate(15deg);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 153, 51, 0.25); /* Saffron focus ring */
+}
+
+.accordion-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ================== 5. ZERO-PLASTIC CAMPAIGN SECTION ================== */
+.zero-plastic-campaign {
+    background-color: #e8f5e9; /* A light, calming green */
+    border-left: 5px solid #4CAF50; /* A darker green accent */
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+/* Override the card-icon style for this specific section */
+.zero-plastic-campaign .card-icon {
+    font-size: 2.5rem;
+    color: #2e7d32; /* A darker shade of green for icons */
+    margin-bottom: 0.75rem;
+}
+
+.zero-plastic-campaign h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1b5e20; /* Darkest green for headings */
+}
