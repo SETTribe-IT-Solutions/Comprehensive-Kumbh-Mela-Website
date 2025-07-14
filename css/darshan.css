@@ -1,0 +1,52 @@
+/* ================== DARSHAN PAGE STYLES ================== */
+
+/* Hero Banner - Optional if you want a hero image */
+/* #darshan-hero {
+  padding: 6rem 0;
+  background: url('../assets/images/darshan-hero.jpg') no-repeat center center/cover;
+  position: relative;
+} */
+
+#darshan-hero .hero-title {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  text-align: center;
+  font-family: "Vollkorn", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Darshan Section */
+.darshan-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  
+}
+
+/* Darshan Title */
+.darshan-title {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+/* Underline Wrapper */
+.underline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Underline Image/Graphic */
+.section-underline {
+  width: 200px;
+  max-width: 80%;
+  height: auto;
+}
