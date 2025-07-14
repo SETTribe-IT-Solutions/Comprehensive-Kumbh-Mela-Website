@@ -21,7 +21,11 @@
             <div class="hero-overlay"></div>
             <div class="container position-relative">
                 <h1 class="hero-title" id="travel-hero-title">Travel & Stay Planner</h1>
-                <p class="hero-announcement" id="travel-hero-subtitle">Your complete guide to reaching and staying at Kumbh Mela 2027.</p>
+                <!-- <p class="hero-announcement" id="travel-hero-subtitle">Your complete guide to reaching and staying at Kumbh Mela 2027.</p> -->
+            <div class="underline-wrapper">
+      <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+    </div>
+
             </div>
         </section>
 
