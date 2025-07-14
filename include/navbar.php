@@ -62,7 +62,7 @@
                     <li class="nav-item"><a class="nav-link" id="nav-shop" href="shop.php">Shop</a></li>
                    
 
-                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.html?page=Sustainability">Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="sustainability.php">Sustainability</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-login" href="under-construction.html?page=Login">Login</a></li>
                 </ul>
 
