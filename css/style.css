@@ -23,7 +23,12 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     background-color: white !important;
 }
 
-/* .underline-wrapper {
+/* .
+
+
+
+
+-wrapper {
     margin: 0 auto 2rem auto;
     text-align: center;
     width: 100%;
@@ -192,6 +197,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   0%   { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
 }
+
 
 /* ================== 4. HERO SECTION (HOMEPAGE & TRAVEL) ================== */
 #hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center; }
@@ -445,6 +451,19 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 
 /* ================== 9. TRAVEL PAGE STYLES ================== */
+
+
+#travel-hero {
+ padding: 6rem 0; background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
+       position: relative; 
+       
+}
+
+#travel-hero .hero-title {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+
 .booking-module {
     background-color: var(--white);
     border-radius: 15px;
@@ -471,7 +490,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 /* Darshan Page Hero Banner */
 #darshan-hero {
     padding: 6rem 0;
-    background: url('../assets/images/darshan-hero.jpg') no-repeat center center/cover;
+    background: url('../assets/images/darshan-hero3.jpg') no-repeat center center/cover;
     position: relative;
 }
 
@@ -486,8 +505,6 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 #health-hero {
 
     padding: 6rem 0;
-    background: url('../assets/images/health-hero.jpg') no-repeat center center/cover;
-
     position: relative;
 }
 
