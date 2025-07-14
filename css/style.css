@@ -479,10 +479,13 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 #darshan-hero .hero-title {
     font-size: clamp(2.5rem, 7vw, 4rem);
 } */
-.darshan-section {
+
+
+
+/* .darshan-section {
   text-align: center;
   padding: 3rem 1rem;
-  /* background-color: #fff7ec; light orange shade */
+  
 }
 
 .darshan-title {
@@ -503,10 +506,10 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 
 .section-underline {
-  width: 200px; /* adjust as needed */
+  width: 200px;
   max-width: 80%;
   height: auto;
-}
+} */
 
 
 /* ================== 11. HEALTH & SAFETY PAGE STYLES ================== */
