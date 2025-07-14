@@ -2,8 +2,8 @@
 require_once 'include/connect.php';
 include 'include/navbar.php'; 
 ?>
-<?php
 
+<?php
 $pageTitle = "Health & Safety - Kumbh Mela 2027";
 $activePage = "health";
 ?>
@@ -17,26 +17,10 @@ $activePage = "health";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=36">
+
+  <link rel="stylesheet" href="css/health.css?v=1">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <style>
-    #sos-status {
-      display: none;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      max-width: 300px;
-    }
-    .sos-spinner {
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-  </style>
 </head>
 <body>
 <div id="sos-status" class="alert alert-dismissible fade show">
@@ -45,8 +29,6 @@ $activePage = "health";
 </div>
 
 <main>
- 
-
   <!-- Helpline Ticker -->
   <div class="alert-ticker-container">
     <div class="helpline">
@@ -60,16 +42,16 @@ $activePage = "health";
     </div>
   </div>
 
-   <!-- HERO SECTION -->
-  <section id="health-hero" class="text-center text-white">
-      <h1 class="hero-title" id="health-hero-title">Health & Safety</h1>
-      <p class="hero-announcement" id="health-hero-subtitle">Your well-being is our utmost priority. Access essential services here.</p>
-  </section>
-
+  <div class="health-section">
+    <h1 class="health-title">Health & Safety</h1>
+    <div class="underline-wrapper">
+      <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+    </div>
+  </div>
   
   <div class="container section-padding">
     <!-- SOS BUTTON -->
-    <div class="row mb-5">
+    <div class="row mb-5 sos-row">
       <div class="col-12 text-center">
         <button class="btn btn-danger btn-sos" id="sos-button">
           <i class="bi bi-bell-fill"></i>
@@ -80,12 +62,12 @@ $activePage = "health";
     </div>
 
     <!-- Grid -->
-    <div class="row g-5">
+    <div class="row g-4">
       <!-- LEFT SIDE -->
       <div class="col-lg-7">
         <!-- Doctor Consultation -->
-        <div class="booking-module">
-          <h2 class="section-title text-start" id="doctor-title">24x7 Online Doctor Consultation</h2>
+        <div class="booking-module health-card">
+          <h2 class="section-title text-start">24x7 Online Doctor Consultation</h2>
           <form id="doctorForm" novalidate>
             <div class="mb-3">
               <label for="name" class="form-label">Full Name</label>
@@ -107,12 +89,12 @@ $activePage = "health";
         </div>
 
         <!-- Wearables -->
-        <div class="booking-module mt-5">
-          <h2 class="section-title text-start" id="wearable-title">Wearable Device Support</h2>
-          <p class="text-muted" id="wearable-desc">Connect a GPS wearable to track children or elderly family members.</p>
+        <div class="booking-module health-card mt-4">
+          <h2 class="section-title text-start">Wearable Device Support</h2>
+          <p class="text-muted">Connect a GPS wearable to track children or elderly family members.</p>
           <form class="row g-3">
             <div class="col-md-8">
-              <label for="wearable-id" class="form-label" id="wearable-id-label">Enter Wearable Device ID</label>
+              <label for="wearable-id" class="form-label">Enter Wearable Device ID</label>
               <input type="text" class="form-control" id="wearable-id" placeholder="e.g., 987-654-3210">
             </div>
             <div class="col-md-4 align-self-end">
@@ -124,26 +106,30 @@ $activePage = "health";
 
       <!-- RIGHT SIDE MAP -->
       <div class="col-lg-5">
-        <div class="booking-module h-100">
-          <h2 class="section-title text-start" id="map-title">Nearby Medical Help</h2>
-          <p class="text-muted" id="map-desc">Find the closest first-aid posts, clinics, and hospitals on the map.</p>
-          <div id="map" style="height: 400px; border-radius: 10px;"></div>
+        <div class="booking-module health-card healthfind">
+          <h2 class="section-title text-start">Nearby Medical Help</h2>
+          <p class="text-muted">Find the closest first-aid posts, clinics, and hospitals on the map.</p>
+          <div id="map"></div>
         </div>
       </div>
     </div>
   </div>
 </main>
+
 <?php include 'include/footer.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
+// SOS Functionality
 function showStatus(message, type = 'info') {
   const statusEl = document.getElementById('sos-status');
   statusEl.style.display = 'block';
   statusEl.className = `alert alert-${type} alert-dismissible fade show`;
   document.getElementById('sos-status-message').innerHTML = message;
 }
+
 function hideStatus() {
   document.getElementById('sos-status').style.display = 'none';
 }
@@ -166,11 +152,8 @@ document.getElementById('sos-button').addEventListener('click', async function (
   sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Locating...';
   sosButton.disabled = true;
   
-
   try {
     const position = await getLocation({ enableHighAccuracy: true, timeout: 10000 });
- 
-
     sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Sending...';
     const result = await sendSOSAlert(sosButton, originalHTML, {
       latitude: position.coords.latitude,
@@ -179,7 +162,6 @@ document.getElementById('sos-button').addEventListener('click', async function (
     });
 
     Swal.fire('Success', 'Alert sent! Help is on the way.', 'success');
-
   } catch (error) {
     console.error('Location Error:', error);
     Swal.fire('Warning', 'Could not get precise location. Trying approximate...', 'warning');
@@ -187,27 +169,22 @@ document.getElementById('sos-button').addEventListener('click', async function (
     try {
       const position = await getLocation({ enableHighAccuracy: false, timeout: 5000 });
       showStatus('Sending alert with approximate location...', 'info');
-
       sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Sending...';
       await sendSOSAlert(sosButton, originalHTML, {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
         accuracy: position.coords.accuracy
       });
-
       Swal.fire('Success', 'Alert sent with approximate location.', 'success');
-
     } catch (fallbackError) {
       console.error('Fallback Location Error:', fallbackError);
       Swal.fire('Error', 'Could not get location. Sending alert anyway.', 'error');
-
       sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Sending...';
       await sendSOSAlert(sosButton, originalHTML, {
         latitude: null,
         longitude: null,
         accuracy: null
       });
-
       Swal.fire('Success', 'Alert sent without location.', 'success');
     }
   } finally {
@@ -240,19 +217,16 @@ async function sendSOSAlert(button, originalHTML, locationData) {
 
     if (!response.ok) throw new Error('Network response was not ok');
     return await response.json();
-
   } catch (error) {
     console.error('Error:', error);
     Swal.fire('Error', 'Failed to send alert. Please try again or call directly.', 'error');
     throw error;
   }
 }
-</script>
 
-<script>
+// Doctor Consultation Form
 document.getElementById('doctorForm').addEventListener('submit', function (e) {
   e.preventDefault();
-
   document.querySelectorAll('.form-control').forEach(input => input.classList.remove('is-invalid'));
 
   const name = document.getElementById('name').value.trim();
@@ -260,9 +234,8 @@ document.getElementById('doctorForm').addEventListener('submit', function (e) {
   const symptoms = document.getElementById('symptoms').value.trim();
 
   const isValidIndianMobile = (number) => {
-  // Must be 10 digits, start with 6-9, and not all digits the same
-  return /^[6-9]\d{9}$/.test(number) && !/^(\d)\1{9}$/.test(number);
-};
+    return /^[6-9]\d{9}$/.test(number) && !/^(\d)\1{9}$/.test(number);
+  };
 
   let valid = true;
 
@@ -302,10 +275,8 @@ document.getElementById('doctorForm').addEventListener('submit', function (e) {
       console.error(err);
     });
 });
-</script>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
+// Map Initialization
 const map = L.map('map').setView([25.45, 81.85], 14);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
@@ -347,12 +318,10 @@ if (navigator.geolocation) {
           }).addTo(map).bindPopup(`<strong>${name}</strong><br>Type: ${type}`);
         }
       });
-
     } catch (err) {
       console.error("Overpass fetch failed", err);
       Swal.fire('Error', 'Unable to load nearby medical help.', 'error');
     }
-
   }, () => {
     Swal.fire('Permission Denied', 'Location access denied. Cannot show nearby help.', 'warning');
   });
@@ -360,6 +329,5 @@ if (navigator.geolocation) {
   Swal.fire('Unsupported', 'Geolocation not supported by your browser.', 'error');
 }
 </script>
-
 </body>
 </html>
