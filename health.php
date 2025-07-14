@@ -42,12 +42,14 @@ $activePage = "health";
     </div>
   </div>
 
+
   <div class="health-section">
     <h1 class="health-title">Health & Safety</h1>
     <div class="underline-wrapper">
       <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
     </div>
   </div>
+
   
   <div class="container section-padding">
     <!-- SOS BUTTON -->

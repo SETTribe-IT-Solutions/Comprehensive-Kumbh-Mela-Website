@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main>
     <section id="darshan-hero" class="text-center text-white">
-        
+        <div class="hero-overlay"></div>
         <div class="container position-relative">
             <h1 class="hero-title">Rituals & Darshan Services</h1>
             <p class="hero-announcement">Connect with the divine. Book your sacred services online.</p>
