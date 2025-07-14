@@ -100,11 +100,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <main>
-    <section id="darshan-hero" class="text-center text-white">
-        <div class="hero-overlay"></div>
-        <div class="container position-relative">
-            <h1 class="hero-title">Rituals & Darshan Services</h1>
-            <p class="hero-announcement">Connect with the divine. Book your sacred services online.</p>
+<section id="darshan-hero" class="text-center text-white">
+        
+        <div class="darshan-section">
+            <h1 class="darshan-title">Rituals & Darshan Services</h1>
+           <div class="underline-wrapper">
+          <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
         </div>
     </section>
 
@@ -206,37 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
        <!-- Sankalp & Donation -->
-<div class="booking-module mt-5">
-  <h2 class="section-title text-start">Sankalp & Donation Seva</h2>
-  <form class="row g-3">
-    <div class="col-md-6">
-      <label class="form-label">Devotee Name</label>
-      <input type="text" class="form-control" name="devotee_name">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Donation Amount (₹)</label>
-      <input type="number" class="form-control" name="amount">
-    </div>
-    <div class="col-12">
-      <label class="form-label">Address</label>
-      <input type="text" class="form-control" name="address">
-    </div>
-    
-    <div class="col-md-6">
-      <button class="btn btn-primary w-100">Submit</button>
-    </div>
 
-    <!-- ✅ QR Code Section -->
-    <div class="col-md-6 text-center">
-      
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=donate@upi&pn=KumbhMelaDonation&am=500&cu=INR&size=150x150" 
-           alt="QR Code for Donation" 
-           class="img-fluid rounded shadow" 
-           style="max-width: 180px;">
-      <p class="mt-2 small text-muted">Scan with any UPI App</p>
-    </div>
-  </form>
-</div>
 
 </main>
 
