@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <main>
-    <section id="darshan-hero" class="text-center text-white">
+<section id="darshan-hero" class="text-center text-white">
         
         <div class="darshan-section">
             <h1 class="darshan-title">Rituals & Darshan Services</h1>
