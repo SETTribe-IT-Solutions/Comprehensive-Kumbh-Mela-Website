@@ -699,7 +699,6 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 
 /* ================== 13. CULTURE PAGE STYLES ================== */
-/* ================== 13. CULTURE PAGE STYLES ================== */
 
 /* Culture Page Hero Banner */
 #culture-hero {
@@ -742,4 +741,42 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 .ratio.ratio-16x9 video {
     width: 100%;
     height: 100%;
+}
+
+/* Styling for the new Featured Saint card */
+.featured-saint-card {
+    background-color: var(--light-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+}
+
+.featured-saint-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.featured-saint-card h5 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--saffron);
+}
+
+/* ======== ENROLL BUTTON ======== */
+
+.btn-saffron {
+    background-color: var(--saffron) !important;
+    color: var(--white) !important;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-saffron:hover {
+    background-color: #e68a2e !important; /* A slightly darker saffron */
 }
