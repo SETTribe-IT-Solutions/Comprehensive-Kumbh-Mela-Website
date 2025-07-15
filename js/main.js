@@ -250,6 +250,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+        // =========================================================
+    // --- 6. BOOTSTRAP FORM VALIDATION (FOR MODALS, ETC.) ---
+    // =========================================================
+    // This is a self-invoking function that finds all forms with the 'needs-validation' class
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+
+        // =========================================================
+    // --- 7. CULTURE PAGE ENROLLMENT FORM SUBMISSION ---
+    // =========================================================
+    const enrollmentForm = document.getElementById('enrollment-form');
+
+    // Only run this code if the enrollment form exists on the page
+    if (enrollmentForm) {
+
+        enrollmentForm.addEventListener('submit', function(event) {
+            // Stop the form from submitting the traditional way
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Check if the form is valid according to Bootstrap's rules
+            if (enrollmentForm.checkValidity()) {
+                
+                // If valid, show the success alert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Enrollment Successful!',
+                    text: 'Thank you for your interest. We will contact you with more details shortly.',
+                    confirmButtonColor: '#FF9933' // Using your theme's saffron color
+                }).then((result) => {
+                    // This code runs after the user clicks "OK"
+                    if (result.isConfirmed) {
+                        enrollmentForm.reset();
+                        enrollmentForm.classList.remove('was-validated');
+                        
+                        // Get the modal instance and hide it
+                        const enrollModalEl = document.getElementById('enrollModal');
+                        const modal = bootstrap.Modal.getInstance(enrollModalEl);
+                        if (modal) {
+                            modal.hide();
+                        }
+                    }
+                });
+
+            }
+
+            // This line adds the validation styles (e.g., green/red borders)
+            enrollmentForm.classList.add('was-validated');
+        });
+    }
 
 }); // This is the closing brace of the main DOMContentLoaded listener
