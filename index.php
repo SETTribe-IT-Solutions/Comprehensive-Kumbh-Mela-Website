@@ -15,8 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This new link imports Montserrat (for headings) and Poppins (for body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Signika:wght@300..700&family=Merienda:wght@300..900&family=Russo+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=92">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
+<link rel="stylesheet" href="css/style.css?v=97 ">
 </head>
 <body> 
 
@@ -25,7 +25,20 @@
         <section id="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content text-center text-white">
-                <h1 class="hero-title" id="hero-title">Kumbh Mela 2027, Nashik</h1>
+                <h1 class="hero-title" id="hero-title" style="
+                font-family: 'Vollkorn', serif;
+                font-size: clamp(2.5rem, 6vw, 3rem);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 500;
+                color: #111;
+                text-align: center;
+                margin-top: 3rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                ">
+                Kumbh Mela 2027, Nashik
+                </h1>
+
                 <p class="hero-announcement" id="hero-announcement">The sacred confluence awaits. Official dates for the Shahi Snan are 18th March 2027 to 20th March 2027.</p>
                 <div id="countdown-timer" class="d-flex justify-content-center gap-3">
                     <div class="time-unit"><span id="days">000</span><label>Days</label></div>
@@ -110,9 +123,10 @@
         <!-- Video 1 -->
         <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video1.mp4" type="video/mp4">
+                <video id="video1" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
                 </video>
+
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
@@ -126,8 +140,8 @@
         <!-- Local Video 2 -->
        <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video2.mp4" type="video/mp4">
+               <video id="video1" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video2.mp4" type="video/mp4">
                 </video>
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
@@ -235,9 +249,10 @@
         <!-- Video 1 -->
         <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video1.mp4" type="video/mp4">
+                <video id="video1" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
                 </video>
+
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
@@ -251,8 +266,8 @@
         <!-- Local Video 2 -->
        <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video2.mp4" type="video/mp4">
+                <video id="video2" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
                 </video>
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
@@ -407,14 +422,13 @@
 
     <?php include 'include/footer.php'; ?>
 
-   <!-- ✅ FIXED: Single Lightbox container -->
-    <!-- Lightbox for image and video -->
+  
+    <!-- ================== LIGHTBOX HTML (FINAL & ROBUST) ================== -->
     <div id="lightbox">
-        <img id="lightbox-img" alt="Full Image" style="display: none;">
-        <video id="lightbox-video" controls style="display: none; max-width: 90%; max-height: 80vh; border-radius: 8px;"></video>
-        <div class="lightbox-close">&times;</div>
+        <span class="lightbox-close">&times;</span>
+        <div id="lightboxVideoContainer" class="lightbox-content"></div>
+        <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged view">
     </div>
-
 
 
 

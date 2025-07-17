@@ -106,60 +106,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 3. FINAL IMAGE & VIDEO LIGHTBOX LOGIC ---
+          // =========================================================
+    // --- 3. FINAL & ROBUST IMAGE/VIDEO LIGHTBOX LOGIC ---
+    // =========================================================
     const mediaCards = document.querySelectorAll('.media-card');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxVideo = document.getElementById('lightbox-video');
-    const closeBtn = document.querySelector('.lightbox-close');
 
-    if (mediaCards.length > 0 && lightbox && lightboxImg && lightboxVideo && closeBtn) {
+    if (mediaCards.length > 0 && lightbox) {
+        
+        const lightboxImg = document.getElementById('lightbox-img');
+        // Get the container, not the video itself
+        const lightboxVideoContainer = document.getElementById('lightbox-video');
+        const closeBtn = document.querySelector('.lightbox-close');
 
-        const openLightbox = (e) => {
-            const card = e.currentTarget;
-            const type = card.dataset.type;
+        if (lightboxImg && lightboxVideoContainer && closeBtn) {
 
-            if (type === 'image') {
-                const imgSrc = card.querySelector('img').src;
-                lightboxImg.src = imgSrc;
-                lightboxImg.style.display = 'block';
-                lightboxVideo.style.display = 'none';
-                lightboxVideo.pause();
-                lightboxVideo.removeAttribute('src');
-            } else if (type === 'video') {
-                const videoSrc = card.querySelector('video source').src;
-                lightboxVideo.src = videoSrc;
-                lightboxVideo.style.display = 'block';
+            const openLightbox = (e) => {
+                const clickedCard = e.currentTarget;
+                const type = clickedCard.dataset.type;
+                
+                // Hide both viewers initially
                 lightboxImg.style.display = 'none';
-                lightboxVideo.play();
-            }
+                lightboxVideoContainer.style.display = 'none';
+                lightboxVideoContainer.innerHTML = ''; // Clear any old video
 
-            lightbox.classList.add('lightbox-active');
-        };
+                if (type === 'video') {
+                    const videoEl = clickedCard.querySelector('video');
+                    const videoSrc = videoEl?.querySelector('source')?.src || videoEl?.src;
 
-        const closeLightbox = () => {
-            lightbox.classList.remove('lightbox-active');
-            lightboxImg.src = '';
-            lightboxVideo.pause();
-            lightboxVideo.removeAttribute('src');
-            lightboxVideo.style.display = 'none';
-            lightboxImg.style.display = 'none';
-        };
+                    if (videoSrc) {
+                        // Show the container
+                        lightboxVideoContainer.style.display = 'block';
+                        // ✅ Create a new video element and inject it
+                        lightboxVideoContainer.innerHTML = `<video class="lightbox-content" controls><source src="${videoSrc}" type="video/mp4"></video>`;
 
-        mediaCards.forEach(card => {
-            card.addEventListener('click', openLightbox);
-        });
+                    }
+                } else { // It's an image
+                    const imgSrc = clickedCard.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightboxImg.style.display = 'block';
+                }
+                
+                lightbox.classList.add('lightbox-active');
+            };
 
-        closeBtn.addEventListener('click', closeLightbox);
+            const closeLightbox = () => {
+                lightbox.classList.remove('lightbox-active');
+                // Stop any video by simply clearing the container's HTML
+                lightboxVideoContainer.innerHTML = '';
+                lightboxImg.src = '';
+            };
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
+            mediaCards.forEach(card => {
+                card.addEventListener('click', openLightbox);
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
     }
-
-
     
     // =========================================================
     // --- 4. ACCOMMODATION DATE VALIDATION ---
