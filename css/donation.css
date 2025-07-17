@@ -1,0 +1,84 @@
+/* ================== DONATION PAGE STYLES ================== */
+
+/* Section Title */
+main h1 {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin-top: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Underline Image */
+.underline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-underline {
+  width: 200px;
+  max-width: 80%;
+  height: auto;
+}
+
+/* Card: Donation Planner */
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card .form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Donation Suggestion Output */
+#suggested-amount {
+  font-size: 1rem;
+}
+
+/* Form Styles */
+form .form-label {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Submit Button */
+form .btn-primary {
+  background-color: var(--saffron);
+  border-color: var(--saffron);
+  font-weight: 600;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+form .btn-primary:hover {
+  background-color: #e68a2e;
+  border-color: #e68a2e;
+}
+
+/* UPI QR Section */
+#qr-image {
+  max-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Columns Adjustments */
+@media (max-width: 768px) {
+  .col-md-6, .col-md-4 {
+    width: 100%;
+  }
+}
+
+/* SweetAlert Overrides (optional) */
+.swal2-popup {
+  font-family: var(--font-body);
+}
