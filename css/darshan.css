@@ -1,70 +1,97 @@
-/* ================== DARSHAN PAGE STYLES ================== */
+/* ================== GLOBAL RESET ================== */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Section Title */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Reduce top margin/padding of the next section */
+.live-darshan-section {
+  margin-top: 0.5rem !important;
+  padding-top: 0 !important;
+}
+
+/* ================== MAIN CONTAINER ================== */
+main.container {
+  padding: 2rem 1rem;
+}
+
+/* ================== SECTION TITLE ================== */
 main h1,
 .darshan-title {
   font-family: "Vollkorn", serif;
-  font-size: clamp(2.5rem, 6vw, 3rem);
+  font-size: clamp(2.4rem, 6vw, 3rem);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-weight: 500;
   color: #111;
   text-align: center;
-  margin-top: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.5rem; /* Reduced gap */
+  margin-top: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Underline Image */
 .underline-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
-}
-
-.section-underline {
-  width: 200px;
-  max-width: 80%;
-  height: auto;
-}
-
-
-
-/* Darshan Info Card */
-.darshan-card .card-title {
-  font-weight: 600;
-  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.darshan-card .form-label {
-  font-weight: 500;
-  font-size: 0.9rem;
+.section-underline {
+  width: 180px;
+  height: auto;
+  max-width: 80%;
 }
 
-/* Booking Suggestion Output */
-#available-slots {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--dark-text);
+/* ================== FORM / CARD WRAPPERS ================== */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
 }
 
-/* Form Styles */
+.card-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* ================== FORM FIELDS ================== */
 form .form-label {
   font-weight: 500;
   font-size: 0.95rem;
 }
 
-/* Darshan Submit Button */
+form .form-control {
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+/* ================== BUTTONS ================== */
 form .btn-primary,
 .btn-darshan {
   background-color: var(--saffron);
   border-color: var(--saffron);
   font-weight: 600;
-  padding: 0.75rem;
+  padding: 0.75rem 1.25rem;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 form .btn-primary:hover,
@@ -73,16 +100,15 @@ form .btn-primary:hover,
   border-color: #e68a2e;
 }
 
-/* Image Gallery */
-#darshan-gallery img {
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
-  max-width: 100%;
-  height: auto;
+/* ================== SUGGESTED DONATION ================== */
+#suggested-amount {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: green;
+  margin-top: 0.5rem;
 }
 
-/* Timetable or Darshan Info Table */
+/* ================== TABLE STYLES ================== */
 .darshan-table {
   width: 100%;
   border-collapse: collapse;
@@ -103,14 +129,39 @@ form .btn-primary:hover,
   font-weight: 600;
 }
 
-/* Form Columns Responsive */
+/* ================== IMAGE GALLERY ================== */
+#darshan-gallery img {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================== RESPONSIVE STYLES ================== */
 @media (max-width: 768px) {
-  .col-md-6, .col-md-4 {
-    width: 100%;
+  .col-md-6,
+  .col-md-4 {
+    width: 100% !important;
+  }
+
+  main h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  #qr-image {
+    margin-top: 1rem;
   }
 }
 
-/* Optional SweetAlert for Darshan Booking */
+/* ================== SWEETALERT OVERRIDE ================== */
 .swal2-popup {
-  font-family: var(--font-body);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
+
