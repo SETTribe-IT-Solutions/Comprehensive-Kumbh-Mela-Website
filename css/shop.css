@@ -28,14 +28,15 @@ body {
 }
 
 .shop-title {
-  font-family: "Vollkorn", serif;
+   font-family: "Vollkorn", serif !important;
   font-size: clamp(2.5rem, 6vw, 3rem);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 700;
-  color: #111; 
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  margin-top: 3rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-bottom: 1rem;
 }
 
 .underline-wrapper {
