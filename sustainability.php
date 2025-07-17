@@ -1,8 +1,6 @@
 <?php
 require_once 'include/connect.php';
 include 'include/navbar.php';
-?>
-<?php
 
 $pageTitle = "Sustainability & Green Services - Kumbh Mela 2027";
 $activePage = "sustainability";
@@ -16,62 +14,59 @@ $activePage = "sustainability";
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Signika:wght@300..700&family=Merienda:wght@300..900&family=Russo+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=38">
   <link rel="stylesheet" href="css/sustainability.css?v=1">
-  <!--  -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
 <main>
-
   <!-- HERO SECTION -->
-  <section >
-    
+  <section>
     <div class="sustainability-section">
       <h1 class="sus-title">Sustainability & Green Services</h1>
-        <div class="underline-wrapper">
-          <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-        </div>
+      <div class="underline-wrapper">
+        <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+      </div>
     </div>
   </section>
 
   <div class="container section-padding">
-
-    <!-- 3.7.1 Eco-friendly Travel and Stay -->
+    <!-- Eco-Friendly Travel & Stay -->
     <div class="mb-5">
-        <h2 class="sus-section text-center">Eco-Friendly Travel & Stay</h2>
-        <p class="text-center text-muted mb-4">Choose sustainable options to minimize your environmental impact.</p>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 sustainability-card">
-                    <div class="card-body">
-                        <div class="card-icon"><i class="bi bi-train-front"></i></div>
-                        <h5 class="card-title text-center">Use Public Transport</h5>
-                        <p class="card-text">Opt for trains and buses dedicated to Kumbh pilgrims to reduce traffic congestion and air pollution.</p>
-                    </div>
-                </div>
+      <h2 class="sus-section text-center">Eco-Friendly Travel & Stay</h2>
+      <p class="text-center text-muted mb-4">Choose sustainable options to minimize your environmental impact.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 sustainability-card">
+            <div class="card-body">
+              <div class="card-icon"><i class="bi bi-train-front"></i></div>
+              <h5 class="card-title text-center">Use Public Transport</h5>
+              <p class="card-text">Opt for trains and buses dedicated to Kumbh pilgrims to reduce traffic congestion and air pollution.</p>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 sustainability-card">
-                     <div class="card-icon"><i class="bi bi-people-fill"></i></div>
-                    <h5 class="card-title text-center">Carpooling & Shared Taxis</h5>
-                    <p class="card-text">Connect with fellow pilgrims and share rides. This not only saves fuel but also builds community.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 sustainability-card">
-                    <div class="card-icon"><i class="bi bi-bicycle"></i></div>
-                    <h5 class="card-title text-center">Local Green Transport</h5>
-                    <p class="card-text">Once here, use e-rickshaws, bicycle rentals, or walk. Designated pedestrian zones make it safe and easy.</p>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 sustainability-card">
+            <div class="card-icon"><i class="bi bi-people-fill"></i></div>
+            <h5 class="card-title text-center">Carpooling & Shared Taxis</h5>
+            <p class="card-text">Connect with fellow pilgrims and share rides. This not only saves fuel but also builds community.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 sustainability-card">
+            <div class="card-icon"><i class="bi bi-bicycle"></i></div>
+            <h5 class="card-title text-center">Local Green Transport</h5>
+            <p class="card-text">Once here, use e-rickshaws, bicycle rentals, or walk. Designated pedestrian zones make it safe and easy.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <hr class="my-5">
 
-    <!-- 3.8.1 Guide on eco-friendly practices -->
+    <!-- Sustainable Practices -->
     <div class="mb-5">
         <h2 class="section-title text-center">Guide on Sustainable Pilgrim Practices</h2>
         <p class="text-center text-muted mb-4">Embrace practices that honor both your faith and Mother Nature.</p>
@@ -129,37 +124,41 @@ $activePage = "sustainability";
 
     <hr class="my-5">
 
-    <!-- 3.7.2 & 3.8.2 Waste Disposal & Donations -->
+    <!-- Donation Guidelines and Map -->
     <div class="mb-5">
-        <div class="row g-5">
-            <!-- Zero-waste Donation Guidelines -->
-            <div class="col-lg-6">
-                <h3 class="section-title text-start h4">Zero-Waste Donation Guidelines</h3>
-                <p class="text-muted">Donate responsibly so your charity doesn't harm the environment.</p>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Contribute to official community kitchens (Anna Kshetras).</li>
-                  <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Gift durable items like blankets or steel utensils.</li>
-                  <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Use official online portals for digital donations.</li>
-                  <li class="list-group-item d-flex align-items-center"><i class="bi bi-x-octagon-fill text-danger me-3 fs-4"></i>Avoid donating plastic-wrapped items or single-use plastics.</li>
-                  <li class="list-group-item d-flex align-items-center"><i class="bi bi-x-octagon-fill text-danger me-3 fs-4"></i>Do not leave leftover food in open areas.</li>
-                </ul>
-            </div>
-            <!-- Waste Disposal Maps -->
-            <div class="col-lg-6">
-                <h3 class="section-title text-start h4">Waste Disposal Maps</h3>
-                <p class="text-muted">Find nearby color-coded bins and waste collection centers.</p>
-                <div class="map-placeholder">
-                    <i class="bi bi-map-fill fs-1 text-muted"></i>
-                    <p class="mt-2"><strong>Interactive Map Coming Soon</strong></p>
-                    <p class="small">This map will show locations for Green (Organic) and Blue (Dry) waste bins throughout the Mela.</p>
-                </div>
-              </div>
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <h3 class="section-title text-start h4">Zero-Waste Donation Guidelines</h3>
+          <p class="text-muted">Donate responsibly so your charity doesn't harm the environment.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Contribute to official community kitchens (Anna Kshetras).</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Gift durable items like blankets or steel utensils.</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Use official online portals for digital donations.</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-x-octagon-fill text-danger me-3 fs-4"></i>Avoid donating plastic-wrapped items or single-use plastics.</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-x-octagon-fill text-danger me-3 fs-4"></i>Do not leave leftover food in open areas.</li>
+          </ul>
         </div>
+
+        <div class="col-lg-6">
+          <h3 class="section-title text-start h4">Waste Disposal Maps</h3>
+          <p class="text-muted">Find nearby color-coded bins and waste collection centers.</p>
+          <div id="wasteMap" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
+
+          <!-- Legend -->
+          <div class="mt-3">
+            <h6>Legend:</h6>
+            <ul class="list-unstyled d-flex flex-wrap align-items-center gap-4 mt-2">
+              <li><img src="assets/images/bluebin.jpg" alt="Blue Bin" style="height:30px;"> - Wet Waste (Organic)</li>
+              <li><img src="assets/images/redbin.webp" alt="Red Bin" style="height:30px;"> - Dry Waste (Recyclable)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <hr class="my-5">
 
-    <!-- 3.8.3 Zero-plastic campaign info -->
+    <!-- Zero Plastic Campaign -->
     <div class="mb-5 zero-plastic-campaign">
         <h2 class="section-title text-center">Join the Zero-Plastic Campaign</h2>
         <p class="text-center text-muted mb-4">Be a part of the solution. Let's protect our environment and our sacred river.</p>
@@ -193,6 +192,44 @@ $activePage = "sustainability";
 <?php include 'include/footer.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const map = L.map('wasteMap').setView([25.43, 81.85], 13); // Prayagraj
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // User's Current Location
+  map.locate({ setView: true, maxZoom: 16 });
+  map.on('locationfound', function (e) {
+    L.marker(e.latlng).addTo(map).bindPopup("You are here").openPopup();
+    L.circle(e.latlng, { radius: e.accuracy / 2, color: '#3388ff', fillColor: '#3388ff', fillOpacity: 0.2 }).addTo(map);
+  });
+
+  // Blue Bin Marker
+  L.marker([25.434, 81.85], {
+    icon: L.icon({
+      iconUrl: 'assets/images/bluebin.jpg',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -30]
+    })
+  }).addTo(map).bindPopup("<b>Blue Bin</b><br>Wet Waste (Organic)");
+
+  // Red Bin Marker
+  L.marker([25.432, 81.853], {
+    icon: L.icon({
+      iconUrl: 'assets/images/redbin.webp',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -30]
+    })
+  }).addTo(map).bindPopup("<b>Red Bin</b><br>Dry Waste (Recyclable)");
+});
+</script>
 
 </body>
 </html>
