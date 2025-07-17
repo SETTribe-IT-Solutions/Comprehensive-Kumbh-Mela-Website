@@ -57,7 +57,7 @@
                     <li class="nav-item"><a class="nav-link" id="nav-culture" href="under-construction.html?page=Culture">Culture</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-shop" href="under-construction.html?page=Shop">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-donate" href="under-construction.html?page=Donate">Donate</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="under-construction.html?page=Sustainability">Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="sustainability.php">Sustainability</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-login" href="under-construction.html?page=Login">Login</a></li>
                 </ul>
 
