@@ -128,7 +128,7 @@ $activePage = "sustainability";
     <div class="mb-5">
       <div class="row g-5">
         <div class="col-lg-6">
-          <h3 class="section-title text-start h4">Zero-Waste Donation Guidelines</h3>
+          <h2 class="section-title">Zero-Waste Donation Guidelines</h2>
           <p class="text-muted">Donate responsibly so your charity doesn't harm the environment.</p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Contribute to official community kitchens (Anna Kshetras).</li>
@@ -140,7 +140,7 @@ $activePage = "sustainability";
         </div>
 
         <div class="col-lg-6">
-          <h3 class="section-title text-start h4">Waste Disposal Maps</h3>
+          <h2 class="section-title">Waste Disposal Maps</h2>
           <p class="text-muted">Find nearby color-coded bins and waste collection centers.</p>
           <div id="wasteMap" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
 
@@ -150,6 +150,7 @@ $activePage = "sustainability";
             <ul class="list-unstyled d-flex flex-wrap align-items-center gap-4 mt-2">
               <li><img src="assets/images/bluebin.jpg" alt="Blue Bin" style="height:30px;"> - Wet Waste (Organic)</li>
               <li><img src="assets/images/redbin.webp" alt="Red Bin" style="height:30px;"> - Dry Waste (Recyclable)</li>
+
             </ul>
           </div>
         </div>
