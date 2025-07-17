@@ -192,7 +192,9 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 /* === Override: Apply Inter font only to Travel page === */
 #travel-hero .container .hero-title {
-  font-family: "Vollkorn", serif !important;
+
+   font-family: "Vollkorn", serif !important;
+
   font-size: clamp(2.5rem, 6vw, 3rem);
   text-transform: uppercase;
   letter-spacing: 2px;
