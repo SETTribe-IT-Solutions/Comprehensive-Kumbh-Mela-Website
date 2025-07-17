@@ -1,24 +1,29 @@
 /* ================== DONATION PAGE STYLES ================== */
 
+main {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  margin-top: 0;
+}
+
 /* Section Title */
 main h1 {
   font-family: "Vollkorn", serif;
   font-size: clamp(2.5rem, 6vw, 3rem);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 700;
+  font-weight: 500;
   color: #111;
   text-align: center;
-  margin-top: 3rem;
+  margin: 1rem 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Underline Image */
+/* Decorative Underline */
 .underline-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-underline {
@@ -27,36 +32,40 @@ main h1 {
   height: auto;
 }
 
-/* Card: Donation Planner */
+/* Card Common */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .card-title {
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-weight: 600 !important;
+  font-size: 2.2rem !important;  /* increase as needed */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  margin-bottom: 1.2rem;
+  color: #111;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.card .form-label {
+
+/* Form Labels */
+.form-label {
   font-weight: 500;
-  font-size: 0.9rem;
-}
-
-/* Donation Suggestion Output */
-#suggested-amount {
   font-size: 1rem;
 }
 
-/* Form Styles */
-form .form-label {
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-/* Submit Button */
+/* Button - Keep Original Orange */
 form .btn-primary {
   background-color: var(--saffron);
   border-color: var(--saffron);
   font-weight: 600;
   padding: 0.75rem;
   font-size: 1rem;
+  border-radius: 8px;
 }
 
 form .btn-primary:hover {
@@ -64,21 +73,46 @@ form .btn-primary:hover {
   border-color: #e68a2e;
 }
 
-/* UPI QR Section */
-#qr-image {
-  max-width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* Budget Suggestion Text */
+#suggested-amount {
+  font-size: 1rem;
 }
 
-/* Form Columns Adjustments */
+/* QR Code */
+.qr-box {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#qr-image {
+  max-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+/* Action Button and QR Layout */
+.form-action-box {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 768px) {
-  .col-md-6, .col-md-4 {
-    width: 100%;
+  .form-action-box {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
-/* SweetAlert Overrides (optional) */
-.swal2-popup {
-  font-family: var(--font-body);
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main.container {
+  padding-top: 1rem !important;
 }

@@ -23,109 +23,112 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_type'] === 'donation')
     }
 }
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Donate - Sankalp & Donation</title>
+  <title>Pilgrimage Budget & Donation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/donation.css?v=5">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="css/donation.css?v=1">
-
 </head>
-<body>
 
-<main class="container section-padding">
- <div > <h1 class="mb-4 text-center">Sankalp & Donation Seva</h1>
-   <div class="underline-wrapper">
-          <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-        </div>
- </div>
- 
-  <!-- AI Budget Suggestion -->
-  <div class="card mb-4 shadow-sm">
+<body>
+<main class="container">
+  <h1>Pilgrimage Budget & Donation</h1>
+  <div class="underline-wrapper">
+    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+  </div>
+
+  <!-- AI-Based Pilgrimage Budget Planner -->
+  <div class="card">
     <div class="card-body">
-      <h5 class="card-title"> Plan Your Donation</h5>
+      <h2 class="card-title">AI-Based Pilgrimage Budget Planner</h2>
       <div class="row g-3">
         <div class="col-md-4">
           <label class="form-label">Days of Stay</label>
           <input type="number" class="form-control" id="stay-days" placeholder="e.g. 3">
         </div>
         <div class="col-md-4">
-          <label class="form-label">Pooja Count</label>
-          <input type="number" class="form-control" id="pooja-count" placeholder="e.g. 2">
+          <label class="form-label">Meals per Day</label>
+          <input type="number" class="form-control" id="meals" placeholder="e.g. 3">
         </div>
         <div class="col-md-4">
-          <label class="form-label">Prasad Quantity</label>
-          <input type="number" class="form-control" id="prasad-count" placeholder="e.g. 1">
+          <label class="form-label">Travel Cost (₹)</label>
+          <input type="number" class="form-control" id="travel-cost" placeholder="e.g. 1000">
         </div>
       </div>
       <div class="mt-3">
-        <button class="btn btn-outline-primary" onclick="suggestDonation()">Suggest Donation</button>
+        <button class="btn btn-outline-primary" onclick="suggestBudget()">Calculate Budget</button>
         <span id="suggested-amount" class="ms-3 fw-bold text-success"></span>
       </div>
     </div>
   </div>
 
-  <!-- Donation Form -->
-  <form class="row g-3" method="POST">
-    <input type="hidden" name="form_type" value="donation">
+  <!-- Donation Section -->
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Make a Donation</h2>
+      <form method="POST" class="row g-3">
+        <input type="hidden" name="form_type" value="donation">
 
-    <div class="col-md-6">
-      <label class="form-label">Devotee Name</label>
-      <input type="text" class="form-control" name="devotee_name" id="donor-name" required>
-    </div>
+        <div class="col-md-6">
+          <label class="form-label">Devotee Name</label>
+          <input type="text" class="form-control" name="devotee_name" id="donor-name" required>
+        </div>
 
-    <div class="col-md-6">
-      <label class="form-label">Donation Amount (₹)</label>
-      <input type="number" class="form-control" name="amount" id="donation-amount" min="1" required>
-    </div>
+        <div class="col-md-6">
+          <label class="form-label">Donation Amount (₹)</label>
+          <input type="number" class="form-control" name="amount" id="donation-amount" min="1" required>
+        </div>
 
-    <div class="col-12">
-      <label class="form-label">Address</label>
-      <input type="text" class="form-control" name="address" required>
-    </div>
+        <div class="col-12">
+          <label class="form-label">Address</label>
+          <input type="text" class="form-control" name="address" required>
+        </div>
 
-    <div class="col-12">
-      <label class="form-label">Prepaid Kumbh Card Number <span class="text-muted small">(Optional)</span></label>
-      <input type="text" class="form-control" name="kumbh_card" placeholder="XXXX-XXXX-XXXX">
-    </div>
+        <div class="col-12">
+          <label class="form-label">Prepaid Kumbh Card Number <span class="text-muted small">(Optional)</span></label>
+          <input type="text" class="form-control" name="kumbh_card" placeholder="XXXX-XXXX-XXXX">
+        </div>
 
-    <div class="col-md-6">
-      <button class="btn btn-primary w-100" type="submit"></i>Donate</button>
+        <div class="form-action-box">
+          <div class="flex-grow-1">
+            <button class="btn btn-primary w-100" type="submit">Donate</button>
+          </div>
+          <div class="qr-box">
+            <p class="fw-semibold">Scan & Pay via UPI</p>
+            <img id="qr-image"
+              src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=donate@upi&pn=KumbhMelaDonation&am=500&cu=INR&size=150x150"
+              alt="QR Code for Donation">
+            <p class="small text-muted">QR auto-updates with name + amount</p>
+          </div>
+        </div>
+      </form>
     </div>
-
-    <div class="col-md-6 text-center">
-      <p class="mb-2 fw-semibold">Scan & Pay via UPI</p>
-      <img id="qr-image" class="img-fluid rounded shadow" 
-           src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=donate@upi&pn=KumbhMelaDonation&am=500&cu=INR&size=150x150" 
-           alt="QR Code for Donation" 
-           style="max-width: 180px;">
-      <p class="mt-2 small text-muted">QR auto-updates with name + amount</p>
-    </div>
-  </form>
+  </div>
 </main>
 
 <?php include 'include/footer.php'; ?>
 
-<!-- SweetAlert -->
-<script>
+<!-- SweetAlert Message -->
 <?php if ($message): ?>
-document.addEventListener('DOMContentLoaded', function () {
-  Swal.fire({
-    icon: '<?php echo $status; ?>',
-    title: '<?php echo $status === "success" ? "Thank You!" : "Oops..."; ?>',
-    text: '<?php echo $message; ?>',
-    confirmButtonText: 'OK'
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+      icon: '<?php echo $status; ?>',
+      title: '<?php echo $status === "success" ? "Thank You!" : "Oops..."; ?>',
+      text: '<?php echo $message; ?>',
+      confirmButtonText: 'OK'
+    });
   });
-});
-<?php endif; ?>
 </script>
+<?php endif; ?>
 
-<!-- QR Dynamic & AI Planner -->
+<!-- Budget Planner & QR Update Script -->
 <script>
   const amountInput = document.getElementById("donation-amount");
   const qrImage = document.getElementById("qr-image");
@@ -141,19 +144,21 @@ document.addEventListener('DOMContentLoaded', function () {
   amountInput.addEventListener("input", updateQRCode);
   nameInput.addEventListener("input", updateQRCode);
 
-  function suggestDonation() {
+  function suggestBudget() {
     const days = parseInt(document.getElementById('stay-days').value || 0);
-    const poojas = parseInt(document.getElementById('pooja-count').value || 0);
-    const prasads = parseInt(document.getElementById('prasad-count').value || 0);
+    const meals = parseInt(document.getElementById('meals').value || 0);
+    const travel = parseInt(document.getElementById('travel-cost').value || 0);
 
-    let amount = (days * 100) + (poojas * 150) + (prasads * 100);
-    if (amount === 0) {
-      document.getElementById('suggested-amount').innerText = 'Please fill valid trip details.';
+    if (days <= 0 || meals <= 0 || travel < 0) {
+      document.getElementById('suggested-amount').innerText = 'Please fill all fields correctly.';
       return;
     }
 
-    document.getElementById('suggested-amount').innerText = `Suggested: ₹${amount}`;
-    document.getElementById('donation-amount').value = amount;
+    const lodgingCost = days * 200;
+    const foodCost = days * meals * 50;
+    const total = lodgingCost + foodCost + travel;
+
+    document.getElementById('suggested-amount').innerText = `Estimated Trip Budget: ₹${total}`;
     updateQRCode();
   }
 </script>
