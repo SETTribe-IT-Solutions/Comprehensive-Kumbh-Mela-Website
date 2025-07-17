@@ -214,8 +214,10 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 */
 #travel-hero {
   background: none; 
+
   height: auto;  
     padding: 0rem 0;
+
 } 
 
 /* .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); } */
@@ -469,8 +471,10 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 
 /* #travel-hero {
+
   background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
        position: relative; 
+
        
 } */
 
