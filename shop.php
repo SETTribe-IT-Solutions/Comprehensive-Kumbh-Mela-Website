@@ -24,7 +24,7 @@ $activePage = "shop";
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Your Custom CSS -->
-    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/shop.css?v=5">
 </head>
 <body>
     <main>
