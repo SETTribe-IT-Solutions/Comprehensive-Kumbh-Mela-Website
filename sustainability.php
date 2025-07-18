@@ -16,8 +16,7 @@ $activePage = "sustainability";
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="css/sustainability.css?v=41">
+  <link rel="stylesheet" href="css/sustainability.css?v=45">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -28,8 +27,8 @@ $activePage = "sustainability";
   <section>
     <div class="sustainability-section">
       <h1 class="sus-title">Sustainability & Green Services</h1>
-      <div class="underline-wrap">
-        <img src="assets/images/underline.png" alt="decorative underline" class="underline">
+      <div class="underline-wrapper">
+        <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
       </div>
     </div>
   </section>
