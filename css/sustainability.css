@@ -3,8 +3,9 @@
 /* Section Wrapper */
 .sustainability-section {
   text-align: center;
-  padding: 0.2rem 1rem;
-  /* background-color: #fff7ec; light orange shade */
+  /* padding: 0.2rem 1rem; */
+  /* 
+   */
 }
 
 /* ================== 1. SECTION TITLE ================== */
@@ -21,15 +22,15 @@
 }
 
 /* Underline */
-.underline-wrap {
+.underline-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0rem;
+  margin-bottom: 2rem;
 }
 
-.underline {
-  width: 100px;
+.section-underline {
+  width: 200px;
   max-width: 80%;
   height: auto;
 }
