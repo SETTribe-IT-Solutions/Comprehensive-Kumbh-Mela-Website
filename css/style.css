@@ -13,7 +13,7 @@
     --font-body: 'Poppins', sans-serif;
 }
 body { font-family: var(--font-body); color: var(--dark-text); }
-.section-padding { padding: 5rem 0; }
+.section-padding { padding: 2rem 0; }
 
 /* ================== 2. HEADER & NAVIGATION ================== */
 .logo img { height: 45px; }
@@ -223,7 +223,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   font-weight: 500;
   color: #111;
   text-align: center;
-  margin-top: 3rem;
+  
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 /* 
@@ -528,12 +528,11 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     font-size: clamp(2.5rem, 7vw, 4rem);
 } */
 
-
-.booking-module {
+.booking-module { background: linear-gradient(145deg, #eef5f9, #eef5f9);
     background-color: var(--white);
     border-radius: 15px;
     padding: 4rem 2rem; /* Shorthand for: 3rem on top/bottom, 2rem on left/right */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.07); */
     overflow: hidden;
 }
 .booking-module .section-title { text-align: left; margin-bottom: 1.5rem; }
