@@ -35,7 +35,7 @@ $activePage = "sustainability";
   <div class="container section-padding">
     <!-- Eco-Friendly Travel & Stay -->
     <div class="mb-5">
-      <h3 class=" text-center">Eco-Friendly Travel & Stay</h3>
+      <h3 class="sus-section text-center">Eco-Friendly Travel & Stay</h3>
       <p class="text-center text-muted mb-4">Choose sustainable options to minimize your environmental impact.</p>
       <div class="row g-4">
         <div class="col-md-6 col-lg-4">
@@ -68,7 +68,7 @@ $activePage = "sustainability";
 
     <!-- Sustainable Practices -->
     <div class="mb-5">
-        <h3 class="section-title text-center">Guide on Sustainable Pilgrim Practices</h3>
+        <h3 class="text-center">Guide on Sustainable Pilgrim Practices</h3>
         <p class="text-center text-muted mb-4">Embrace practices that honor both your faith and Mother Nature.</p>
         <div class="accordion" id="sustainablePracticesAccordion">
           <div class="accordion-item">
@@ -128,7 +128,7 @@ $activePage = "sustainability";
     <div class="mb-5">
       <div class="row g-5">
         <div class="col-lg-6">
-          <h3 class="section-title">Zero-Waste Donation Guidelines</h3>
+          <h3 class=>Zero-Waste Donation Guidelines</h3>
           <p class="text-muted">Donate responsibly so your charity doesn't harm the environment.</p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>Contribute to official community kitchens (Anna Kshetras).</li>
@@ -140,7 +140,7 @@ $activePage = "sustainability";
         </div>
 
         <div class="col-lg-6">
-          <h3 class="section-title">Waste Disposal Maps</h3>
+          <h3 class=>Waste Disposal Maps</h3>
           <p class="text-muted">Find nearby color-coded bins and waste collection centers.</p>
           <div id="wasteMap" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
 
@@ -167,22 +167,22 @@ $activePage = "sustainability";
             <div class="col-md-3 col-6">
                 <div class="card-icon"><i class="bi bi-cup-straw"></i></div>
                 <h6>Bring Reusable Bottles</h6>
-                <p class="small text-muted">Refill stations are available throughout the Mela.</p>
+                <p class="small card-text">Refill stations are available throughout the Mela.</p>
             </div>
             <div class="col-md-3 col-6">
                 <div class="card-icon"><i class="bi bi-bag-check-fill"></i></div>
                 <h6>Carry Cloth Bags</h6>
-                <p class="small text-muted">Say no to plastic bags when shopping.</p>
+                <p class="small card-text">Say no to plastic bags when shopping.</p>
             </div>
             <div class="col-md-3 col-6">
                 <div class="card-icon"><i class="bi bi-shop"></i></div>
                 <h6>Choose Eco-Vendors</h6>
-                <p class="small text-muted">Support businesses that use plastic-free packaging.</p>
+                <p class="small card-text">Support businesses that use plastic-free packaging.</p>
             </div>
             <div class="col-md-3 col-6">
                 <div class="card-icon"><i class="bi bi-megaphone-fill"></i></div>
                 <h6>Spread Awareness</h6>
-                <p class="small text-muted">Inspire fellow pilgrims to join the cause.</p>
+                <p class="small card-text">Inspire fellow pilgrims to join the cause.</p>
             </div>
         </div>
     </div>

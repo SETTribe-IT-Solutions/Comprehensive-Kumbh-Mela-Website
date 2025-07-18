@@ -37,11 +37,11 @@
 /* ================== 2. SUSTAINABILITY INFO CARDS ================== */
 .sus-section {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 200; /* decreased boldness */
+  
+ 
   color: var(--dark-text);
   margin-bottom: 0.5rem;
-  margin-top: -4rem;
+  margin-top: 0rem;
 }
 
 
@@ -78,7 +78,7 @@
 
 .sustainability-card .card-text {
   font-size: 0.9rem;
-  color: #555;
+  color: black;
 }
 
 /* ================== 3. DONATION & WASTE SECTION ================== */
