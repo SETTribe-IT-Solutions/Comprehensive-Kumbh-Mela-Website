@@ -28,8 +28,8 @@
   margin-bottom: 0rem;
 }
 
-.section-underlin {
-  width: 200px;
+.underline {
+  width: 100px;
   max-width: 80%;
   height: auto;
 }
