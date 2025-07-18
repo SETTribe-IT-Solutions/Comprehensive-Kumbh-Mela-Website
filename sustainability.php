@@ -15,7 +15,6 @@ $activePage = "sustainability";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="css/style.css?v=38"> -->
   <link rel="stylesheet" href="css/sustainability.css?v=2">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -161,7 +160,7 @@ $activePage = "sustainability";
 
     <!-- Zero Plastic Campaign -->
     <div class="mb-5 zero-plastic-campaign">
-        <h3 class="section-title text-center">Join the Zero-Plastic Campaign</h3>
+        <h3 class="text-center">Join the Zero-Plastic Campaign</h3>
         <p class="text-center text-muted mb-4">Be a part of the solution. Let's protect our environment and our sacred river.</p>
         <div class="row g-4 text-center">
             <div class="col-md-3 col-6">
