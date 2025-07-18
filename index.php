@@ -1,8 +1,4 @@
-
 <?php include 'include/navbar.php'; ?>
-    <!-- just a comment -->
-    <!-- again a comment -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This new link imports Montserrat (for headings) and Poppins (for body) -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
-<link rel="stylesheet" href="css/style.css?v=97 ">
+<link rel="stylesheet" href="css/style.css?v=209 ">
 </head>
 <body> 
 
@@ -51,69 +47,91 @@
         </section>
 
     <!-- ALERTS TICKER -->
-    <div class="alert-ticker-container">
-        <div class="helpline">
-            <i class="bi bi-telephone-fill"></i>
-            <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span>
-        </div>
-        <div class="ticker-wrap">
-            <div class="ticker">
-            <span class="ticker-text">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                ALERT: Please follow all safety guidelines. Beware of unauthorized agents.
-            </span>
+    <div class="alert-ticker-wrapper">
+        <div class="alert-ticker-container">
+            <div class="helpline">
+                <i class="bi bi-telephone-fill"></i>
+                <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span>
+            </div>
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <span class="ticker-text">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    ALERT: Please follow all safety guidelines. Beware of unauthorized agents.
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 
 
 
-    <!-- ================== QUICK ACCESS LINKS ================== -->
-        <section id="quick-links" class="section-padding text-center">
-            <div class="container">
-                <!-- THIS IS THE NEW HEADING -->
-                <h2 class="section-title" id="quick-links-title">Essential Services</h2>
-                <div class="underline-essential">
-                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-                </div>
 
-                <div class="row g-4">
-                    <div class="col-6 col-md-3">
-                        <a href="travel.php?page=Book-Travel" class="quick-link-card">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <h3 id="quick-link-travel">Book Travel</h3>
-                        </a>
+   <!-- ================== QUICK ACCESS LINKS (CORRECTED) ================== -->
+<section id="quick-links" class="section-padding text-center">
+    <div class="container">
+        
+        <!-- ✅ ADDED THIS TITLE AND UNDERLINE BACK -->
+        <h2 class="section-title" id="quick-links-title">Essential Services</h2>
+        <div class="underline-wrapper">
+            <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
+        
+        <!-- This is your existing, correct card layout -->
+        <div class="row g-4 justify-content-center mt-5">
+            <!-- Card 1: Book Travel -->
+            <div class="col-lg-3 col-md-6">
+                <a href="travel.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-airplane-fill"></i>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <a href="darshan.php?page=Holy-Dip" class="quick-link-card">
-                            <i class="bi bi-flower1"></i>
-                            <h3 id="quick-link-dip">Holy Dip</h3>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a href="travel.php?page=Stay-Options" class="quick-link-card">
-                            <i class="bi bi-house-heart-fill"></i>
-                            <h3 id="quick-link-stay">Stay Options</h3>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a href="darshan.php?page=Live-Darshan" class="quick-link-card">
-                            <i class="bi bi-eye-fill"></i>
-                            <h3 id="quick-link-darshan">Live Darshan</h3>
-                        </a>
-                    </div>
-                </div>
+                    <h3 class="service-card-title" id="quick-link-travel">Book Travel</h3>
+                    <p class="service-card-text" id="quick-link-travel-desc">Find flights, trains, and buses. Plan your complete journey to Nashik.</p>
+                </a>
             </div>
-        </section>
+            <!-- Card 2: Holy Dip -->
+            <div class="col-lg-3 col-md-6">
+                <a href="darshan.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-water"></i>
+                    </div>
+                    <h3 class="service-card-title" id="quick-link-dip">Holy Dip</h3>
+                    <p class="service-card-text" id="quick-link-dip-desc">Book your holy snan slots and learn about the sacred ghats and auspicious timings.</p>
+                </a>
+            </div>
+            <!-- Card 3: Stay Options -->
+            <div class="col-lg-3 col-md-6">
+                <a href="travel.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-house-heart-fill"></i>
+                    </div>
+                    <h3 class="service-card-title" id="quick-link-stay">Stay Options</h3>
+                    <p class="service-card-text" id="quick-link-stay-desc">Explore hotels, dharamshalas, and tent cities. Find the perfect stay for your pilgrimage.</p>
+                </a>
+            </div>
+            <!-- Card 4: Live Darshan -->
+            <div class="col-lg-3 col-md-6">
+                <a href="darshan.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-camera-video-fill"></i>
+                    </div>
+                    <h3 class="service-card-title" id="quick-link-darshan">Live Darshan</h3>
+                    <p class="service-card-text" id="quick-link-darshan-desc">Can't be here in person? Watch the sacred aartis and rituals live from anywhere.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
     <!-- ============ FINAL UNIFIED GALLERY SECTION (Infinite Scroll) ============ -->
     <section id="gallery" class="section-padding bg-light">
     <div class="container text-center">
         <h2 class="section-title" id="gallery-title">Gallery</h2>
-        <div class="underline-gallery">
+        <!-- <div class="underline-gallery">
             <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-        </div>
+        </div> -->
     </div>
     
     <div class="gallery-wrapper">
@@ -424,18 +442,21 @@
 
   
     <!-- ================== LIGHTBOX HTML (FINAL & ROBUST) ================== -->
-    <div id="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <div id="lightboxVideoContainer" class="lightbox-content"></div>
-        <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged view">
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-inner"> <!-- New wrapper for content -->
+            <span class="lightbox-close">&times;</span>
+            <div id="lightboxVideoContainer" class="lightbox-content"></div>
+            <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged view">
+        </div>
     </div>
 
 
 
 
+
     <!-- This order is CRITICAL -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js?v=47" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js?v=51" defer></script> 
 </body>
 </html>
 

@@ -122,53 +122,57 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightboxImg && lightboxVideoContainer && closeBtn) {
 
             const openLightbox = (e) => {
-                const clickedCard = e.currentTarget;
-                const type = clickedCard.dataset.type;
-                
-                // Hide both viewers initially
-                lightboxImg.style.display = 'none';
-                lightboxVideoContainer.style.display = 'none';
-                lightboxVideoContainer.innerHTML = ''; // Clear any old video
+            const clickedCard = e.currentTarget;
+            const type = clickedCard.dataset.type;
 
-                if (type === 'video') {
-                    const videoEl = clickedCard.querySelector('video');
-                    const videoSrc = videoEl?.querySelector('source')?.src || videoEl?.src;
+            lightboxImg.style.display = 'none';
+            lightboxVideoContainer.style.display = 'none';
+            lightboxVideoContainer.innerHTML = '';
 
-                    if (videoSrc) {
-                        // Show the container
-                        lightboxVideoContainer.style.display = 'block';
-                        // ✅ Create a new video element and inject it
-                        lightboxVideoContainer.innerHTML = `<video class="lightbox-content" controls><source src="${videoSrc}" type="video/mp4"></video>`;
+            if (type === 'video') {
+                const videoEl = clickedCard.querySelector('video');
+                const videoSrc = videoEl?.querySelector('source')?.src || videoEl?.src;
 
-                    }
-                } else { // It's an image
+                if (videoSrc) {
+                    lightboxVideoContainer.style.display = 'block';
+                    lightboxVideoContainer.innerHTML = `<video class="lightbox-content" controls autoplay><source src="${videoSrc}" type="video/mp4"></video>`;
+
+                    // Attach close handler to video if desired
+                }
+                } else {
                     const imgSrc = clickedCard.querySelector('img').src;
                     lightboxImg.src = imgSrc;
                     lightboxImg.style.display = 'block';
+
                 }
-                
+
                 lightbox.classList.add('lightbox-active');
+                document.body.classList.add('lightbox-open'); // ✅ Prevent scroll
             };
 
             const closeLightbox = () => {
                 lightbox.classList.remove('lightbox-active');
-                // Stop any video by simply clearing the container's HTML
+                document.body.classList.remove('lightbox-open'); // ✅ Restore scroll
                 lightboxVideoContainer.innerHTML = '';
                 lightboxImg.src = '';
             };
 
             mediaCards.forEach(card => {
-                card.addEventListener('click', openLightbox);
-            });
+                    card.addEventListener('click', openLightbox);
+                });
 
-            closeBtn.addEventListener('click', closeLightbox);
-            
+                closeBtn.addEventListener('click', closeLightbox);
+                
             lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
+                const lightboxInner = document.querySelector('.lightbox-inner');
+                if (!lightboxInner.contains(e.target)) {
                     closeLightbox();
                 }
             });
+
+
         }
+        
     }
     
     // =========================================================

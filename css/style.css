@@ -39,13 +39,13 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 
 /* Gallery underline styling (already looks good) */
-.underline-gallery {
+/* .underline-gallery {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
   margin-bottom: 10px;
-}
+} */
 
 /* Board of Trustees underline styling (center fix) */
 .underline-trustees {
@@ -139,42 +139,45 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 .alert-ticker-container {
     display: flex;
-    align-items: stretch; /* Makes children fill the full height */
-    background-color: #1a2b48; /* Deep, trustworthy blue for the alerts section */
+    align-items: stretch;
+    background-color: #1a2b48;
     color: var(--white);
-    font-size: 0.95rem; /* Slightly larger font for readability */
-    line-height: 1.5; /* Improves vertical alignment of text */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Adds a subtle shadow below the bar */
+    font-size: 1rem; /* 40% smaller than 0.95rem */
+    line-height: 1.2;    /* reduce vertical spacing */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     font-family: var(--font-body);
+    margin: 0.5rem 0; /* reduce vertical margin too */
 }
+
 
 .helpline {
     display: flex;
     align-items: center;
-    padding: 0.3rem 1.5rem; /* Increased padding for better spacing */
+    padding: 0.12rem 0.9rem; /* 40% smaller padding */
     background-color: var(--saffron);
-    color: #4C2F19; /* A dark brown text for better contrast on saffron */
+    color: #4C2F19;
     font-weight: 700;
     white-space: nowrap;
     transition: background-color 0.3s ease;
 }
+
 
 .helpline:hover {
     background-color: #ffac4d; /* A slightly brighter saffron on hover */
 }
 
 .helpline i {
-    margin-right: 0.75rem;
-    font-size: 1.1rem;
+    margin-right: 0.45rem; /* 40% less */
+    font-size: 0.66rem;     /* 40% smaller */
 }
 
 .ticker-wrap {
     flex-grow: 1;
     overflow: hidden;
     position: relative;
-    /* This padding gives the scrolling text some breathing room */
-    padding: 0.3rem 0; 
+    padding: 0.12rem 0; /* 40% less vertical padding */
 }
+
 
 .ticker {
     display: inline-block;
@@ -191,9 +194,10 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 
 .ticker-text i {
-    color: #FFD700; /* Gold warning icon */
-    margin-right: 0.5rem;
-    vertical-align: text-bottom; /* Better aligns the icon with the text */
+    color: #FFD700;
+    margin-right: 0.3rem;
+    font-size: 0.66rem;
+    vertical-align: text-bottom;
 }
 
 /* A smoother, more seamless animation */
@@ -207,9 +211,23 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   }
 }
 
+
+.alert-ticker-wrapper {
+  width: 97%;
+  max-width: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+
 /* ================== 4. HERO SECTION (HOMEPAGE & TRAVEL) ================== */
-#hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center;  margin-top: 2rem; /* Add spacing below navbar */
-  padding-top: 2rem; /* Optional, for smoother spacing */}
+#hero, #travel-hero { 
+  position: relative; 
+  display: flex; 
+  justify-content: center; 
+  text-align: center;  /* Add spacing below navbar */
+  padding-top: 2rem; /* Optional, for smoother spacing */
+}
 #hero { height: 75vh; background: url('../assets/images/hero-background-new1.jpg') no-repeat center center/cover; align-items: flex-start; padding-top: 10vh; }
 
 /* === Override: Apply Inter font only to Travel page === */
@@ -272,12 +290,53 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 
 /* ================== 5. QUICK LINKS SECTION (HOMEPAGE) ================== */
-#quick-links { background-color: #f0f8ff; }
-.quick-link-card { display: block; padding: 2rem 1rem; border-radius: 8px; background-color: var(--white); box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.quick-link-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-.quick-link-card .bi { font-size: 3rem; color: var(--saffron); margin-bottom: 1rem; }
-.quick-link-card h3 { font-size: 1.1rem; font-weight: 500; color: var(--dark-text); transition: color 0.3s ease; }
-.quick-link-card:hover h3 { color: var(--saffron); }
+/* ================== 5. ESSENTIAL SERVICES (SAFFRON CARDS) ================== */
+
+#quick-links {
+    padding-top: 2.5rem; /* Reduced from the default 5rem */
+    padding-bottom: 5rem; /* Keep the bottom padding for space below the cards */
+}
+
+
+.service-card-saffron {
+    display: block;
+    background-color: #FFF8E1; /* The creamy saffron background from your reference */
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    height: 100%;
+    border: 1px solid #ffe8c0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-saffron:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-saffron .service-card-icon {
+    margin-bottom: 1.5rem;
+}
+
+.service-card-saffron .service-card-icon i {
+    font-size: 3rem;
+    color: var(--saffron);
+}
+
+.service-card-saffron .service-card-title {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+}
+
+.service-card-saffron .service-card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
 
 /* ================== 6. SECTION TITLES (GENERAL) ================== */
 .section-title {
@@ -291,7 +350,17 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 /* ================== 7. FINAL GALLERY & LIGHTBOX STYLES ================== */
 #gallery {
-  background-color: var(--light-bg);
+    /* This adds the background image and a subtle dark overlay for contrast */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/hero-gallery1.jpg') no-repeat center center/cover;
+    position: relative;
+    padding-top: 3rem; /* Matches the top padding of #quick-links */
+    padding-bottom: 5rem;
+}
+
+/* Make the title white to stand out on the new background image */
+#gallery .section-title {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .gallery-wrapper {
@@ -459,11 +528,21 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   display: none;
 }
 
+body.lightbox-open {
+  overflow: hidden;
+}
+
+body.lightbox-open .auto-scroll-gallery {
+  animation-play-state: paused;
+}
+
 
 /* ================== 8. TRUSTEES SECTION (VIBRANT BLUE) ================== */
 
 #trustees {
     background-color: var(--light-bg); 
+    padding-top: 3rem; 
+    padding-bottom: 5rem;
 }
 
 .profile-card {
@@ -490,7 +569,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     padding: 1.5rem;
     margin-top: auto;
     /* THIS IS YOUR CHOSEN VIBRANT BLUE */
-    background-color: #0065F8;
+    background-color: #ff9a3c;
 }
 
 .profile-card-role {
