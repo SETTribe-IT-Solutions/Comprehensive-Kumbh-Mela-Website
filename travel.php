@@ -9,8 +9,12 @@
     <!-- Links are identical to index.html -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=41"> <!-- Use the same stylesheet -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/style.css?v=211"> <!-- Use the same stylesheet -->
+
 </head>
 <body>
 
@@ -21,7 +25,11 @@
             <div class="hero-overlay"></div>
             <div class="container position-relative">
                 <h1 class="hero-title" id="travel-hero-title">Travel & Stay Planner</h1>
-                <p class="hero-announcement" id="travel-hero-subtitle">Your complete guide to reaching and staying at Kumbh Mela 2027.</p>
+                <!-- <p class="hero-announcement" id="travel-hero-subtitle">Your complete guide to reaching and staying at Kumbh Mela 2027.</p> -->
+            <div class="underline-wrapper">
+      <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+    </div>
+
             </div>
         </section>
 
@@ -32,7 +40,7 @@
                 <div class="col-lg-8 d-flex flex-column">
                     <!-- Transport Booking -->
                     <div class="booking-module">
-                        <h2 class="section-title text-start" id="transport-title">Book Your Journey</h2>
+                        <h3 class="section-title " id="transport-title">Book Your Journey</h3>
                         <ul class="nav nav-tabs" id="transportTabs" role="tablist">
                             <li class="nav-item" role="presentation"><button class="nav-link active" id="bus-tab" data-bs-toggle="tab" data-bs-target="#bus-panel" type="button" role="tab"><i class="bi bi-bus-front-fill"></i> <span id="transport-tab-bus">Bus</span></button></li>
                             <li class="nav-item" role="presentation"><button class="nav-link" id="train-tab" data-bs-toggle="tab" data-bs-target="#train-panel" type="button" role="tab"><i class="bi bi-train-front-fill"></i> <span id="transport-tab-train">Train</span></button></li>
@@ -154,7 +162,7 @@
 
                                        <!-- Accommodation Booking -->
                     <div class="booking-module mt-4">
-                        <h2 class="section-title text-start" id="accommodation-title">Find Your Stay</h2>
+                        <h3 class="section-title " id="accommodation-title">Find Your Stay</h3>
                         <div class="p-4 border rounded">
                             <form class="row g-4">
                                 <!-- START: Changed Accommodation Type Dropdown -->
@@ -240,14 +248,15 @@
     <!-- <footer class="bg-dark text-white text-center py-4">
         <div class="container"><p class="mb-0" id="footer-text">© 2025 Ministry of Culture. Govt of India. All Rights Reserved.</p></div>
     </footer> -->
+    <?php include 'include/footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="js/main2.js?v=4" defer></script>
+    <script src="js/main2.js?v=4" defer></script> -->
 
 
 
 
 </body>
 </html>
-<?php include 'include/footer.php'; ?>
+

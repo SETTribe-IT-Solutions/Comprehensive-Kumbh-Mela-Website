@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================
-    // --- 1. COUNTDOWN TIMER LOGIC ---
-    // =========================================================
+    // --- 1. COUNTDOWN TIMER LOGIC (CORRECTED & SAFE) ---
+
     const countdownTimerEl = document.getElementById('countdown-timer');
-    // ** THE FIX IS HERE: Only run the countdown code if the timer exists on the page **
+    
+    // This 'if' statement is the main gatekeeper.
+    // It prevents this entire block from running on pages without a countdown timer.
     if (countdownTimerEl) {
+        
         const countdown = () => {
             const targetDate = new Date('July 14, 2027 00:00:00').getTime();
             const now = new Date().getTime();
@@ -17,25 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                // These elements are only searched for if the main timer exists
-                document.getElementById('days').innerText = String(days).padStart(3, '0');
-                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+                // These elements are now safely inside the main 'if' block.
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                // This second layer of checks ensures we don't get an error
+                // even if one of the inner elements is missing.
+                if (daysEl && hoursEl && minutesEl && secondsEl) {
+                    daysEl.innerText = String(days).padStart(3, '0');
+                    hoursEl.innerText = String(hours).padStart(2, '0');
+                    minutesEl.innerText = String(minutes).padStart(2, '0');
+                    secondsEl.innerText = String(seconds).padStart(2, '0');
+                }
+
             } else {
+                // This part is also safe because countdownTimerEl is guaranteed to exist here.
                 clearInterval(interval);
                 countdownTimerEl.innerHTML = "<h3 class='text-white'>The event has started!</h3>";
             }
         };
+        
         const interval = setInterval(countdown, 1000);
         countdown();
     }
 
-
-    // =========================================================
     // --- UNIVERSAL API-DRIVEN TRANSLATION ENGINE ---
     // This code will run on every page.
-    // =========================================================
+
     const languageOptions = document.querySelectorAll('.lang-option');
 
     // Only set up the engine if language options exist in the navbar
@@ -94,60 +106,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 3. FINAL IMAGE & VIDEO LIGHTBOX LOGIC ---
+          // =========================================================
+    // --- 3. FINAL & ROBUST IMAGE/VIDEO LIGHTBOX LOGIC ---
+    // =========================================================
     const mediaCards = document.querySelectorAll('.media-card');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxVideo = document.getElementById('lightbox-video');
-    const closeBtn = document.querySelector('.lightbox-close');
 
-    if (mediaCards.length > 0 && lightbox && lightboxImg && lightboxVideo && closeBtn) {
+    if (mediaCards.length > 0 && lightbox) {
+        
+        const lightboxImg = document.getElementById('lightbox-img');
+        // Get the container, not the video itself
+        const lightboxVideoContainer = document.getElementById('lightbox-video');
+        const closeBtn = document.querySelector('.lightbox-close');
 
-        const openLightbox = (e) => {
-            const card = e.currentTarget;
-            const type = card.dataset.type;
+        if (lightboxImg && lightboxVideoContainer && closeBtn) {
 
-            if (type === 'image') {
-                const imgSrc = card.querySelector('img').src;
-                lightboxImg.src = imgSrc;
-                lightboxImg.style.display = 'block';
-                lightboxVideo.style.display = 'none';
-                lightboxVideo.pause();
-                lightboxVideo.removeAttribute('src');
-            } else if (type === 'video') {
-                const videoSrc = card.querySelector('video source').src;
-                lightboxVideo.src = videoSrc;
-                lightboxVideo.style.display = 'block';
-                lightboxImg.style.display = 'none';
-                lightboxVideo.play();
-            }
+            const openLightbox = (e) => {
+            const clickedCard = e.currentTarget;
+            const type = clickedCard.dataset.type;
 
-            lightbox.classList.add('lightbox-active');
-        };
-
-        const closeLightbox = () => {
-            lightbox.classList.remove('lightbox-active');
-            lightboxImg.src = '';
-            lightboxVideo.pause();
-            lightboxVideo.removeAttribute('src');
-            lightboxVideo.style.display = 'none';
             lightboxImg.style.display = 'none';
-        };
+            lightboxVideoContainer.style.display = 'none';
+            lightboxVideoContainer.innerHTML = '';
 
-        mediaCards.forEach(card => {
-            card.addEventListener('click', openLightbox);
-        });
+            if (type === 'video') {
+                const videoEl = clickedCard.querySelector('video');
+                const videoSrc = videoEl?.querySelector('source')?.src || videoEl?.src;
 
-        closeBtn.addEventListener('click', closeLightbox);
+                if (videoSrc) {
+                    lightboxVideoContainer.style.display = 'block';
+                    lightboxVideoContainer.innerHTML = `<video class="lightbox-content" controls autoplay><source src="${videoSrc}" type="video/mp4"></video>`;
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
+                    // Attach close handler to video if desired
+                }
+                } else {
+                    const imgSrc = clickedCard.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightboxImg.style.display = 'block';
+
+                }
+
+                lightbox.classList.add('lightbox-active');
+                document.body.classList.add('lightbox-open'); // ✅ Prevent scroll
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('lightbox-active');
+                document.body.classList.remove('lightbox-open'); // ✅ Restore scroll
+                lightboxVideoContainer.innerHTML = '';
+                lightboxImg.src = '';
+            };
+
+            mediaCards.forEach(card => {
+                    card.addEventListener('click', openLightbox);
+                });
+
+                closeBtn.addEventListener('click', closeLightbox);
+                
+            lightbox.addEventListener('click', (e) => {
+                const lightboxInner = document.querySelector('.lightbox-inner');
+                if (!lightboxInner.contains(e.target)) {
+                    closeLightbox();
+                }
+            });
+
+
+        }
+        
     }
-
-
     
     // =========================================================
     // --- 4. ACCOMMODATION DATE VALIDATION ---
@@ -238,6 +264,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+        // =========================================================
+    // --- 6. BOOTSTRAP FORM VALIDATION (FOR MODALS, ETC.) ---
+    // =========================================================
+    // This is a self-invoking function that finds all forms with the 'needs-validation' class
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+
+        // =========================================================
+    // --- 7. CULTURE PAGE ENROLLMENT FORM SUBMISSION ---
+    // =========================================================
+    const enrollmentForm = document.getElementById('enrollment-form');
+
+    // Only run this code if the enrollment form exists on the page
+    if (enrollmentForm) {
+
+        enrollmentForm.addEventListener('submit', function(event) {
+            // Stop the form from submitting the traditional way
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Check if the form is valid according to Bootstrap's rules
+            if (enrollmentForm.checkValidity()) {
+                
+                // If valid, show the success alert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Enrollment Successful!',
+                    text: 'Thank you for your interest. We will contact you with more details shortly.',
+                    confirmButtonColor: '#FF9933' // Using your theme's saffron color
+                }).then((result) => {
+                    // This code runs after the user clicks "OK"
+                    if (result.isConfirmed) {
+                        enrollmentForm.reset();
+                        enrollmentForm.classList.remove('was-validated');
+                        
+                        // Get the modal instance and hide it
+                        const enrollModalEl = document.getElementById('enrollModal');
+                        const modal = bootstrap.Modal.getInstance(enrollModalEl);
+                        if (modal) {
+                            modal.hide();
+                        }
+                    }
+                });
+
+            }
+
+            // This line adds the validation styles (e.g., green/red borders)
+            enrollmentForm.classList.add('was-validated');
+        });
+    }
 
 }); // This is the closing brace of the main DOMContentLoaded listener
