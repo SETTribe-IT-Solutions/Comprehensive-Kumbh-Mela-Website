@@ -44,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_type'] === 'donation')
   </div>
 
   <!-- AI-Based Pilgrimage Budget Planner -->
-  <div class="card">
+  <div class="card booking-module">
     <div class="card-body">
-      <h2 class="card-title">AI-Based Pilgrimage Budget Planner</h2>
+      <h3>AI-Based Pilgrimage Budget Planner </h3>
       <div class="row g-3">
         <div class="col-md-4">
           <label class="form-label">Days of Stay</label>
@@ -69,47 +69,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_type'] === 'donation')
   </div>
 
   <!-- Donation Section -->
-  <div class="card">
+  <!-- ...existing PHP code remains same... -->
+  <!-- Donation Section -->
+  <div class="card booking-module">
     <div class="card-body">
-      <h2 class="card-title">Make a Donation</h2>
-      <form method="POST" class="row g-3">
-        <input type="hidden" name="form_type" value="donation">
+      <h3 >Make a Donation</h3>
+      <div class="row">
+        <!-- Left Column: Donation Form -->
+        <div class="col-md-7">
+          <form method="POST" class="row g-3">
+            <input type="hidden" name="form_type" value="donation">
 
-        <div class="col-md-6">
-          <label class="form-label">Devotee Name</label>
-          <input type="text" class="form-control" name="devotee_name" id="donor-name" required>
+            <div class="col-12">
+              <label class="form-label">Devotee Name</label>
+              <input type="text" class="form-control" name="devotee_name" id="donor-name" required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Donation Amount (₹)</label>
+              <input type="number" class="form-control" name="amount" id="donation-amount" min="1" required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" name="address" required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Prepaid Kumbh Card Number <span class="text-muted small">(Optional)</span></label>
+              <input type="text" class="form-control" name="kumbh_card" placeholder="XXXX-XXXX-XXXX">
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-primary w-100 mt-3" type="submit">Donate</button>
+            </div>
+          </form>
         </div>
 
-        <div class="col-md-6">
-          <label class="form-label">Donation Amount (₹)</label>
-          <input type="number" class="form-control" name="amount" id="donation-amount" min="1" required>
-        </div>
+        <!-- Right Column: QR Code (Styled Box) -->
+<div class="col-md-5 d-flex align-items-center justify-content-center">
+  <div class="scanner-box text-center w-100">
+    <p class="fw-semibold mb-2">Scan & Pay via UPI</p>
+    <img id="qr-image"
+      src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=donate@upi&pn=KumbhMelaDonation&am=500&cu=INR&size=150x150"
+      alt="QR Code for Donation">
+    <p class="small text-muted mt-2">QR auto-updates with name + amount</p>
+  </div>
+</div>
 
-        <div class="col-12">
-          <label class="form-label">Address</label>
-          <input type="text" class="form-control" name="address" required>
-        </div>
-
-        <div class="col-12">
-          <label class="form-label">Prepaid Kumbh Card Number <span class="text-muted small">(Optional)</span></label>
-          <input type="text" class="form-control" name="kumbh_card" placeholder="XXXX-XXXX-XXXX">
-        </div>
-
-        <div class="form-action-box">
-          <div class="flex-grow-1">
-            <button class="btn btn-primary w-100" type="submit">Donate</button>
-          </div>
-          <div class="qr-box">
-            <p class="fw-semibold">Scan & Pay via UPI</p>
-            <img id="qr-image"
-              src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=donate@upi&pn=KumbhMelaDonation&am=500&cu=INR&size=150x150"
-              alt="QR Code for Donation">
-            <p class="small text-muted">QR auto-updates with name + amount</p>
-          </div>
-        </div>
-      </form>
     </div>
   </div>
+
 </main>
 
 <?php include 'include/footer.php'; ?>
