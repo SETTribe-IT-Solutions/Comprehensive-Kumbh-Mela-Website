@@ -28,8 +28,8 @@ $activePage = "sustainability";
   <section>
     <div class="sustainability-section">
       <h1 class="sus-title">Sustainability & Green Services</h1>
-      <div class="underline-wrapper">
-        <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+      <div class="underline-wrap">
+        <img src="assets/images/underline.png" alt="decorative underlin" class="section-underlin">
       </div>
     </div>
   </section>
