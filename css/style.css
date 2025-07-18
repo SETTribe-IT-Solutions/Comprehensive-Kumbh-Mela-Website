@@ -478,7 +478,7 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 .btn-primary { background-color: var(--saffron); border-color: var(--saffron); font-weight: 500; padding: 0.75rem; }
 .btn-primary:hover { background-color: #e68a2e; border-color: #e68a2e; }
 .feature-card { background: linear-gradient(145deg, #eef5f9, #ffffff); padding: 2rem; border-radius: 15px; text-align: center; border: 1px solid #e9ecef; }
-.feature-card i { font-size: 3rem; margin-bottom: 1rem; display: block; background: -webkit-linear-gradient(45deg, var(--sky-blue), var(--saffron)); background-clip: text; -webkit-text-fill-color: transparent; }
+.feature-card i { font-size: 3rem; margin-bottom: 1rem; display: blocFk; background: -webkit-linear-gradient(45deg, var(--sky-blue), var(--saffron)); background-clip: text; -webkit-text-fill-color: transparent; }
 .feature-card h4 { font-family: var(--font-heading); color: var(--dark-text); }
 .feature-card p { font-size: 0.9rem; color: #555; margin-bottom: 1.5rem; }
 .feature-card .btn-secondary { background-color: var(--dark-text); border-color: var(--dark-text); font-weight: 500; }
