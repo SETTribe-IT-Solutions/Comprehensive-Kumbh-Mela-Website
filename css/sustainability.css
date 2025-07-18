@@ -21,14 +21,14 @@
 }
 
 /* Underline */
-.underline-wrapper {
+.underline-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 0rem;
 }
 
-.section-underline {
+.section-underlin {
   width: 200px;
   max-width: 80%;
   height: auto;
