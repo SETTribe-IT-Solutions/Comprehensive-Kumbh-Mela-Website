@@ -528,6 +528,22 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     font-size: clamp(2.5rem, 7vw, 4rem);
 } */
 
+
+#transport-title {
+  font-size: 1.75rem;      
+  /* padding-top: 1.35rem;     */
+  padding-bottom: 1.40rem; 
+   /* text-align: center;       */
+}
+
+#accommodation-title {
+  font-size: 1.75rem;      
+  /* padding-top: 1.25rem;     */
+  padding-bottom: 1.35rem;
+  /* text-align: center;      */
+}
+
+
 .booking-module { background: linear-gradient(145deg, #eef5f9, #eef5f9);
     background-color: var(--white);
     border-radius: 15px;

@@ -40,7 +40,7 @@
                 <div class="col-lg-8 d-flex flex-column">
                     <!-- Transport Booking -->
                     <div class="booking-module">
-                        <h2 class="section-title text-start" id="transport-title">Book Your Journey</h2>
+                        <h3 class="section-title " id="transport-title">Book Your Journey</h3>
                         <ul class="nav nav-tabs" id="transportTabs" role="tablist">
                             <li class="nav-item" role="presentation"><button class="nav-link active" id="bus-tab" data-bs-toggle="tab" data-bs-target="#bus-panel" type="button" role="tab"><i class="bi bi-bus-front-fill"></i> <span id="transport-tab-bus">Bus</span></button></li>
                             <li class="nav-item" role="presentation"><button class="nav-link" id="train-tab" data-bs-toggle="tab" data-bs-target="#train-panel" type="button" role="tab"><i class="bi bi-train-front-fill"></i> <span id="transport-tab-train">Train</span></button></li>
@@ -162,7 +162,7 @@
 
                                        <!-- Accommodation Booking -->
                     <div class="booking-module mt-4">
-                        <h2 class="section-title text-start" id="accommodation-title">Find Your Stay</h2>
+                        <h3 class="section-title " id="accommodation-title">Find Your Stay</h3>
                         <div class="p-4 border rounded">
                             <form class="row g-4">
                                 <!-- START: Changed Accommodation Type Dropdown -->
