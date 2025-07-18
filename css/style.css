@@ -851,14 +851,16 @@ body.lightbox-open .auto-scroll-gallery {
 
 /* Culture Page Hero Banner */
 #culture-hero {
-    padding: 6rem 0;
+    /* padding: 6rem 0; */
     /* This path assumes culture-hero.jpg is in your assets/images folder */
-    background: url('../assets/images/culture-hero.jpg') no-repeat center center/cover;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
+    /* background: url('../assets/images/culture-hero.jpg') no-repeat center center/cover; */
+    font-family: "Vollkorn", serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Adjusted size slightly */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700; /* Made it bolder for impact */
+    color: var(--white); /* Ensures it's white on the dark overlay */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 #culture-hero .hero-title, 
@@ -928,6 +930,29 @@ body.lightbox-open .auto-scroll-gallery {
 
 .btn-saffron:hover {
     background-color: #e68a2e !important; /* A slightly darker saffron */
+}
+
+/* ================== INNER PAGE TITLE SECTION ================== */
+/* This style is for the title headers on pages like Darshan and Culture */
+
+.page-title-section {
+    padding: 2rem 0 0 0; /* Add space above the title, but not below */
+    background-color: var(--white);
+}
+
+.page-main-title {
+    font-family: "Vollkorn", serif;
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--dark-text); /* Black text for a clean look */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* A very subtle shadow */
+}
+
+/* Reduce the margin below the underline on these pages */
+.page-title-section .underline-wrapper {
+    margin-bottom: 2rem;
 }
 
 /* ================== HOMEPAGE HERO TITLE OVERRIDE (FINAL FIX) ================== */
