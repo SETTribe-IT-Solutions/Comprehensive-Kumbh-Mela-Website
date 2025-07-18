@@ -1,6 +1,8 @@
 /* KUMBH MELA 2027 - MASTER STYLESHEET */
 /* new comment added for trial */
+
 /* ================== 1. VARIABLES & GLOBAL STYLES ================== */
+
 :root {
     --saffron: #FF9933;
     --sky-blue: #87CEEB;
@@ -11,7 +13,7 @@
     --font-body: 'Poppins', sans-serif;
 }
 body { font-family: var(--font-body); color: var(--dark-text); }
-.section-padding { padding: 5rem 0; }
+.section-padding { padding: 2rem 0; }
 
 /* ================== 2. HEADER & NAVIGATION ================== */
 .logo img { height: 45px; }
@@ -23,24 +25,8 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     background-color: white !important;
 }
 
-/* .
 
 
-
-
--wrapper {
-    margin: 0 auto 2rem auto;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.section-underline {
-    width: 200px;
-    max-width: 80%;
-    height: auto;
-} */
 
 
 /* Essential Services underline styling */
@@ -149,67 +135,141 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     color: var(--saffron); /* Saffron checkmark */
 }
 
-/* ================== 3. ALERTS TICKER ================== */
+/* ================== 3. ALERTS TICKER (REFINED DESIGN) ================== */
+
 .alert-ticker-container {
-  display: flex;
-  align-items: center;
-  background-color: #800000;
-  color: var(--white);
-  font-size: 0.9rem;
-  overflow: hidden;
+    display: flex;
+    align-items: stretch; /* Makes children fill the full height */
+    background-color: #1a2b48; /* Deep, trustworthy blue for the alerts section */
+    color: var(--white);
+    font-size: 0.95rem; /* Slightly larger font for readability */
+    line-height: 1.5; /* Improves vertical alignment of text */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Adds a subtle shadow below the bar */
+    font-family: var(--font-body);
 }
 
 .helpline {
-  padding: 0.15rem 1rem;
-  background-color: #c00;
-  font-weight: bold;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 1.5rem; /* Increased padding for better spacing */
+    background-color: var(--saffron);
+    color: #4C2F19; /* A dark brown text for better contrast on saffron */
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.helpline:hover {
+    background-color: #ffac4d; /* A slightly brighter saffron on hover */
 }
 
 .helpline i {
-  margin-right: 0.5rem;
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
 }
 
 .ticker-wrap {
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    /* This padding gives the scrolling text some breathing room */
+    padding: 0.3rem 0; 
 }
 
 .ticker {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: ticker-scroll 20s linear infinite;
+    display: inline-block;
+    white-space: nowrap;
+    /* This padding-left pushes the animation start point off-screen */
+    padding-left: 100%;
+    /* The animation itself */
+    animation: ticker-scroll-refined 25s linear infinite;
 }
 
 .ticker-text {
-  display: inline-block;
-  padding-right: 2rem;
+    display: inline-block;
+    padding-right: 2rem; /* Spacing between repeated text */
 }
 
 .ticker-text i {
-  color: #FFD700;
-  margin-right: 0.5rem;
+    color: #FFD700; /* Gold warning icon */
+    margin-right: 0.5rem;
+    vertical-align: text-bottom; /* Better aligns the icon with the text */
 }
 
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+/* A smoother, more seamless animation */
+@keyframes ticker-scroll-refined {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the element by its own width, creating a perfect loop */
+    transform: translateX(-100%);
+  }
 }
-
 
 /* ================== 4. HERO SECTION (HOMEPAGE & TRAVEL) ================== */
-#hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center; }
+#hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center;  margin-top: 2rem; /* Add spacing below navbar */
+  padding-top: 2rem; /* Optional, for smoother spacing */}
 #hero { height: 75vh; background: url('../assets/images/hero-background-new1.jpg') no-repeat center center/cover; align-items: flex-start; padding-top: 10vh; }
 
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
-.hero-content, #travel-hero .container { position: relative; z-index: 2; color: var(--white); }
-.hero-title { font-family:  "Vollkorn", serif; font-size: clamp(2.5rem, 6vw, 3rem); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
+/* === Override: Apply Inter font only to Travel page === */
+#travel-hero .container .hero-title {
+
+   font-family: "Vollkorn", serif !important;
+
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+/* 
+#travel-hero .container .hero-announcement {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem; 
+  font-weight: 400;
+  color: var(--sky-blue);
+}
+*/
+#travel-hero {
+  background: none; 
+
+  height: auto;  
+    padding: 0rem 0;
+
+} 
+
+/* .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); } */
+.hero-content, #travel-hero .container { position: relative; z-index: 2; color: #333333; }
+/* This is the new style for your main hero titles */
+#hero .hero-title {
+    font-family: "Vollkorn", serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Adjusted size slightly */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700; /* Made it bolder for impact */
+    color: var(--white); /* Ensures it's white on the dark overlay */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 .hero-announcement {font-family: "Merienda", cursive; font-size: 1.1rem; margin-top: 1rem; color: var(--sky-blue); font-weight: 500; }
 #countdown-timer .time-unit { background: rgba(0, 0, 0, 0.4); border: 1px solid var(--saffron); border-radius: 8px; padding: 1rem; min-width: 90px; margin-top: 4rem; }
 #countdown-timer .time-unit span { display: block; font-size: 2.5rem; font-weight: 700; }
 #countdown-timer .time-unit label { font-size: 0.8rem; text-transform: uppercase; }
+
+.kumbh-heading {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 
 /* ================== 5. QUICK LINKS SECTION (HOMEPAGE) ================== */
 #quick-links { background-color: #f0f8ff; }
@@ -395,6 +455,9 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   cursor: pointer;
   z-index: 99999;
 }
+#lightboxVideoContainer:empty {
+  display: none;
+}
 
 
 /* ================== 8. TRUSTEES SECTION (VIBRANT BLUE) ================== */
@@ -452,21 +515,24 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 /* ================== 9. TRAVEL PAGE STYLES ================== */
 
-#travel-hero {
- padding: 6rem 0; background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
+
+/* #travel-hero {
+
+  background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
        position: relative; 
+
        
-}
+} */
 
-#travel-hero .hero-title {
+/* #travel-hero .hero-title {
     font-size: clamp(2.5rem, 7vw, 4rem);
-}
+} */
 
-.booking-module {
+.booking-module { background: linear-gradient(145deg, #eef5f9, #eef5f9);
     background-color: var(--white);
     border-radius: 15px;
     padding: 4rem 2rem; /* Shorthand for: 3rem on top/bottom, 2rem on left/right */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.07); */
     overflow: hidden;
 }
 .booking-module .section-title { text-align: left; margin-bottom: 1.5rem; }
@@ -486,75 +552,49 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 /* ================== 10. DARSHAN PAGE STYLES ================== */
 
 /* Darshan Page Hero Banner */
-#darshan-hero {
+/* #darshan-hero {
     padding: 6rem 0;
-    background: url('../assets/images/darshan-hero3.jpg') no-repeat center center/cover;
+
     position: relative;
 }
 
 #darshan-hero .hero-title {
     font-size: clamp(2.5rem, 7vw, 4rem);
+} */
+
+
+
+/* .darshan-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  
 }
 
-
-/* ================== 11. HEALTH & SAFETY PAGE STYLES ================== */
-
-/* Health Page Hero Banner */
-#health-hero {
-    padding: 6rem 0;
-    background: url('../assets/images/health-hero.webp') no-repeat center center/cover;
-    position: relative;
+.darshan-title {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
 }
 
-#health-hero .hero-title {
-    font-size: clamp(2.5rem, 7vw, 4rem);
+.underline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* SOS Button */
-.btn-sos {
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 1.5rem 3rem;
-    border-radius: 50px;
-    animation: pulse 2s infinite;
-}
+.section-underline {
+  width: 200px;
+  max-width: 80%;
+  height: auto;
+} */
 
-.btn-sos i {
-    margin-right: 1rem;
-}
 
-.btn-sos small {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin-top: 0.5rem;
-    opacity: 0.9;
-}
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(220, 53, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
-}
-
-/* Map Placeholder */
-.map-placeholder {
-    width: 100%;
-    height: 300px;
-    background-color: #e9ecef;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #6c757d;
-    border: 1px dashed #ced4da;
-}
-
-.map-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
 
 /* ================== 11. FOOTER STYLES ================== */
 .main-footer-bottom {
@@ -708,4 +748,107 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 .card-footer-links a:hover {
     color: var(--saffron);
+}
+
+
+
+/* ================== 13. CULTURE PAGE STYLES ================== */
+
+/* Culture Page Hero Banner */
+#culture-hero {
+    padding: 6rem 0;
+    /* This path assumes culture-hero.jpg is in your assets/images folder */
+    background: url('../assets/images/culture-hero.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+}
+
+#culture-hero .hero-title, 
+#culture-hero .hero-announcement {
+    position: relative;
+    z-index: 2; /* Ensures text is on top of the overlay */
+}
+
+/* Styling for the list items in the sidebars to make them look more premium */
+.list-group-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* Use a light border color or remove it if using list-group-flush */
+    border-color: #f0f0f0; 
+}
+
+.list-group-item h5, .list-group-item h6 {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.list-group-item .badge.bg-primary {
+    background-color: var(--saffron) !important;
+    padding: 0.5em 0.75em;
+    font-size: 0.8rem;
+}
+
+/* Ensures the video player is responsive */
+.ratio.ratio-16x9 video {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the new Featured Saint card */
+.featured-saint-card {
+    background-color: var(--light-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+}
+
+.featured-saint-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.featured-saint-card h5 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--saffron);
+}
+
+/* ======== ENROLL BUTTON ======== */
+
+.btn-saffron {
+    background-color: var(--saffron) !important;
+    color: var(--white) !important;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-saffron:hover {
+    background-color: #e68a2e !important; /* A slightly darker saffron */
+}
+
+/* ================== HOMEPAGE HERO TITLE OVERRIDE (FINAL FIX) ================== */
+
+/*
+  This rule is highly specific. It targets ONLY the .hero-title
+  that is a direct child of .hero-content, which is itself inside #hero.
+  This makes it more powerful than the general .hero-content color rule
+  and prevents it from affecting the travel page.
+*/
+#hero > .hero-content > .hero-title {
+    color: var(--white) !important; /* Force white color */
+    font-family: "Vollkorn", serif; /* Apply the correct font */
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
