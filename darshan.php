@@ -90,7 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=33">
+    <!-- <link rel="stylesheet" href="css/style.css?v=33"> -->
+     <link rel="stylesheet" href="css/darshan.css?v=216">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .feature-video { background: #f9f9f9; padding: 30px; border-radius: 10px; text-align: center; }
@@ -100,23 +101,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <main>
-    <section id="darshan-hero" class="text-center text-white">
-        <div class="hero-overlay"></div>
-        <div class="container position-relative">
-            <h1 class="hero-title">Rituals & Darshan Services</h1>
-            <p class="hero-announcement">Connect with the divine. Book your sacred services online.</p>
+<section id="darshan-hero" class="text-center text-white">
+        
+        <div class="darshan-section">
+            <h1 class="darshan-title">Rituals & Darshan Services</h1>
+           <div class="underline-wrapper">
+          <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
         </div>
     </section>
 
     <div class="container section-padding">
         <div class="feature-video mb-5">
-            <h2 class="mb-3">Live Darshan & Virtual Pooja</h2>
+            <h3 class="mb-3">Live Darshan & Virtual Pooja</h3>
             <iframe width="560" height="560" src="https://www.youtube.com/embed/vJY1Nn9xc-U?si=uQYWgLqc_5S50Cqa&controls=0&start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p class="mt-3">Watch the sacred rituals live and feel spiritually connected.</p>
         </div>
 
         <div class="booking-module">
-            <h2 class="section-title text-start">Holy Dip (Snan) Slot Booking</h2>
+            <h3 >Holy Dip (Snan) Slot Booking</h3>
             <form class="row g-3" method="POST">
                 <input type="hidden" name="form_type" value="snan">
                 <div class="col-md-6">
@@ -157,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="booking-module mt-5">
-            <h2 class="section-title text-start">E-Pandit Booking</h2>
+            <h3>E-Pandit Booking</h3>
             <form class="row g-3" method="POST">
                 <input type="hidden" name="form_type" value="epandit">
                 <div class="col-md-6">
@@ -190,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="booking-module mt-5">
-            <h2 class="section-title text-start">Prasad Delivery</h2>
+            <h3>Prasad Delivery</h3>
             <form class="row g-3" method="POST">
                 <input type="hidden" name="form_type" value="prasad">
                 <div class="col-md-6"><label class="form-label">Devotee Name</label><input type="text" class="form-control" name="devotee_name" required></div>
@@ -201,42 +204,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="col-md-12"><label class="form-label">Google Map Link(Paste Your URL)</label><input type="url" class="form-control" name="map_link"></div>
                 <div class="col-md-6"><label class="form-label">Quantity (Boxes)</label><input type="number" class="form-control" id="box-count" name="quantity" min="1" value="1" required></div>
                 <div class="col-md-6"><label class="form-label">Total Price (₹)</label><input type="text" class="form-control" id="total-price" readonly name="total_price"></div>
-                <div class="col-12"><button class="btn btn-primary w-100" type="submit">Order Prasad</button></div>
+                <button class="btn btn-primary" style="margin-bottom: 3rem;">Order Prasad</button>
+
             </form>
         </div>
 
-       <!-- Sankalp & Donation -->
-<div class="booking-module mt-5">
-  <h2 class="section-title text-start">Sankalp & Donation Seva</h2>
-  <form class="row g-3">
-    <div class="col-md-6">
-      <label class="form-label">Devotee Name</label>
-      <input type="text" class="form-control" name="devotee_name">
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Donation Amount (₹)</label>
-      <input type="number" class="form-control" name="amount">
-    </div>
-    <div class="col-12">
-      <label class="form-label">Address</label>
-      <input type="text" class="form-control" name="address">
-    </div>
-    
-    <div class="col-md-6">
-      <button class="btn btn-primary w-100">Submit</button>
-    </div>
+     
 
-    <!-- ✅ QR Code Section -->
-    <div class="col-md-6 text-center">
-      
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=donate@upi&pn=KumbhMelaDonation&am=500&cu=INR&size=150x150" 
-           alt="QR Code for Donation" 
-           class="img-fluid rounded shadow" 
-           style="max-width: 180px;">
-      <p class="mt-2 small text-muted">Scan with any UPI App</p>
-    </div>
-  </form>
-</div>
 
 </main>
 
