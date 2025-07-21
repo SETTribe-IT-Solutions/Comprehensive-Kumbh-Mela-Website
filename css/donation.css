@@ -6,7 +6,6 @@ main {
   margin-top: 0;
 }
 
-/* Section Title */
 main h1 {
   font-family: "Vollkorn", serif;
   font-size: clamp(2.5rem, 6vw, 3rem);
@@ -19,7 +18,6 @@ main h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Decorative Underline */
 .underline-wrapper {
   display: flex;
   justify-content: center;
@@ -32,33 +30,38 @@ main h1 {
   height: auto;
 }
 
-/* Card Common */
+/* ====== UPDATED CARD STYLE (like Darshan) ====== */
 .card {
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* softer shadow */
   padding: 1.5rem;
   margin-bottom: 2rem;
+  background-color: #fff;
+  border: 1px solid #eee;
+  font-family: "Vollkorn", serif;
 }
 
 .card-title {
-  font-weight: 600 !important;
-  font-size: 2.2rem !important;  /* increase as needed */
+  font-weight: 600;
+  font-size: 1.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  
   margin-bottom: 1.2rem;
   color: #111;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
+.card-body {
+  padding: 1rem 0;
+}
 
-/* Form Labels */
+/* ====== FORM STYLES ====== */
 .form-label {
   font-weight: 500;
   font-size: 1rem;
 }
 
-/* Button - Keep Original Orange */
 form .btn-primary {
   background-color: var(--saffron);
   border-color: var(--saffron);
@@ -73,12 +76,11 @@ form .btn-primary:hover {
   border-color: #e68a2e;
 }
 
-/* Budget Suggestion Text */
 #suggested-amount {
   font-size: 1rem;
 }
 
-/* QR Code */
+/* ====== QR & Scanner ====== */
 .qr-box {
   text-align: center;
   margin-top: 1rem;
@@ -91,7 +93,23 @@ form .btn-primary:hover {
   margin-bottom: 0.5rem;
 }
 
-/* Action Button and QR Layout */
+.scanner-box {
+  background-color: #f9f6f2;
+  border: 2px dashed #e68a2e;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  margin-top: 1rem;
+}
+
+.scanner-box img {
+  max-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== Action Box ====== */
 .form-action-box {
   display: flex;
   gap: 1rem;
@@ -115,4 +133,12 @@ body {
 
 main.container {
   padding-top: 1rem !important;
+}
+
+/* == Custom Card Background == */
+.booking-module {
+  background-color: #f5f3ee !important;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }

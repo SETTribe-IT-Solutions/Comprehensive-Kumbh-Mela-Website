@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/style.css?v=33"> -->
-     <link rel="stylesheet" href="css/darshan.css?v=5">
+     <link rel="stylesheet" href="css/darshan.css?v=216">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .feature-video { background: #f9f9f9; padding: 30px; border-radius: 10px; text-align: center; }
@@ -113,13 +113,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="container section-padding">
         <div class="feature-video mb-5">
-            <h2 class="mb-3">Live Darshan & Virtual Pooja</h2>
+            <h3 class="mb-3">Live Darshan & Virtual Pooja</h3>
             <iframe width="560" height="560" src="https://www.youtube.com/embed/vJY1Nn9xc-U?si=uQYWgLqc_5S50Cqa&controls=0&start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p class="mt-3">Watch the sacred rituals live and feel spiritually connected.</p>
         </div>
 
         <div class="booking-module">
-            <h2 class="section-title text-start">Holy Dip (Snan) Slot Booking</h2>
+            <h3 >Holy Dip (Snan) Slot Booking</h3>
             <form class="row g-3" method="POST">
                 <input type="hidden" name="form_type" value="snan">
                 <div class="col-md-6">
@@ -160,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="booking-module mt-5">
-            <h2 class="section-title text-start">E-Pandit Booking</h2>
+            <h3>E-Pandit Booking</h3>
             <form class="row g-3" method="POST">
                 <input type="hidden" name="form_type" value="epandit">
                 <div class="col-md-6">
@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="booking-module mt-5">
-            <h2 class="section-title text-start">Prasad Delivery</h2>
+            <h3>Prasad Delivery</h3>
             <form class="row g-3" method="POST">
                 <input type="hidden" name="form_type" value="prasad">
                 <div class="col-md-6"><label class="form-label">Devotee Name</label><input type="text" class="form-control" name="devotee_name" required></div>

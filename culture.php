@@ -2,11 +2,12 @@
 
 <main>
     <!-- ================== CULTURE HERO BANNER ================== -->
-    <section id="culture-hero" class="text-center text-white">
-        <div class="hero-overlay"></div>
-        <div class="container position-relative">
-            <h1 class="hero-title" id="culture-hero-title">Culture & Learning</h1>
-            <p class="hero-announcement" id="culture-hero-subtitle">Immerse yourself in the rich history and spiritual wisdom of the Kumbh Mela.</p>
+     <section class="page-title-section">
+        <div class="container text-center">
+            <h1 class="page-main-title" id="culture-hero-title">Culture & Learning</h1>
+            <div class="underline-wrapper">
+                <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+            </div>
         </div>
     </section>
 
@@ -249,5 +250,8 @@
         </div>
     </div>
 </div>
+
+
+
 
 <?php require_once 'include/footer.php'; ?>
