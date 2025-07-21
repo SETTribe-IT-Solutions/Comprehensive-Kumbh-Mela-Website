@@ -626,7 +626,7 @@ body.lightbox-open .auto-scroll-gallery {
 .booking-module { background: linear-gradient(145deg, #eef5f9, #eef5f9);
     background-color: var(--white);
     border-radius: 15px;
-    padding: 4rem 2rem; /* Shorthand for: 3rem on top/bottom, 2rem on left/right */
+    padding: 4rem 2rem; 
     /* box-shadow: 0 10px 30px rgba(0,0,0,0.07); */
     overflow: hidden;
 }

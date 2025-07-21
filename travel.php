@@ -13,7 +13,8 @@
 <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> -->
 
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/style.css?v=211"> <!-- Use the same stylesheet -->
+    <link rel="stylesheet" href="css/style.css?v=212"> <!-- Use the same stylesheet -->
+
 
 </head>
 <body>
@@ -250,9 +251,9 @@
     </footer> -->
     <?php include 'include/footer.php'; ?>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="js/main2.js?v=4" defer></script> -->
+    <script src="js/main2.js?v=6" defer></script>
 
 
 
