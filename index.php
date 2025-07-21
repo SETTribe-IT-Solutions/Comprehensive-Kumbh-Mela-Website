@@ -390,53 +390,53 @@
     </div>
     </section>
 
-        <!-- ================== TRUSTEES SECTION (FINAL PROFILE CARD) ================== -->
-        <section id="trustees" class="section-padding bg-light">
-            <div class="container text-center">
-                <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
-                <div class="underline-trustees">
-                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-                </div>
+    <!-- ================== TRUSTEES SECTION (FINAL & CLEAN) ================== -->
+<section id="trustees" class="section-padding bg-light">
+    <div class="container text-center">
+        <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
+        <div class="underline-wrapper">
+            <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
 
-                <div class="row justify-content-center g-4">
-                    <!-- Trustee 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="profile-card">
-                            <img src="assets/images/trustee1.png" alt="Photo of Devendra Fadnavis" class="profile-card-img">
-                            <div class="profile-card-body">
-                                <p class="profile-card-role" id="trustee-1-role">Chairman</p>
-                                <h3 class="profile-card-name" id="trustee-1-name">Shri. Devendra Fadnavis</h3>
-                            </div>
-                        </div>
+        <div class="row justify-content-center g-4">
+          <!-- Trustee 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card">
+                    <img src="assets/images/trustee1.png" alt="Photo of Devendra Fadnavis" class="glass-card-img">
+                    <div class="glass-card-body">
+                        <p class="glass-card-role" id="trustee-1-role">Chairman</p>
+                        <h3 class="glass-card-name" id="trustee-1-name">Shri. Devendra Fadnavis</h3>
                     </div>
-
-                    <!-- Trustee 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="profile-card">
-                            <img src="assets/images/trustee2.png" alt="Photo of Eknath Shinde" class="profile-card-img">
-                            <div class="profile-card-body">
-                                <p class="profile-card-role" id="trustee-2-role">Member</p>
-                                <h3 class="profile-card-name" id="trustee-2-name">Shri. Eknath Shinde</h3>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Trustee 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="profile-card">
-                            <img src="assets/images/trustee3.png" alt="Photo of Ajit Pawar" class="profile-card-img">
-                            <div class="profile-card-body">
-                                <p class="profile-card-role" id="trustee-3-role">Secretary</p>
-                                <h3 class="profile-card-name" id="trustee-3-name">Shri. Ajit Pawar</h3>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
-        </section>
 
-    </main>
+
+            <!-- Trustee 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card">
+                    <img src="assets/images/trustee2.png" alt="Photo of Eknath Shine" class="glass-card-img">
+                    <div class="glass-card-body">
+                        <p class="glass-card-role" id="trustee-1-role">Secretary</p>
+                        <h3 class="glass-card-name" id="trustee-1-name">Shri. Eknath Shinde</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other trustees, changing image src and content -->
+
+
+            <!-- Trustee 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card">
+                    <img src="assets/images/trustee3.png" alt="Photo of Devendra Fadnavis" class="glass-card-img">
+                    <div class="glass-card-body">
+                        <p class="glass-card-role" id="trustee-1-role">Member</p>
+                        <h3 class="glass-card-name" id="trustee-1-name">Shri. Ajit Pawar</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <?php include 'include/footer.php'; ?>
 

@@ -537,58 +537,99 @@ body.lightbox-open .auto-scroll-gallery {
 }
 
 
-/* ================== 8. TRUSTEES SECTION (VIBRANT BLUE) ================== */
+/* ================== TRUSTEES - ENHANCED FLOATING GLASS ================== */
 
+/* This sets a background image for the section, which is needed for the glass effect to be visible */
 #trustees {
-    background-color: var(--light-bg); 
-    padding-top: 3rem; 
-    padding-bottom: 5rem;
+    background: url('../assets/images/gallery-bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Makes the background stay in place while scrolling */
 }
 
-.profile-card {
-    background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+.glass-card {
+    position: relative;
+    padding: 2rem 1.5rem; /* Increased padding for more space */
     text-align: center;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    margin-top: 2rem;
+    
+    /* The Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.4); /* Made the glass slightly more opaque */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    
+    transition: all 0.3s ease;
+    overflow: hidden; /* This is needed for the pseudo-element border */
 }
 
-.profile-card-img {
-    width: 100%;
-    height: 250px;
+/* This creates the animated gradient border that appears on hover */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--saffron), var(--sky-blue));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.glass-card:hover::before {
+    opacity: 1; /* The gradient border becomes visible on hover */
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-card-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: top;
-    display: block;
+    border: 5px solid var(--white); /* Slightly thicker border */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1.5rem;
 }
 
-.profile-card-body {
-    padding: 1.5rem;
-    margin-top: auto;
-    /* THIS IS YOUR CHOSEN VIBRANT BLUE */
-    background-color: #ff9a3c;
+/* The text body container */
+.glass-card-body {
+    transition: color 0.4s ease; /* Smooth color transition for text */
 }
 
-.profile-card-role {
+/* Change ALL text inside to white on hover */
+.glass-card:hover .glass-card-body,
+.glass-card:hover .glass-card-body h3,
+.glass-card:hover .glass-card-body p {
+    color: var(--white);
+}
+
+.glass-card-role {
     font-size: 0.8rem;
-    /* Use a slightly transparent white for better hierarchy */
-    color: rgba(255, 255, 255, 0.85); 
+    color: var(--saffron); /* Saffron color by default */
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+}
+/* On hover, the role text becomes white */
+.glass-card:hover .glass-card-role {
+    color: var(--white);
 }
 
-.profile-card-name {
+
+.glass-card-name {
     font-family: var(--font-body);
-    font-weight: 700; /* Bolder name for contrast */
+    font-weight: 600;
     font-size: 1.25rem;
-    /* Use solid white text for the name */
+    margin-top: 0.5rem;
+    color: var(--dark-text); /* Dark text by default */
+}
+/* On hover, the name text becomes white */
+.glass-card:hover .glass-card-name {
     color: var(--white);
-    margin-bottom: 0;
 }
 
 
@@ -914,8 +955,12 @@ body.lightbox-open .auto-scroll-gallery {
     font-weight: 700;
     color: var(--saffron);
 }
+/* ================== CULTURE PAGE SPACING FIX ================== */
 
-/* ======== ENROLL BUTTON ======== */
+/* This rule specifically targets the video card to reduce its top padding */
+.video-module-padding {
+    padding-top: 1.5rem !important; /* Reduces the space above the title */
+}
 
 .btn-saffron {
     background-color: var(--saffron) !important;
@@ -932,6 +977,67 @@ body.lightbox-open .auto-scroll-gallery {
     background-color: #e68a2e !important; /* A slightly darker saffron */
 }
 
+
+/* ================== CULTURE PAGE - IMPRESSIVE SAINTS DIRECTORY ================== */
+
+.saints-directory .saint-card {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.saints-directory .saint-card:last-child {
+    border-bottom: none;
+}
+
+.saint-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    border: 3px solid var(--sky-blue);
+}
+
+.saint-info {
+    flex-grow: 1;
+}
+
+.saint-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.saint-akhara {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--saffron);
+    margin-bottom: 0.5rem;
+}
+
+.saint-session {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+.saint-session i {
+    margin-right: 0.5rem;
+}
+
+.btn-outline-saffron {
+    color: var(--saffron);
+    border-color: var(--saffron);
+    font-weight: 500;
+    border-radius: 50px;
+}
+.btn-outline-saffron:hover {
+    color: var(--white);
+    background-color: var(--saffron);
+    border-color: var(--saffron);
+}
+
+
 /* ================== INNER PAGE TITLE SECTION ================== */
 /* This style is for the title headers on pages like Darshan and Culture */
 
@@ -946,10 +1052,10 @@ body.lightbox-open .auto-scroll-gallery {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
-    color: var(--dark-text); /* Black text for a clean look */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* A very subtle shadow */
+    color: var(--dark-text);
+    /* ✅ THIS IS THE NEW, STRONGER SHADOW */
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
 }
-
 /* Reduce the margin below the underline on these pages */
 .page-title-section .underline-wrapper {
     margin-bottom: 2rem;
