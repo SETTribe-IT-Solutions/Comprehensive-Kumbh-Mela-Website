@@ -13,9 +13,8 @@
 
     <!-- ================== MAIN CONTENT SECTION ================== -->
     <div class="container section-padding">
-        
         <!-- Featured Video Module -->
-        <div class="booking-module mb-5">
+        <div class="booking-module video-module-padding">
             <h2 class="section-title text-center" id="history-video-title">The History of Kumbh Mela</h2>
             <div class="ratio ratio-16x9 rounded shadow-sm">
                 <video controls poster="assets/images/video1-thumbnail.jpg" preload="metadata">
@@ -27,7 +26,7 @@
         </div>
 
         <!-- Online Spiritual Courses Module -->
-        <div class="booking-module mt-5">
+        <div class="booking-module mt-5 mb-5">
             <h2 class="section-title text-start" id="courses-title">Online Spiritual Courses</h2>
             <div class="list-group">
                 <!-- Course 1 -->
@@ -48,55 +47,49 @@
             </div>
         </div>
 
-       <!-- Directory of Saints Module -->
-        <div class="booking-module mt-5">
-            <h2 class="section-title text-start" id="saints-directory-title">Directory of Saints</h2>
-            
-            <!-- NEW: Inner two-column grid -->
-            <div class="row g-4 align-items-center">
-
-                <!-- LEFT SIDE: List of Saints -->
-                <div class="col-md-7">
-                    <ul class="list-group list-group-flush">
-                        <!-- Saint 1 -->
-                        <li class="list-group-item">
-                            <h6 class="mb-1" id="saint-1-name">Swami Avdheshanand Giri</h6>
-                            <small class="text-muted" id="saint-1-desc">Session on: The Path of Jnana Yoga - Daily at 4 PM</small>
-                        </li>
-                        <!-- Saint 2 -->
-                        <li class="list-group-item">
-                            <h6 class="mb-1" id="saint-2-name">Pujya Swami Chidanand Saraswati</h6>
-                            <small class="text-muted" id="saint-2-desc">Session on: Karma and Dharma - Daily at 5 PM</small>
-                        </li>
-                        <!-- Saint 3 -->
-                        <li class="list-group-item">
-                            <h6 class="mb-1" id="saint-3-name">Devi Chitralekha</h6>
-                            <small class="text-muted" id="saint-3-desc">Discourse on Shrimad Bhagwatam - Daily at 6 PM</small>
-                        </li>
-                        <!-- Saint 4 -->
-                        <li class="list-group-item">
-                            <h6 class="mb-1" id="saint-4-name">Swami Ramdev</h6>
-                            <small class="text-muted" id="saint-4-desc">Yoga and Pranayama Workshop - Daily at 6 AM</small>
-                        </li>
-                        <!-- Saint 5 -->
-                        <li class="list-group-item">
-                            <h6 class="mb-1" id="saint-5-name">Sadhguru Jaggi Vasudev</h6>
-                            <small class="text-muted" id="saint-5-desc">Talk on Inner Engineering - 19th March at 7 PM</small>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- RIGHT SIDE: Featured Saint Card -->
-                <div class="col-md-5">
-                    <div class="featured-saint-card text-center">
-                        <img src="assets/images/saint_featured.jpg" alt="Featured Saint" class="img-fluid rounded-circle mb-3">
-                        <h5 class="mb-1">Featured Saint</h5>
-                        <p class="text-muted small">Learn from the masters and elevate your spiritual journey.</p>
-                    </div>
-                </div>
-
+       <!-- Directory of Saints Module (New Impressive Design) -->
+<div class="booking-module">
+    <h2 class="section-title text-start" id="saints-directory-title">Directory of Saints</h2>
+    <div class="list-group list-group-flush saints-directory">
+        
+        <!-- Saint 1 Card -->
+        <div class="saint-card">
+            <img src="assets/images/saint1.jpg" alt="Swami Avdheshanand Giri" class="saint-photo">
+            <div class="saint-info">
+                <h5 class="saint-name" id="saint-1-name">Swami Avdheshanand Giri</h5>
+                <p class="saint-akhara" id="saint-1-akhara">Juna Akhara</p>
+                <p class="saint-session" id="saint-1-desc"><i class="bi bi-calendar3-event"></i> Session on: The Path of Jnana Yoga - Daily at 4 PM</p>
             </div>
+            <a href="#" class="btn btn-sm btn-outline-saffron ms-auto">View Schedule</a>
         </div>
+        
+        <!-- Saint 2 Card -->
+        <div class="saint-card">
+            <img src="assets/images/saint2.jpg" alt="Pujya Swami Chidanand Saraswati" class="saint-photo">
+            <div class="saint-info">
+                <h5 class="saint-name" id="saint-2-name">Pujya Swami Chidanand Saraswati</h5>
+                <p class="saint-akhara" id="saint-2-akhara">Parmarth Niketan</p>
+                <p class="saint-session" id="saint-2-desc"><i class="bi bi-calendar3-event"></i> Session on: Karma and Dharma - Daily at 5 PM</p>
+            </div>
+            <a href="#" class="btn btn-sm btn-outline-saffron ms-auto">View Schedule</a>
+        </div>
+
+        <!-- Saint 3 Card -->
+        <div class="saint-card">
+            <img src="assets/images/saint3.jpg" alt="Devi Chitralekha" class="saint-photo">
+            <div class="saint-info">
+                <h5 class="saint-name" id="saint-3-name">Devi Chitralekha</h5>
+                <p class="saint-akhara" id="saint-3-akhara">World Sankirtan Tour Trust</p>
+                <p class="saint-session" id="saint-3-desc"><i class="bi bi-calendar3-event"></i> Discourse on Shrimad Bhagwatam - Daily at 6 PM</p>
+            </div>
+            <a href="#" class="btn btn-sm btn-outline-saffron ms-auto">View Schedule</a>
+        </div>
+        
+        <!-- Add other saints here in the same format -->
+
+    </div>
+</div>
+
 
     </div>
 </main>
@@ -250,8 +243,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <?php require_once 'include/footer.php'; ?>
