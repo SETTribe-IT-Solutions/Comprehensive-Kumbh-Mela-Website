@@ -955,7 +955,7 @@ body.lightbox-open .auto-scroll-gallery {
     font-weight: 700;
     color: var(--saffron);
 }
-/* ================== CULTURE PAGE SPACING FIX ================== */
+/*SPACING FIX  */
 
 /* This rule specifically targets the video card to reduce its top padding */
 .video-module-padding {
@@ -978,7 +978,7 @@ body.lightbox-open .auto-scroll-gallery {
 }
 
 
-/* ================== CULTURE PAGE - IMPRESSIVE SAINTS DIRECTORY ================== */
+/*IMPRESSIVE SAINTS DIRECTORY  */
 
 .saints-directory .saint-card {
     display: flex;

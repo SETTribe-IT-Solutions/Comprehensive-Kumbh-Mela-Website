@@ -76,7 +76,7 @@
         </div>
 
         <div class="col-md-6">
-            <label class="form-label">Date of Journey</label>
+            <label class="form-label" id="form-label-journey-date">Date of Journey</label>
             <div class="d-flex align-items-center gap-3">
             <div class="d-flex align-items-center border rounded px-3 py-2 flex-grow-1">
                 <i class="bi bi-calendar2-event me-2 text-muted"></i>
@@ -171,7 +171,7 @@
                                     <label class="form-label" id="form-label-stay-type">Accommodation Type</label>
                                     <div class="dropdown">
                                         <button class="btn btn-light border dropdown-toggle w-100 text-start" type="button" id="accommodation-type-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                                            All Types
+                                            <span id="accommodation-type-text">All Types</span>
                                         </button>
                                         <ul class="dropdown-menu w-100" aria-labelledby="accommodation-type-dropdown">
                                             <li class="px-3 py-1">

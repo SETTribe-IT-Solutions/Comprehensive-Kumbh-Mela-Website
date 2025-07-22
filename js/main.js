@@ -326,4 +326,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+        // =========================================================
+    // --- CULTURE PAGE - SAINT SCHEDULE MODAL ---
+    // =========================================================
+    const scheduleButtons = document.querySelectorAll('.view-schedule-btn');
+    const scheduleModalTitle = document.getElementById('scheduleModalLabel');
+    const scheduleModalBody = document.getElementById('scheduleModalBody');
+
+    // Only run this code if the schedule buttons and modal elements exist on the page
+    if (scheduleButtons.length > 0 && scheduleModalTitle && scheduleModalBody) {
+
+        // Store the schedule data here. In a real app, this would come from an API.
+        const schedules = {
+            'saint-1': {
+                name: "Swami Avdheshanand Giri",
+                schedule: `
+                    <h6>Daily Pravachan (Discourse)</h6>
+                    <p><strong>Topic:</strong> The Path of Jnana Yoga (The Path of Knowledge)</p>
+                    <p><strong>Time:</strong> 4:00 PM - 5:00 PM Daily</p>
+                    <p><strong>Location:</strong> Juna Akhara Main Stage</p>
+                    <hr>
+                    <h6>Special Session:</h6>
+                    <p><strong>Topic:</strong> Meditation for Self-Realization</p>
+                    <p><strong>Date:</strong> 19th March 2027, 9:00 AM</p>
+                `
+            },
+            'saint-2': {
+                name: "Pujya Swami Chidanand Saraswati",
+                schedule: `
+                    <h6>Ganga Aarti & Satsang</h6>
+                    <p><strong>Topic:</strong> Seva, Karma and Dharma in modern life.</p>
+                    <p><strong>Time:</strong> 5:00 PM - 6:00 PM Daily</p>
+                    <p><strong>Location:</strong> Parmarth Niketan Ghat</p>
+                `
+            },
+            'saint-3': {
+                name: "Devi Chitralekha",
+                schedule: `
+                    <h6>Katha Vachan</h6>
+                    <p><strong>Topic:</strong> Discourses and Bhajans from Shrimad Bhagwatam</p>
+                    <p><strong>Time:</strong> 6:00 PM - 7:30 PM Daily</p>
+                    <p><strong>Location:</strong> Main Pravachan Hall</p>
+                `
+            }
+        };
+
+        scheduleButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const saintId = event.currentTarget.dataset.saintId;
+                const scheduleData = schedules[saintId];
+
+                if (scheduleData) {
+                    // Update the modal's title and body content
+                    scheduleModalTitle.textContent = `Schedule for ${scheduleData.name}`;
+                    scheduleModalBody.innerHTML = scheduleData.schedule;
+                } else {
+                    scheduleModalTitle.textContent = 'Schedule Not Available';
+                    scheduleModalBody.innerHTML = '<p>The schedule for this saint has not been updated yet. Please check back later.</p>';
+                }
+            });
+        });
+    }
+
 }); // This is the closing brace of the main DOMContentLoaded listener
