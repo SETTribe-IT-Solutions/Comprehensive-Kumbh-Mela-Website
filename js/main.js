@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mediaCards.length > 0 && lightbox) {
         
-        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxImg = document.getElementById('lightboxImg');
         // Get the container, not the video itself
-        const lightboxVideoContainer = document.getElementById('lightbox-video');
+        const lightboxVideoContainer = document.getElementById('lightboxVideoContainer');
         const closeBtn = document.querySelector('.lightbox-close');
 
         if (lightboxImg && lightboxVideoContainer && closeBtn) {
