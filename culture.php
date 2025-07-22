@@ -1,5 +1,17 @@
 <?php require_once 'include/navbar.php'; ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture & Learning - Kumbh Mela 2027</title>
+    <!-- Your CSS links -->
+    <link rel="stylesheet" href="css/style.css?v=...">
+    <!-- ... other links ... -->
+</head>
+<body>
+    
 <main>
     <!-- ================== CULTURE HERO BANNER ================== -->
      <section class="page-title-section">
@@ -47,7 +59,7 @@
             </div>
         </div>
 
-       <!-- Directory of Saints Module (New Impressive Design) -->
+       <!-- Directory of Saints Module -->
 <div class="booking-module">
     <h2 class="section-title text-start" id="saints-directory-title">Directory of Saints</h2>
     <div class="list-group list-group-flush saints-directory">
@@ -60,7 +72,8 @@
                 <p class="saint-akhara" id="saint-1-akhara">Juna Akhara</p>
                 <p class="saint-session" id="saint-1-desc"><i class="bi bi-calendar3-event"></i> Session on: The Path of Jnana Yoga - Daily at 4 PM</p>
             </div>
-            <a href="#" class="btn btn-sm btn-outline-saffron ms-auto">View Schedule</a>
+            <!-- ✅ UPDATED BUTTON -->
+            <button class="btn btn-sm btn-outline-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-1">View Schedule</button>
         </div>
         
         <!-- Saint 2 Card -->
@@ -71,7 +84,8 @@
                 <p class="saint-akhara" id="saint-2-akhara">Parmarth Niketan</p>
                 <p class="saint-session" id="saint-2-desc"><i class="bi bi-calendar3-event"></i> Session on: Karma and Dharma - Daily at 5 PM</p>
             </div>
-            <a href="#" class="btn btn-sm btn-outline-saffron ms-auto">View Schedule</a>
+            <!-- ✅ UPDATED BUTTON -->
+            <button class="btn btn-sm btn-outline-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-2">View Schedule</button>
         </div>
 
         <!-- Saint 3 Card -->
@@ -82,11 +96,10 @@
                 <p class="saint-akhara" id="saint-3-akhara">World Sankirtan Tour Trust</p>
                 <p class="saint-session" id="saint-3-desc"><i class="bi bi-calendar3-event"></i> Discourse on Shrimad Bhagwatam - Daily at 6 PM</p>
             </div>
-            <a href="#" class="btn btn-sm btn-outline-saffron ms-auto">View Schedule</a>
+            <!-- ✅ UPDATED BUTTON -->
+            <button class="btn btn-sm btn-outline-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-3">View Schedule</button>
         </div>
         
-        <!-- Add other saints here in the same format -->
-
     </div>
 </div>
 
@@ -244,5 +257,33 @@
     </div>
 </div>
 
+
+<!-- ... your main content ends here ... -->
+</main>
+
+<!-- ================== SCHEDULE MODAL ================== -->
+<div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="scheduleModalLabel">Schedule</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="scheduleModalBody">
+        <!-- Schedule content will be injected here by JavaScript -->
+        <p>Loading schedule...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <!-- ================== PAGE-SPECIFIC SCRIPTS ================== -->
+    <!-- This block makes the modal and form on THIS page work -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js?v=51" defer></script> 
+
+</body>
+</html>
 
 <?php require_once 'include/footer.php'; ?>

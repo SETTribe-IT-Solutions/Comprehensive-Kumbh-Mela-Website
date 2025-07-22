@@ -127,5 +127,13 @@
   "saint-2-name": "Pujya Swami Chidanand Saraswati",
   "saint-2-desc": "Session on: Karma and Dharma - Daily at 5 PM",
   "saint-3-name": "Devi Chitralekha",
-  "saint-3-desc": "Discourse on Shrimad Bhagwatam - Daily at 6 PM"
+  "saint-3-desc": "Discourse on Shrimad Bhagwatam - Daily at 6 PM",
+
+    "quick-link-travel-desc": "Find flights, trains, and buses. Plan your complete journey to Nashik.",
+  "quick-link-dip-desc": "Book your holy snan slots and learn about the sacred ghats and auspicious timings.",
+  "quick-link-stay-desc": "Explore hotels, dharamshalas, and tent cities. Find the perfect stay for your pilgrimage.",
+  "quick-link-darshan-desc": "Can't be here in person? Watch the sacred aartis and rituals live from anywhere.",
+
+    "form-label-journey-date": "Date of Journey",
+  "accommodation-type-text": "All Types"
 }

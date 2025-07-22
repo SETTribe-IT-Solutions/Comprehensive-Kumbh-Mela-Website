@@ -55,7 +55,7 @@
             </div>
             <div class="ticker-wrap">
                 <div class="ticker">
-                    <span class="ticker-text">
+                    <span class="ticker-text" id="alert-text">
                     <i class="bi bi-exclamation-triangle-fill"></i>
                     ALERT: Please follow all safety guidelines. Beware of unauthorized agents.
                     </span>
