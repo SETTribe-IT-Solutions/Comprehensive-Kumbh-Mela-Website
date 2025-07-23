@@ -148,7 +148,6 @@ $activePage = "sustainability";
 
           <!-- Legend -->
           <div class="mt-3">
-            <h6>Legend:</h6>
             <ul class="list-unstyled d-flex flex-wrap align-items-center gap-4 mt-2">
               <li><img src="assets/images/bluebin.jpg" alt="Blue Bin" style="height:30px;"> - Wet Waste (Organic)</li>
               <li><img src="assets/images/redbin.webp" alt="Red Bin" style="height:30px;"> - Dry Waste (Recyclable)</li>
