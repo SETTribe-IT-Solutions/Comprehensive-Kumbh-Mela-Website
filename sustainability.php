@@ -16,7 +16,8 @@ $activePage = "sustainability";
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/sustainability.css?v=55">
+
+  <link rel="stylesheet" href="css/sustainability.css?v=65">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -33,7 +34,7 @@ $activePage = "sustainability";
     </div>
   </section>
 
-  <div class="">
+  <div class="container">
     <!-- Eco-Friendly Travel & Stay -->
     <div class="mb-5">
       <h3 class="sus-section text-center">Eco-Friendly Travel & Stay</h3>
