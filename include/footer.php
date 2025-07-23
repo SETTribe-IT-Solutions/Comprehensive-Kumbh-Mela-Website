@@ -55,10 +55,10 @@
             <ul class="footer-links">
               <li><a href="#"><i class="bi bi-images me-2"></i>Photo Gallery</a></li>
               <li><a href="#"><i class="bi bi-film me-2"></i>Video Gallery</a></li>
-              <!-- Social Media Links can be added here -->
+              <!-- Social Media Links can be added here
               <li><a href="#"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
               <li><a href="#"><i class="bi bi-twitter me-2"></i>Twitter</a></li>
-              <li><a href="#"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
+              <li><a href="#"><i class="bi bi-instagram me-2"></i>Instagram</a></li> -->
             </ul>
           </div>
 
