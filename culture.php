@@ -60,7 +60,7 @@
         </div>
 
        <!-- Directory of Saints Module -->
-<div class="booking-module">
+<div class="booking-module saints-module">
     <h2 class="section-title text-start" id="saints-directory-title">Directory of Saints</h2>
     <div class="list-group list-group-flush saints-directory">
         
@@ -73,7 +73,7 @@
                 <p class="saint-session" id="saint-1-desc"><i class="bi bi-calendar3-event"></i> Session on: The Path of Jnana Yoga - Daily at 4 PM</p>
             </div>
             <!-- ✅ UPDATED BUTTON -->
-            <button class="btn btn-sm btn-outline-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-1">View Schedule</button>
+            <button class="btn btn-sm btn-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-1">View Schedule</button>
         </div>
         
         <!-- Saint 2 Card -->
@@ -85,7 +85,7 @@
                 <p class="saint-session" id="saint-2-desc"><i class="bi bi-calendar3-event"></i> Session on: Karma and Dharma - Daily at 5 PM</p>
             </div>
             <!-- ✅ UPDATED BUTTON -->
-            <button class="btn btn-sm btn-outline-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-2">View Schedule</button>
+            <button class="btn btn-sm btn-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-2">View Schedule</button>
         </div>
 
         <!-- Saint 3 Card -->
@@ -97,7 +97,7 @@
                 <p class="saint-session" id="saint-3-desc"><i class="bi bi-calendar3-event"></i> Discourse on Shrimad Bhagwatam - Daily at 6 PM</p>
             </div>
             <!-- ✅ UPDATED BUTTON -->
-            <button class="btn btn-sm btn-outline-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-3">View Schedule</button>
+            <button class="btn btn-sm btn-saffron ms-auto view-schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleModal" data-saint-id="saint-3">View Schedule</button>
         </div>
         
     </div>
