@@ -888,6 +888,7 @@ body.lightbox-open .auto-scroll-gallery {
 
 
 
+
 /* ================== 13. CULTURE PAGE STYLES ================== */
 
 /* Culture Page Hero Banner */
@@ -980,12 +981,24 @@ body.lightbox-open .auto-scroll-gallery {
 
 /*IMPRESSIVE SAINTS DIRECTORY  */
 
+/* Make saints section cards match Online Courses look */
 .saints-directory .saint-card {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+    background-color: var(--white);
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background-color 0.2s ease;
 }
+
+.saints-directory .saint-card:hover {
+    background-color: #fdfdfd;
+}
+
 .saints-directory .saint-card:last-child {
     border-bottom: none;
 }
@@ -1036,6 +1049,26 @@ body.lightbox-open .auto-scroll-gallery {
     background-color: var(--saffron);
     border-color: var(--saffron);
 }
+
+.booking-module.saints-module {
+    background-color: var(--light-bg) !important; /* light-bg is your #eef5f9 blue */
+    padding: 2rem !important; /* Also adjust padding to match the visual */
+}
+
+/* Add spacing between course cards */
+.booking-module .list-group-item {
+    margin-bottom: 1rem; /* Adds space between items */
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background-color 0.2s ease;
+}
+
+.booking-module .list-group-item:last-child {
+    margin-bottom: 0; /* Prevents extra space at the end */
+}
+
+
 
 
 /* ================== INNER PAGE TITLE SECTION ================== */
