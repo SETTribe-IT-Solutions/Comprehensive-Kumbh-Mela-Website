@@ -45,7 +45,7 @@
               <li><a href="culture.php"><i class="bi bi-cloud-sun me-2"></i>Culture</a></li>
               <li><a href="shop.php"><i class="bi bi-file-earmark-pdf me-2"></i>Shop</a></li>
               <li><a href="donate.php"><i class="bi bi-patch-question me-2"></i>Donate</a></li>
-              <li><a href="sustainibility.php"><i class="bi bi-tree me-2"></i>Sustainability</a></li>
+              <li><a href="sustainability.php"><i class="bi bi-tree me-2"></i>Sustainability</a></li>
             </ul>
           </div>
 
