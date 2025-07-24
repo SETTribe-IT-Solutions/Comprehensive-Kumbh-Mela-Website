@@ -17,8 +17,8 @@ $activePage = "health";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/health.css?v=201">
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -42,12 +42,14 @@ $activePage = "health";
     </div>
   </div>
 
+
   <div class="health-section">
     <h1 class="health-title">Health & Safety</h1>
     <div class="underline-wrapper">
       <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
     </div>
   </div>
+
   
   <div class="container section-padding">
     <!-- SOS BUTTON -->

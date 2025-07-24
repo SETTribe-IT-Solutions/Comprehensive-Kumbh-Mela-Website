@@ -1,8 +1,4 @@
-
 <?php include 'include/navbar.php'; ?>
-    <!-- just a comment -->
-    <!-- again a comment -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This new link imports Montserrat (for headings) and Poppins (for body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Signika:wght@300..700&family=Merienda:wght@300..900&family=Russo+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=92">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
+<link rel="stylesheet" href="css/style.css?v=215 ">
 </head>
 <body> 
 
@@ -25,7 +21,20 @@
         <section id="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content text-center text-white">
-                <h1 class="hero-title" id="hero-title">Kumbh Mela 2027, Nashik</h1>
+                <h1 class="hero-title" id="hero-title" style="
+                font-family: 'Vollkorn', serif;
+                font-size: clamp(2.5rem, 6vw, 3rem);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 500;
+                color: #111;
+                text-align: center;
+                margin-top: 3rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                ">
+                Kumbh Mela 2027, Nashik
+                </h1>
+
                 <p class="hero-announcement" id="hero-announcement">The sacred confluence awaits. Official dates for the Shahi Snan are 18th March 2027 to 20th March 2027.</p>
                 <div id="countdown-timer" class="d-flex justify-content-center gap-3">
                     <div class="time-unit"><span id="days">000</span><label>Days</label></div>
@@ -38,69 +47,91 @@
         </section>
 
     <!-- ALERTS TICKER -->
-    <div class="alert-ticker-container">
-        <div class="helpline">
-            <i class="bi bi-telephone-fill"></i>
-            <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span>
-        </div>
-        <div class="ticker-wrap">
-            <div class="ticker">
-            <span class="ticker-text">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                ALERT: Please follow all safety guidelines. Beware of unauthorized agents.
-            </span>
+    <div class="alert-ticker-wrapper">
+        <div class="alert-ticker-container">
+            <div class="helpline">
+                <i class="bi bi-telephone-fill"></i>
+                <span id="helpline-text">Emergency Helpline: +91-123-456-7890</span>
+            </div>
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <span class="ticker-text" id="alert-text">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    ALERT: Please follow all safety guidelines. Beware of unauthorized agents.
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 
 
 
-    <!-- ================== QUICK ACCESS LINKS ================== -->
-        <section id="quick-links" class="section-padding text-center">
-            <div class="container">
-                <!-- THIS IS THE NEW HEADING -->
-                <h2 class="section-title" id="quick-links-title">Essential Services</h2>
-                <div class="underline-essential">
-                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-                </div>
 
-                <div class="row g-4">
-                    <div class="col-6 col-md-3">
-                        <a href="travel.php?page=Book-Travel" class="quick-link-card">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <h3 id="quick-link-travel">Book Travel</h3>
-                        </a>
+   <!-- ================== QUICK ACCESS LINKS (CORRECTED) ================== -->
+<section id="quick-links" class="section-padding text-center">
+    <div class="container">
+        
+        <!-- ✅ ADDED THIS TITLE AND UNDERLINE BACK -->
+        <h2 class="section-title" id="quick-links-title">Essential Services</h2>
+        <div class="underline-wrapper">
+            <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+        </div>
+        
+        <!-- This is your existing, correct card layout -->
+        <div class="row g-4 justify-content-center mt-5">
+            <!-- Card 1: Book Travel -->
+            <div class="col-lg-3 col-md-6">
+                <a href="travel.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-airplane-fill"></i>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <a href="darshan.php?page=Holy-Dip" class="quick-link-card">
-                            <i class="bi bi-flower1"></i>
-                            <h3 id="quick-link-dip">Holy Dip</h3>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a href="travel.php?page=Stay-Options" class="quick-link-card">
-                            <i class="bi bi-house-heart-fill"></i>
-                            <h3 id="quick-link-stay">Stay Options</h3>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a href="darshan.php?page=Live-Darshan" class="quick-link-card">
-                            <i class="bi bi-eye-fill"></i>
-                            <h3 id="quick-link-darshan">Live Darshan</h3>
-                        </a>
-                    </div>
-                </div>
+                    <h3 class="service-card-title" id="quick-link-travel">Book Travel</h3>
+                    <p class="service-card-text" id="quick-link-travel-desc">Find flights, trains, and buses. Plan your complete journey to Nashik.</p>
+                </a>
             </div>
-        </section>
+            <!-- Card 2: Holy Dip -->
+            <div class="col-lg-3 col-md-6">
+                <a href="darshan.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-water"></i>
+                    </div>
+                    <h3 class="service-card-title" id="quick-link-dip">Holy Dip</h3>
+                    <p class="service-card-text" id="quick-link-dip-desc">Book your holy snan slots and learn about the sacred ghats and auspicious timings.</p>
+                </a>
+            </div>
+            <!-- Card 3: Stay Options -->
+            <div class="col-lg-3 col-md-6">
+                <a href="travel.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-house-heart-fill"></i>
+                    </div>
+                    <h3 class="service-card-title" id="quick-link-stay">Stay Options</h3>
+                    <p class="service-card-text" id="quick-link-stay-desc">Explore hotels, dharamshalas, and tent cities. Find the perfect stay for your pilgrimage.</p>
+                </a>
+            </div>
+            <!-- Card 4: Live Darshan -->
+            <div class="col-lg-3 col-md-6">
+                <a href="darshan.php" class="service-card-saffron">
+                    <div class="service-card-icon">
+                        <i class="bi bi-camera-video-fill"></i>
+                    </div>
+                    <h3 class="service-card-title" id="quick-link-darshan">Live Darshan</h3>
+                    <p class="service-card-text" id="quick-link-darshan-desc">Can't be here in person? Watch the sacred aartis and rituals live from anywhere.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
     <!-- ============ FINAL UNIFIED GALLERY SECTION (Infinite Scroll) ============ -->
     <section id="gallery" class="section-padding bg-light">
     <div class="container text-center">
         <h2 class="section-title" id="gallery-title">Gallery</h2>
-        <div class="underline-gallery">
+        <!-- <div class="underline-gallery">
             <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-        </div>
+        </div> -->
     </div>
     
     <div class="gallery-wrapper">
@@ -110,9 +141,10 @@
         <!-- Video 1 -->
         <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video1.mp4" type="video/mp4">
+                <video id="video1" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
                 </video>
+
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
@@ -126,8 +158,8 @@
         <!-- Local Video 2 -->
        <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video2.mp4" type="video/mp4">
+               <video id="video1" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video2.mp4" type="video/mp4">
                 </video>
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
@@ -235,9 +267,10 @@
         <!-- Video 1 -->
         <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video1.mp4" type="video/mp4">
+                <video id="video1" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
                 </video>
+
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
             <div class="media-card-body">
@@ -251,8 +284,8 @@
         <!-- Local Video 2 -->
        <div class="media-card" data-type="video">
             <div class="media-card-img-container">
-                <video class="media-card-img" muted>
-                <source src="assets/videos/video2.mp4" type="video/mp4">
+                <video id="video2" width="320" height="240" style="cursor: pointer;">
+                    <source src="assets/videos/video1.mp4" type="video/mp4">
                 </video>
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
@@ -357,62 +390,64 @@
     </div>
     </section>
 
-        <!-- ================== TRUSTEES SECTION (FINAL PROFILE CARD) ================== -->
-        <section id="trustees" class="section-padding bg-light">
-            <div class="container text-center">
-                <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
-                <div class="underline-trustees">
-                    <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
-                </div>
+    <!-- ================== TRUSTEES SECTION (FINAL & CLEAN) ================== -->
+    <section id="trustees" class="section-padding bg-light">
+        <div class="container text-center">
+            <h2 class="section-title" id="trustees-title">Board of Trustees</h2>
+            <div class="underline-wrapper">
+                <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+            </div>
 
-                <div class="row justify-content-center g-4">
-                    <!-- Trustee 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="profile-card">
-                            <img src="assets/images/trustee1.png" alt="Photo of Devendra Fadnavis" class="profile-card-img">
-                            <div class="profile-card-body">
-                                <p class="profile-card-role" id="trustee-1-role">Chairman</p>
-                                <h3 class="profile-card-name" id="trustee-1-name">Shri. Devendra Fadnavis</h3>
-                            </div>
+            <div class="row justify-content-center g-4">
+            <!-- Trustee 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card">
+                        <img src="assets/images/trustee1.png" alt="Photo of Devendra Fadnavis" class="glass-card-img">
+                        <div class="glass-card-body">
+                            <p class="glass-card-role" id="trustee-1-role">Chairman</p>
+                            <h3 class="glass-card-name" id="trustee-1-name">Shri. Devendra Fadnavis</h3>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Trustee 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="profile-card">
-                            <img src="assets/images/trustee2.png" alt="Photo of Eknath Shinde" class="profile-card-img">
-                            <div class="profile-card-body">
-                                <p class="profile-card-role" id="trustee-2-role">Member</p>
-                                <h3 class="profile-card-name" id="trustee-2-name">Shri. Eknath Shinde</h3>
-                            </div>
+
+                <!-- Trustee 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card">
+                        <img src="assets/images/trustee2.png" alt="Photo of Eknath Shine" class="glass-card-img">
+                        <div class="glass-card-body">
+                            <p class="glass-card-role" id="trustee-2-role">Secretary</p>
+                            <h3 class="glass-card-name" id="trustee-2-name">Shri. Eknath Shinde</h3>
                         </div>
                     </div>
-                    
-                    <!-- Trustee 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="profile-card">
-                            <img src="assets/images/trustee3.png" alt="Photo of Ajit Pawar" class="profile-card-img">
-                            <div class="profile-card-body">
-                                <p class="profile-card-role" id="trustee-3-role">Secretary</p>
-                                <h3 class="profile-card-name" id="trustee-3-name">Shri. Ajit Pawar</h3>
-                            </div>
+                </div>
+                <!-- Repeat for other trustees, changing image src and content -->
+
+
+                <!-- Trustee 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="glass-card">
+                        <img src="assets/images/trustee3.png" alt="Photo of Devendra Fadnavis" class="glass-card-img">
+                        <div class="glass-card-body">
+                            <p class="glass-card-role" id="trustee-3-role">Member</p>
+                            <h3 class="glass-card-name" id="trustee-3-name">Shri. Ajit Pawar</h3>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <?php include 'include/footer.php'; ?>
 
-   <!-- ✅ FIXED: Single Lightbox container -->
-    <!-- Lightbox for image and video -->
-    <div id="lightbox">
-        <img id="lightbox-img" alt="Full Image" style="display: none;">
-        <video id="lightbox-video" controls style="display: none; max-width: 90%; max-height: 80vh; border-radius: 8px;"></video>
-        <div class="lightbox-close">&times;</div>
+  
+    <!-- ================== LIGHTBOX HTML (FINAL & ROBUST) ================== -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-inner"> <!-- New wrapper for content -->
+            <span class="lightbox-close">&times;</span>
+            <div id="lightboxVideoContainer" class="lightbox-content"></div>
+            <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged view">
+        </div>
     </div>
 
 
@@ -421,7 +456,7 @@
 
     <!-- This order is CRITICAL -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js?v=47" defer></script>
+    <script src="js/main.js?v=51" defer></script> 
 </body>
 </html>
 
