@@ -17,48 +17,46 @@ $activePage = "health";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/health.css?v=201">
 
+  <link rel="stylesheet" href="css/health.css?v=201">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-<div id="sos-status" class="alert alert-dismissible fade show">
+<div class="alert-status alert alert-dismissible fade show">
   <button type="button" class="btn-close" onclick="hideStatus()"></button>
-  <span id="sos-status-message"></span>
+  <span id="alert-status-message"></span>
 </div>
 
 <main>
   <!-- Helpline Ticker -->
-  <div class="alert-ticker-container">
-    <div class="helpline">
+  <div class="alert-ticker">
+    <div class="helpline-box">
       <i class="bi bi-telephone-fill"></i>
       <span>Medical Helpline:</span>
     </div>
-    <div class="ticker-wrap">
-      <div class="ticker" onmouseover="this.style.animationPlayState='paused'" onmouseout="this.style.animationPlayState='running'">
+    <div class="ticker-container">
+      <div class="ticker-content" onmouseover="this.style.animationPlayState='paused'" onmouseout="this.style.animationPlayState='running'">
         <p> <i class="bi bi-exclamation-triangle-fill"></i> Emergency: 108 | Ambulance: 102 | Police: 100 | Women's Helpline: 1091 | Mental Health: 1800-599-0019</p>
       </div>
     </div>
   </div>
 
-
-  <div class="health-section">
-    <h1 class="health-title">Health & Safety</h1>
-    <div class="underline-wrapper">
-      <img src="assets/images/underline.png" alt="decorative underline" class="section-underline">
+  <div class="medical-section">
+    <h1 class="medical-title">Health & Safety</h1>
+    <div class="decorative-underline">
+      <img src="assets/images/underline.png" alt="decorative underline" class="section-divider">
     </div>
   </div>
-
   
   <div class="container section-padding">
-    <!-- SOS BUTTON -->
-    <div class="row mb-5 sos-row">
+    <!-- Emergency BUTTON -->
+    <div class="row mb-5 emergency-container">
       <div class="col-12 text-center">
-        <button class="btn btn-danger btn-sos" id="sos-button">
+        <button class="btn btn-danger emergency-btn" id="emergency-button">
           <i class="bi bi-bell-fill"></i>
-          <span id="sos-button-text">EMERGENCY SOS</span>
-          <small id="sos-button-desc">Press in case of a medical or safety emergency</small>
+          <span id="emergency-button-text">EMERGENCY SOS</span>
+          <small id="emergency-button-desc">Press in case of a medical or safety emergency</small>
         </button>
       </div>
     </div>
@@ -68,39 +66,39 @@ $activePage = "health";
       <!-- LEFT SIDE -->
       <div class="col-lg-7">
         <!-- Doctor Consultation -->
-        <div class="booking-module health-card">
+        <div class="medical-module safety-card">
           <h2 class="section-title text-start">24x7 Online Doctor Consultation</h2>
-          <form id="doctorForm" novalidate>
+          <form class="doctor-form" id="doctorForm" novalidate>
             <div class="mb-3">
               <label for="name" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="name" required>
+              <input type="text" class="form-control form-input" id="name" required>
               <div class="invalid-feedback" id="name-error">Please enter a valid name (min 3 letters).</div>
             </div>
             <div class="mb-3">
               <label for="mobile" class="form-label">Mobile Number</label>
-              <input type="tel" class="form-control" id="mobile" required>
+              <input type="tel" class="form-control form-input" id="mobile" required>
               <div class="invalid-feedback" id="mobile-error">Please enter a valid 10-digit mobile number.</div>
             </div>
             <div class="mb-3">
               <label for="symptoms" class="form-label">Describe your symptoms (optional)</label>
-              <textarea class="form-control" id="symptoms" rows="4" maxlength="500"></textarea>
+              <textarea class="form-control symptoms-input" id="symptoms" rows="4" maxlength="500"></textarea>
               <div class="invalid-feedback" id="symptoms-error">Symptoms should not exceed 500 characters.</div>
             </div>
-            <button type="submit" class="btn btn-primary w-100" id="btn-consult-doctor">Connect to a Doctor Now</button>
+            <button type="submit" class="btn primary-btn w-100" id="consult-btn">Connect to a Doctor Now</button>
           </form>
         </div>
 
         <!-- Wearables -->
-        <div class="booking-module health-card mt-4">
+        <div class="medical-module safety-card mt-4">
           <h2 class="section-title text-start">Wearable Device Support</h2>
           <p class="text-muted">Connect a GPS wearable to track children or elderly family members.</p>
           <form class="row g-3">
             <div class="col-md-8">
-              <label for="wearable-id" class="form-label">Enter Wearable Device ID</label>
-              <input type="text" class="form-control" id="wearable-id" placeholder="e.g., 987-654-3210">
+              <label for="device-id" class="form-label">Enter Wearable Device ID</label>
+              <input type="text" class="form-control device-id" id="device-id" placeholder="e.g., 987-654-3210">
             </div>
             <div class="col-md-4 align-self-end">
-              <button type="submit" class="btn btn-secondary w-100" id="btn-register-device">Register Device</button>
+              <button type="submit" class="btn secondary-btn w-100 register-btn" id="register-btn">Register Device</button>
             </div>
           </form>
         </div>
@@ -108,10 +106,10 @@ $activePage = "health";
 
       <!-- RIGHT SIDE MAP -->
       <div class="col-lg-5">
-        <div class="booking-module health-card healthfind">
+        <div class="medical-module safety-card medical-map-container">
           <h2 class="section-title text-start">Nearby Medical Help</h2>
           <p class="text-muted">Find the closest first-aid posts, clinics, and hospitals on the map.</p>
-          <div id="map"></div>
+          <div class="medical-map" id="medical-map"></div>
         </div>
       </div>
     </div>
@@ -124,21 +122,21 @@ $activePage = "health";
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
-// SOS Functionality
+// Emergency Functionality
 function showStatus(message, type = 'info') {
-  const statusEl = document.getElementById('sos-status');
+  const statusEl = document.querySelector('.alert-status');
   statusEl.style.display = 'block';
   statusEl.className = `alert alert-${type} alert-dismissible fade show`;
-  document.getElementById('sos-status-message').innerHTML = message;
+  document.getElementById('alert-status-message').innerHTML = message;
 }
 
 function hideStatus() {
-  document.getElementById('sos-status').style.display = 'none';
+  document.querySelector('.alert-status').style.display = 'none';
 }
 
-document.getElementById('sos-button').addEventListener('click', async function () {
-  const sosButton = this;
-  const originalHTML = sosButton.innerHTML;
+document.getElementById('emergency-button').addEventListener('click', async function () {
+  const emergencyBtn = this;
+  const originalHTML = emergencyBtn.innerHTML;
 
   const result = await Swal.fire({
     title: 'Send Emergency Alert?',
@@ -151,13 +149,13 @@ document.getElementById('sos-button').addEventListener('click', async function (
 
   if (!result.isConfirmed) return;
 
-  sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Locating...';
-  sosButton.disabled = true;
+  emergencyBtn.innerHTML = '<i class="bi bi-arrow-repeat alert-spinner"></i> Locating...';
+  emergencyBtn.disabled = true;
   
   try {
     const position = await getLocation({ enableHighAccuracy: true, timeout: 10000 });
-    sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Sending...';
-    const result = await sendSOSAlert(sosButton, originalHTML, {
+    emergencyBtn.innerHTML = '<i class="bi bi-arrow-repeat alert-spinner"></i> Sending...';
+    const result = await sendEmergencyAlert(emergencyBtn, originalHTML, {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude,
       accuracy: position.coords.accuracy
@@ -171,8 +169,8 @@ document.getElementById('sos-button').addEventListener('click', async function (
     try {
       const position = await getLocation({ enableHighAccuracy: false, timeout: 5000 });
       showStatus('Sending alert with approximate location...', 'info');
-      sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Sending...';
-      await sendSOSAlert(sosButton, originalHTML, {
+      emergencyBtn.innerHTML = '<i class="bi bi-arrow-repeat alert-spinner"></i> Sending...';
+      await sendEmergencyAlert(emergencyBtn, originalHTML, {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
         accuracy: position.coords.accuracy
@@ -181,8 +179,8 @@ document.getElementById('sos-button').addEventListener('click', async function (
     } catch (fallbackError) {
       console.error('Fallback Location Error:', fallbackError);
       Swal.fire('Error', 'Could not get location. Sending alert anyway.', 'error');
-      sosButton.innerHTML = '<i class="bi bi-arrow-repeat sos-spinner"></i> Sending...';
-      await sendSOSAlert(sosButton, originalHTML, {
+      emergencyBtn.innerHTML = '<i class="bi bi-arrow-repeat alert-spinner"></i> Sending...';
+      await sendEmergencyAlert(emergencyBtn, originalHTML, {
         latitude: null,
         longitude: null,
         accuracy: null
@@ -190,8 +188,8 @@ document.getElementById('sos-button').addEventListener('click', async function (
       Swal.fire('Success', 'Alert sent without location.', 'success');
     }
   } finally {
-    sosButton.innerHTML = originalHTML;
-    sosButton.disabled = false;
+    emergencyBtn.innerHTML = originalHTML;
+    emergencyBtn.disabled = false;
     setTimeout(hideStatus, 5000);
   }
 });
@@ -202,17 +200,17 @@ function getLocation(options) {
   });
 }
 
-async function sendSOSAlert(button, originalHTML, locationData) {
+async function sendEmergencyAlert(button, originalHTML, locationData) {
   try {
     const formData = new FormData();
-    formData.append('sos_alert', 'true');
+    formData.append('emergency_alert', 'true');
     if (locationData.latitude && locationData.longitude) {
       formData.append('latitude', locationData.latitude);
       formData.append('longitude', locationData.longitude);
       formData.append('accuracy', locationData.accuracy || 0);
     }
 
-    const response = await fetch('sos_handler.php', {
+    const response = await fetch('emergency_handler.php', {
       method: 'POST',
       body: formData
     });
@@ -229,7 +227,7 @@ async function sendSOSAlert(button, originalHTML, locationData) {
 // Doctor Consultation Form
 document.getElementById('doctorForm').addEventListener('submit', function (e) {
   e.preventDefault();
-  document.querySelectorAll('.form-control').forEach(input => input.classList.remove('is-invalid'));
+  document.querySelectorAll('.form-input').forEach(input => input.classList.remove('is-invalid'));
 
   const name = document.getElementById('name').value.trim();
   const mobile = document.getElementById('mobile').value.trim();
@@ -279,18 +277,18 @@ document.getElementById('doctorForm').addEventListener('submit', function (e) {
 });
 
 // Map Initialization
-const map = L.map('map').setView([25.45, 81.85], 14);
+const medicalMap = L.map('medical-map').setView([25.45, 81.85], 14);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+}).addTo(medicalMap);
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(async (position) => {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
 
-    map.setView([lat, lon], 16);
-    L.marker([lat, lon]).addTo(map).bindPopup("You are here").openPopup();
+    medicalMap.setView([lat, lon], 16);
+    L.marker([lat, lon]).addTo(medicalMap).bindPopup("You are here").openPopup();
 
     const query = `
       [out:json];
@@ -317,7 +315,7 @@ if (navigator.geolocation) {
               iconUrl: 'https://www.nicepng.com/png/full/87-874647_red-cross-hospital-logo-hospital-logo-red-cross.png',
               iconSize: [32, 32]
             })
-          }).addTo(map).bindPopup(`<strong>${name}</strong><br>Type: ${type}`);
+          }).addTo(medicalMap).bindPopup(`<strong>${name}</strong><br>Type: ${type}`);
         }
       });
     } catch (err) {
