@@ -29,10 +29,14 @@
         <div class="booking-module video-module-padding">
             <h2 class="section-title text-center" id="history-video-title">The History of Kumbh Mela</h2>
             <div class="ratio ratio-16x9 rounded shadow-sm">
-                <video controls poster="assets/images/video1-thumbnail.jpg" preload="metadata">
-                    <source src="assets/videos/video1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe
+        src="https://www.youtube.com/embed/f7Y7A9Rgn-A?si=NZaoh12yDYjE3iFV"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
             </div>
             <p class="text-muted mt-3" id="history-video-desc">Discover the ancient origins and mythological significance of this grand spiritual gathering.</p>
         </div>
