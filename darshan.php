@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container section-padding">
         <div class="feature-video mb-5">
             <h3 class="mb-3">Live Darshan & Virtual Pooja</h3>
-            <iframe width="560" height="560" src="https://www.youtube.com/embed/vJY1Nn9xc-U?si=uQYWgLqc_5S50Cqa&controls=0&start=36" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="560" src="https://www.youtube.com/embed/xI3ZIw0Od28?si=LZ7dDG9J7Ll2t9NH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p class="mt-3">Watch the sacred rituals live and feel spiritually connected.</p>
         </div>
 
