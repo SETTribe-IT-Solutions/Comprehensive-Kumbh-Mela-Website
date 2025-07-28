@@ -1,15 +1,25 @@
 /* Reset and base */
-body, html {
+html, body {
   height: 100%;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: white
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
 
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .auth-wrapper {
-  height: 100vh;
+  flex: 1;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .auth-box {
@@ -38,11 +48,13 @@ body, html {
   .auth-img {
     display: none;
   }
+
   .auth-form {
     width: 100%;
   }
 }
 
+/* Buttons */
 .btn.btn-primary {
   background-color: #e68a2e; /* saffron shade */
   border: none;
@@ -55,8 +67,9 @@ body, html {
   background-color: #ef6c00;
 }
 
+/* Links */
 .text-saffron {
-  color:#e68a2e;
+  color: #e68a2e;
   text-decoration: none;
 }
 
