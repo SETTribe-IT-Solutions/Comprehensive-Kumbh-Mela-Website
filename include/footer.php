@@ -287,6 +287,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Visitor counter animation
+
     const counter = document.getElementById('visitor-counter');
     if (counter) {
       let current = parseInt(counter.textContent.replace(/,/g, ''));
@@ -305,3 +306,5 @@
     }
   });
 </script>
+<!-- ... your entire existing <footer> code is above this ... -->
+

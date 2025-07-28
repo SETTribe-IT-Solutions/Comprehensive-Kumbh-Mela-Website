@@ -1,6 +1,8 @@
 /* KUMBH MELA 2027 - MASTER STYLESHEET */
 /* new comment added for trial */
+
 /* ================== 1. VARIABLES & GLOBAL STYLES ================== */
+
 :root {
     --saffron: #FF9933;
     --sky-blue: #87CEEB;
@@ -11,7 +13,7 @@
     --font-body: 'Poppins', sans-serif;
 }
 body { font-family: var(--font-body); color: var(--dark-text); }
-.section-padding { padding: 5rem 0; }
+.section-padding { padding: 2rem 0; }
 
 /* ================== 2. HEADER & NAVIGATION ================== */
 .logo img { height: 45px; }
@@ -23,24 +25,8 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     background-color: white !important;
 }
 
-/* .
 
 
-
-
--wrapper {
-    margin: 0 auto 2rem auto;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.section-underline {
-    width: 200px;
-    max-width: 80%;
-    height: auto;
-} */
 
 
 /* Essential Services underline styling */
@@ -53,13 +39,13 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 }
 
 /* Gallery underline styling (already looks good) */
-.underline-gallery {
+/* .underline-gallery {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
   margin-bottom: 10px;
-}
+} */
 
 /* Board of Trustees underline styling (center fix) */
 .underline-trustees {
@@ -149,75 +135,208 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     color: var(--saffron); /* Saffron checkmark */
 }
 
-/* ================== 3. ALERTS TICKER ================== */
+/* ================== 3. ALERTS TICKER (REFINED DESIGN) ================== */
+
 .alert-ticker-container {
-  display: flex;
-  align-items: center;
-  background-color: #800000;
-  color: var(--white);
-  font-size: 0.9rem;
-  overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    background-color: #1a2b48;
+    color: var(--white);
+    font-size: 1rem; /* 40% smaller than 0.95rem */
+    line-height: 1.2;    /* reduce vertical spacing */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-family: var(--font-body);
+    margin: 0.5rem 0; /* reduce vertical margin too */
 }
 
+
 .helpline {
-  padding: 0.15rem 1rem;
-  background-color: #c00;
-  font-weight: bold;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: 0.12rem 0.9rem; /* 40% smaller padding */
+    background-color: var(--saffron);
+    color: #4C2F19;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+
+.helpline:hover {
+    background-color: #ffac4d; /* A slightly brighter saffron on hover */
 }
 
 .helpline i {
-  margin-right: 0.5rem;
+    margin-right: 0.45rem; /* 40% less */
+    font-size: 0.66rem;     /* 40% smaller */
 }
 
 .ticker-wrap {
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    padding: 0.12rem 0; /* 40% less vertical padding */
 }
 
+
 .ticker {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: ticker-scroll 20s linear infinite;
+    display: inline-block;
+    white-space: nowrap;
+    /* This padding-left pushes the animation start point off-screen */
+    padding-left: 100%;
+    /* The animation itself */
+    animation: ticker-scroll-refined 25s linear infinite;
 }
 
 .ticker-text {
-  display: inline-block;
-  padding-right: 2rem;
+    display: inline-block;
+    padding-right: 2rem; /* Spacing between repeated text */
 }
 
 .ticker-text i {
-  color: #FFD700;
-  margin-right: 0.5rem;
+    color: #FFD700;
+    margin-right: 0.3rem;
+    font-size: 0.66rem;
+    vertical-align: text-bottom;
 }
 
-@keyframes ticker-scroll {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+/* A smoother, more seamless animation */
+@keyframes ticker-scroll-refined {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the element by its own width, creating a perfect loop */
+    transform: translateX(-100%);
+  }
+}
+
+
+.alert-ticker-wrapper {
+  width: 97%;
+  max-width: none;
+  padding: 0;
+  margin: 0 auto;
 }
 
 
 /* ================== 4. HERO SECTION (HOMEPAGE & TRAVEL) ================== */
-#hero, #travel-hero { position: relative; display: flex; justify-content: center; text-align: center; }
+#hero, #travel-hero { 
+  position: relative; 
+  display: flex; 
+  justify-content: center; 
+  text-align: center;  /* Add spacing below navbar */
+  padding-top: 2rem; /* Optional, for smoother spacing */
+}
 #hero { height: 75vh; background: url('../assets/images/hero-background-new1.jpg') no-repeat center center/cover; align-items: flex-start; padding-top: 10vh; }
 
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
-.hero-content, #travel-hero .container { position: relative; z-index: 2; color: var(--white); }
-.hero-title { font-family:  "Vollkorn", serif; font-size: clamp(2.5rem, 6vw, 3rem); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
+/* === Override: Apply Inter font only to Travel page === */
+#travel-hero .container .hero-title {
+
+   font-family: "Vollkorn", serif !important;
+
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  margin-top: 0rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+/* 
+#travel-hero .container .hero-announcement {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem; 
+  font-weight: 400;
+  color: var(--sky-blue);
+}
+*/
+#travel-hero {
+  background: none; 
+
+  height: auto;  
+    padding: 0rem 0;
+
+} 
+
+/* .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); } */
+.hero-content, #travel-hero .container { position: relative; z-index: 2; color: #333333; }
+/* This is the new style for your main hero titles */
+#hero .hero-title {
+    font-family: "Vollkorn", serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Adjusted size slightly */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700; /* Made it bolder for impact */
+    color: var(--white); /* Ensures it's white on the dark overlay */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 .hero-announcement {font-family: "Merienda", cursive; font-size: 1.1rem; margin-top: 1rem; color: var(--sky-blue); font-weight: 500; }
 #countdown-timer .time-unit { background: rgba(0, 0, 0, 0.4); border: 1px solid var(--saffron); border-radius: 8px; padding: 1rem; min-width: 90px; margin-top: 4rem; }
 #countdown-timer .time-unit span { display: block; font-size: 2.5rem; font-weight: 700; }
 #countdown-timer .time-unit label { font-size: 0.8rem; text-transform: uppercase; }
 
+.kumbh-heading {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
 /* ================== 5. QUICK LINKS SECTION (HOMEPAGE) ================== */
-#quick-links { background-color: #f0f8ff; }
-.quick-link-card { display: block; padding: 2rem 1rem; border-radius: 8px; background-color: var(--white); box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.quick-link-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-.quick-link-card .bi { font-size: 3rem; color: var(--saffron); margin-bottom: 1rem; }
-.quick-link-card h3 { font-size: 1.1rem; font-weight: 500; color: var(--dark-text); transition: color 0.3s ease; }
-.quick-link-card:hover h3 { color: var(--saffron); }
+/* ================== 5. ESSENTIAL SERVICES (SAFFRON CARDS) ================== */
+
+#quick-links {
+    padding-top: 2.5rem; /* Reduced from the default 5rem */
+    padding-bottom: 5rem; /* Keep the bottom padding for space below the cards */
+}
+
+
+.service-card-saffron {
+    display: block;
+    background-color: #FFF8E1; /* The creamy saffron background from your reference */
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    height: 100%;
+    border: 1px solid #ffe8c0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-saffron:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-saffron .service-card-icon {
+    margin-bottom: 1.5rem;
+}
+
+.service-card-saffron .service-card-icon i {
+    font-size: 3rem;
+    color: var(--saffron);
+}
+
+.service-card-saffron .service-card-title {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+}
+
+.service-card-saffron .service-card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
 
 /* ================== 6. SECTION TITLES (GENERAL) ================== */
 .section-title {
@@ -231,7 +350,17 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 
 /* ================== 7. FINAL GALLERY & LIGHTBOX STYLES ================== */
 #gallery {
-  background-color: var(--light-bg);
+    /* This adds the background image and a subtle dark overlay for contrast */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/hero-gallery1.jpg') no-repeat center center/cover;
+    position: relative;
+    padding-top: 3rem; /* Matches the top padding of #quick-links */
+    padding-bottom: 5rem;
+}
+
+/* Make the title white to stand out on the new background image */
+#gallery .section-title {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .gallery-wrapper {
@@ -395,78 +524,151 @@ body { font-family: var(--font-body); color: var(--dark-text); }
   cursor: pointer;
   z-index: 99999;
 }
+#lightboxVideoContainer:empty {
+  display: none;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+body.lightbox-open .auto-scroll-gallery {
+  animation-play-state: paused;
+}
 
 
-/* ================== 8. TRUSTEES SECTION (VIBRANT BLUE) ================== */
+/* ================== TRUSTEES - ENHANCED FLOATING GLASS ================== */
 
+/* This sets a background image for the section, which is needed for the glass effect to be visible */
 #trustees {
-    background-color: var(--light-bg); 
+    background: url('../assets/images/gallery-bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Makes the background stay in place while scrolling */
 }
 
-.profile-card {
-    background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+.glass-card {
+    position: relative;
+    padding: 2rem 1.5rem; /* Increased padding for more space */
     text-align: center;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    margin-top: 2rem;
+    
+    /* The Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.4); /* Made the glass slightly more opaque */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    
+    transition: all 0.3s ease;
+    overflow: hidden; /* This is needed for the pseudo-element border */
 }
 
-.profile-card-img {
-    width: 100%;
-    height: 250px;
+/* This creates the animated gradient border that appears on hover */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--saffron), var(--sky-blue));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.glass-card:hover::before {
+    opacity: 1; /* The gradient border becomes visible on hover */
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-card-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: top;
-    display: block;
+    border: 5px solid var(--white); /* Slightly thicker border */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1.5rem;
 }
 
-.profile-card-body {
-    padding: 1.5rem;
-    margin-top: auto;
-    /* THIS IS YOUR CHOSEN VIBRANT BLUE */
-    background-color: #0065F8;
+/* The text body container */
+.glass-card-body {
+    transition: color 0.4s ease; /* Smooth color transition for text */
 }
 
-.profile-card-role {
+/* Change ALL text inside to white on hover */
+.glass-card:hover .glass-card-body,
+.glass-card:hover .glass-card-body h3,
+.glass-card:hover .glass-card-body p {
+    color: var(--white);
+}
+
+.glass-card-role {
     font-size: 0.8rem;
-    /* Use a slightly transparent white for better hierarchy */
-    color: rgba(255, 255, 255, 0.85); 
+    color: var(--saffron); /* Saffron color by default */
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+}
+/* On hover, the role text becomes white */
+.glass-card:hover .glass-card-role {
+    color: var(--white);
 }
 
-.profile-card-name {
+
+.glass-card-name {
     font-family: var(--font-body);
-    font-weight: 700; /* Bolder name for contrast */
+    font-weight: 600;
     font-size: 1.25rem;
-    /* Use solid white text for the name */
+    margin-top: 0.5rem;
+    color: var(--dark-text); /* Dark text by default */
+}
+/* On hover, the name text becomes white */
+.glass-card:hover .glass-card-name {
     color: var(--white);
-    margin-bottom: 0;
 }
 
 
 /* ================== 9. TRAVEL PAGE STYLES ================== */
 
-#travel-hero {
- padding: 6rem 0; background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
+
+/* #travel-hero {
+
+  background: url('../assets/images/travel-hero.jpg') no-repeat center center/cover;
        position: relative; 
+
        
-}
+} */
 
-#travel-hero .hero-title {
+/* #travel-hero .hero-title {
     font-size: clamp(2.5rem, 7vw, 4rem);
+} */
+
+
+#transport-title {
+  font-size: 1.75rem;      
+  /* padding-top: 1.35rem;     */
+  padding-bottom: 1.40rem; 
+   /* text-align: center;       */
 }
 
-.booking-module {
+#accommodation-title {
+  font-size: 1.75rem;      
+  /* padding-top: 1.25rem;     */
+  padding-bottom: 1.35rem;
+  /* text-align: center;      */
+}
+
+
+.booking-module { background: linear-gradient(145deg, #eef5f9, #eef5f9);
     background-color: var(--white);
     border-radius: 15px;
-    padding: 4rem 2rem; /* Shorthand for: 3rem on top/bottom, 2rem on left/right */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    padding: 4rem 2rem; 
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.07); */
     overflow: hidden;
 }
 .booking-module .section-title { text-align: left; margin-bottom: 1.5rem; }
@@ -486,75 +688,49 @@ body { font-family: var(--font-body); color: var(--dark-text); }
 /* ================== 10. DARSHAN PAGE STYLES ================== */
 
 /* Darshan Page Hero Banner */
-#darshan-hero {
+/* #darshan-hero {
     padding: 6rem 0;
-    background: url('../assets/images/darshan-hero3.jpg') no-repeat center center/cover;
+
     position: relative;
 }
 
 #darshan-hero .hero-title {
     font-size: clamp(2.5rem, 7vw, 4rem);
+} */
+
+
+
+/* .darshan-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  
 }
 
-
-/* ================== 11. HEALTH & SAFETY PAGE STYLES ================== */
-
-/* Health Page Hero Banner */
-#health-hero {
-    padding: 6rem 0;
-    background: url('../assets/images/health-hero.webp') no-repeat center center/cover;
-    position: relative;
+.darshan-title {
+  font-family: "Vollkorn", serif;
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #111; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
 }
 
-#health-hero .hero-title {
-    font-size: clamp(2.5rem, 7vw, 4rem);
+.underline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* SOS Button */
-.btn-sos {
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 1.5rem 3rem;
-    border-radius: 50px;
-    animation: pulse 2s infinite;
-}
+.section-underline {
+  width: 200px;
+  max-width: 80%;
+  height: auto;
+} */
 
-.btn-sos i {
-    margin-right: 1rem;
-}
 
-.btn-sos small {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin-top: 0.5rem;
-    opacity: 0.9;
-}
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(220, 53, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
-}
-
-/* Map Placeholder */
-.map-placeholder {
-    width: 100%;
-    height: 300px;
-    background-color: #e9ecef;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #6c757d;
-    border: 1px dashed #ced4da;
-}
-
-.map-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
 
 /* ================== 11. FOOTER STYLES ================== */
 .main-footer-bottom {
@@ -710,4 +886,225 @@ body { font-family: var(--font-body); color: var(--dark-text); }
     color: var(--saffron);
 }
 
+/* ================== 13. CULTURE PAGE STYLES ================== */
 
+/* Culture Page Hero Banner */
+#culture-hero {
+    /* padding: 6rem 0; */
+    /* This path assumes culture-hero.jpg is in your assets/images folder */
+    /* background: url('../assets/images/culture-hero.jpg') no-repeat center center/cover; */
+    font-family: "Vollkorn", serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Adjusted size slightly */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700; /* Made it bolder for impact */
+    color: var(--white); /* Ensures it's white on the dark overlay */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#culture-hero .hero-title, 
+#culture-hero .hero-announcement {
+    position: relative;
+    z-index: 2; /* Ensures text is on top of the overlay */
+}
+
+/* Styling for the list items in the sidebars to make them look more premium */
+.list-group-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* Use a light border color or remove it if using list-group-flush */
+    border-color: #f0f0f0; 
+}
+
+.list-group-item h5, .list-group-item h6 {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.list-group-item .badge.bg-primary {
+    background-color: var(--saffron) !important;
+    padding: 0.5em 0.75em;
+    font-size: 0.8rem;
+}
+
+/* Ensures the video player is responsive */
+.ratio.ratio-16x9 video {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the new Featured Saint card */
+.featured-saint-card {
+    background-color: var(--light-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+}
+
+.featured-saint-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.featured-saint-card h5 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--saffron);
+}
+/*SPACING FIX  */
+
+/* This rule specifically targets the video card to reduce its top padding */
+.video-module-padding {
+    padding-top: 1.5rem !important; /* Reduces the space above the title */
+}
+
+.btn-saffron {
+    background-color: var(--saffron) !important;
+    color: var(--white) !important;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-saffron:hover {
+    background-color: #e68a2e !important; /* A slightly darker saffron */
+}
+
+
+/*IMPRESSIVE SAINTS DIRECTORY  */
+
+/* Make saints section cards match Online Courses look */
+.saints-directory .saint-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--white);
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background-color 0.2s ease;
+}
+
+.saints-directory .saint-card:hover {
+    background-color: #fdfdfd;
+}
+
+.saints-directory .saint-card:last-child {
+    border-bottom: none;
+}
+
+.saint-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    border: 3px solid var(--sky-blue);
+}
+
+.saint-info {
+    flex-grow: 1;
+}
+
+.saint-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.saint-akhara {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--saffron);
+    margin-bottom: 0.5rem;
+}
+
+.saint-session {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+.saint-session i {
+    margin-right: 0.5rem;
+}
+
+.btn-outline-saffron {
+    color: var(--saffron);
+    border-color: var(--saffron);
+    font-weight: 500;
+    border-radius: 50px;
+}
+.btn-outline-saffron:hover {
+    color: var(--white);
+    background-color: var(--saffron);
+    border-color: var(--saffron);
+}
+
+.booking-module.saints-module {
+    background-color: var(--light-bg) !important; /* light-bg is your #eef5f9 blue */
+    padding: 2rem !important; /* Also adjust padding to match the visual */
+}
+
+/* Add spacing between course cards */
+.booking-module .list-group-item {
+    margin-bottom: 1rem; /* Adds space between items */
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background-color 0.2s ease;
+}
+
+.booking-module .list-group-item:last-child {
+    margin-bottom: 0; /* Prevents extra space at the end */
+}
+
+
+
+
+/* ================== INNER PAGE TITLE SECTION ================== */
+/* This style is for the title headers on pages like Darshan and Culture */
+
+.page-title-section {
+    padding: 2rem 0 0 0; /* Add space above the title, but not below */
+    background-color: var(--white);
+}
+
+.page-main-title {
+    font-family: "Vollkorn", serif;
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--dark-text);
+    /* ✅ THIS IS THE NEW, STRONGER SHADOW */
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
+}
+/* Reduce the margin below the underline on these pages */
+.page-title-section .underline-wrapper {
+    margin-bottom: 2rem;
+}
+
+/* ================== HOMEPAGE HERO TITLE OVERRIDE (FINAL FIX) ================== */
+
+/*
+  This rule is highly specific. It targets ONLY the .hero-title
+  that is a direct child of .hero-content, which is itself inside #hero.
+  This makes it more powerful than the general .hero-content color rule
+  and prevents it from affecting the travel page.
+*/
+#hero > .hero-content > .hero-title {
+    color: var(--white) !important; /* Force white color */
+    font-family: "Vollkorn", serif; /* Apply the correct font */
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
