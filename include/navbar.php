@@ -63,7 +63,9 @@
                     <li class="nav-item"><a class="nav-link" id="nav-shop" href="shop.php">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-donate" href="donate.php">Donate</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="sustainability.php">Sustainability</a></li>
-                    <li class="nav-item"><a class="nav-link" id="nav-login" href="login">Login</a></li>
+
+                    <li class="nav-item"><a class="nav-link" id="nav-login" href="login.php">Login</a>
+                    
                 </ul>
 
                 <div class="dropdown">
