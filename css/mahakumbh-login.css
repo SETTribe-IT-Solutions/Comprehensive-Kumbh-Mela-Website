@@ -1,0 +1,66 @@
+/* Reset and base */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: white
+
+}
+
+.auth-wrapper {
+  height: 100vh;
+  padding: 20px;
+}
+
+.auth-box {
+  max-width: 900px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.auth-img {
+  width: 50%;
+  background: #fff;
+}
+
+.auth-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.auth-form {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .auth-img {
+    display: none;
+  }
+  .auth-form {
+    width: 100%;
+  }
+}
+
+.btn.btn-primary {
+  background-color: #e68a2e; /* saffron shade */
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background-color: #ef6c00;
+}
+
+.text-saffron {
+  color:#e68a2e;
+  text-decoration: none;
+}
+
+.text-saffron:hover {
+  color: #ef6c00;
+  text-decoration: underline;
+}
