@@ -18,7 +18,7 @@ include 'include/navbar.php';
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/mahakumbh-login.css?v=4">
+  <link rel="stylesheet" href="css/mahakumbh-login.css?v=5">
 
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
