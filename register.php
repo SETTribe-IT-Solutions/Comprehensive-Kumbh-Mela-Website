@@ -1,6 +1,7 @@
 <?php 
 require_once 'include/connect.php';
-include 'include/navbar.php'; ?>
+include 'include/navbar.php'; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,9 +22,8 @@ include 'include/navbar.php'; ?>
 
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/register.js"></script>
-
 </head>
+
 <body class="d-flex flex-column min-vh-100">
 
   <main class="flex-grow-1 d-flex align-items-center justify-content-center">
@@ -40,22 +40,33 @@ include 'include/navbar.php'; ?>
           <h3 class="text-dark fw-bold mb-2">Register</h3>
           <p class="text-muted mb-4">Create your account</p>
 
-          <form id="registerForm">
+          <form id="registerForm" novalidate>
             <div class="mb-3">
-              <input type="text" class="form-control" name="fullname" placeholder="Full Name" required>
+              <input type="text" class="form-control" name="fullname" placeholder="Full Name">
+              <div class="form-text text-danger" id="fullnameError"></div>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" name="email" placeholder="Email" required>
+              <input type="email" class="form-control" name="email" placeholder="Email">
+              <div class="form-text text-danger" id="emailError"></div>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" name="username" placeholder="Username" required>
+              <input type="text" class="form-control" name="username" placeholder="Username">
+              <div class="form-text text-danger" id="usernameError"></div>
             </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required>
-            </div>
+            <div class="mb-3 position-relative">
+  <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
+  <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
+    <i class="bi bi-eye" id="togglePasswordIcon"></i>
+  </button>
+</div>
+
+<div class="mb-3 position-relative">
+  <input type="password" class="form-control" name="confirm_password" id="confirmPasswordInput" placeholder="Confirm Password" required>
+  <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="toggleConfirmPassword" tabindex="-1" style="border: none; background: none;">
+    <i class="bi bi-eye" id="toggleConfirmPasswordIcon"></i>
+  </button>
+</div>
+
             <button type="submit" class="btn btn-primary w-100 fw-bold">REGISTER</button>
           </form>
 
@@ -71,24 +82,7 @@ include 'include/navbar.php'; ?>
 
   <?php include 'include/footer.php'; ?>
 
-  <!-- SweetAlert2 Script -->
-  <script>
-    document.getElementById('registerForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // stop real submission
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Registration Successful',
-        text: 'You have been registered!',
-        confirmButtonColor: '#e68a2e',
-        confirmButtonText: 'Go to Login'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = 'login.php';
-        }
-      });
-    });
-  </script>
+  <script src="js/register.js?v=2"></script>
 
 </body>
 </html>

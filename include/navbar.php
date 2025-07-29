@@ -69,10 +69,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-person-circle me-2"></i>
-      <?= htmlspecialchars($_SESSION['user']['fullname']) ?>
+      Hi, <?= htmlspecialchars($_SESSION['user']['fullname']) ?>
     </a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="profile.php">Profile</a></li>
       <li><a class="dropdown-item text-danger" href="logout.php">Logout</a></li>
     </ul>
   </li>
