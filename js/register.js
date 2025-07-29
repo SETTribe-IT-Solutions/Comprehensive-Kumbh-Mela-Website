@@ -6,8 +6,70 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
+  // 🔒 Password visibility toggles
+  const passwordInput = document.getElementById('passwordInput');
+  const confirmPasswordInput = document.getElementById('confirmPasswordInput');
+  const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+  const toggleConfirmPasswordIcon = document.getElementById('toggleConfirmPasswordIcon');
+
+  togglePasswordIcon.addEventListener('click', function () {
+    const isText = passwordInput.type === 'text';
+    passwordInput.type = isText ? 'password' : 'text';
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-slash');
+  });
+
+  toggleConfirmPasswordIcon.addEventListener('click', function () {
+    const isText = confirmPasswordInput.type === 'text';
+    confirmPasswordInput.type = isText ? 'password' : 'text';
+    this.classList.toggle('bi-eye');
+    this.classList.toggle('bi-eye-slash');
+  });
+
+  // 📝 Form submission
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
+
+    // Clear previous errors
+    document.querySelectorAll('.form-text.text-danger').forEach(el => el.textContent = '');
+
+    const fullname = form.fullname.value.trim();
+    const email = form.email.value.trim();
+    const username = form.username.value.trim();
+    const password = passwordInput.value.trim();
+    const confirmPassword = confirmPasswordInput.value.trim();
+
+    let valid = true;
+
+    if (fullname.length < 3) {
+      document.getElementById('fullnameError').textContent = 'Full Name must be at least 3 characters.';
+      valid = false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      document.getElementById('emailError').textContent = 'Enter a valid email address.';
+      valid = false;
+    }
+
+    const usernamePattern = /^[a-zA-Z0-9]{6,}$/;
+    if (!usernamePattern.test(username)) {
+      document.getElementById('usernameError').textContent = 'Username must be at least 6 characters and alphanumeric.';
+      valid = false;
+    }
+
+    const passwordPattern = /^[a-zA-Z0-9]{6,}$/;
+    if (!passwordPattern.test(password)) {
+      document.getElementById('passwordError').textContent = 'Password must be at least 6 characters and alphanumeric.';
+      valid = false;
+    }
+
+    if (confirmPassword !== password) {
+      document.getElementById('confirmError').textContent = 'Passwords do not match.';
+      valid = false;
+    }
+
+    if (!valid) return;
 
     const formData = new FormData(form);
 
@@ -18,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       const text = await response.text();
-      console.log("Raw Response:", text); // For debugging
+      console.log("Raw Response:", text);
 
       const result = JSON.parse(text);
 

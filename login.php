@@ -37,9 +37,14 @@
             <div class="mb-3">
               <input type="text" class="form-control" name="username" placeholder="Email or Username" required>
             </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
+            <div class="mb-3 position-relative">
+  <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
+  <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
+    <i class="bi bi-eye" id="togglePasswordIcon"></i>
+  </button>
+</div>
+
+
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="remember">

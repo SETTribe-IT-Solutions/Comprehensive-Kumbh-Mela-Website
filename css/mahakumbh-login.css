@@ -77,3 +77,9 @@ html, body {
   color: #ef6c00;
   text-decoration: underline;
 }
+
+#togglePasswordIcon:hover,
+#toggleConfirmPasswordIcon:hover {
+  color: #e68a2e;
+  cursor: pointer;
+}
