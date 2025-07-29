@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/mahakumbh-login.css?v=6">
+  <link rel="stylesheet" href="css/mahakumbh-login.css?v=10">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
