@@ -1,4 +1,6 @@
-<?php include 'include/navbar.php'; ?>
+<?php 
+require_once 'include/connect.php';
+include 'include/navbar.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +21,8 @@
 
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/register.js"></script>
+
 </head>
 <body class="d-flex flex-column min-vh-100">
 
