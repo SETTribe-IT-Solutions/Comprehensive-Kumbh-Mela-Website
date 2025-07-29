@@ -53,19 +53,22 @@ include 'include/navbar.php';
               <input type="text" class="form-control" name="username" placeholder="Username">
               <div class="form-text text-danger" id="usernameError"></div>
             </div>
-            <div class="mb-3 position-relative">
+            <!-- Password Field -->
+<div class="mb-3 position-relative">
   <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
   <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
     <i class="bi bi-eye" id="togglePasswordIcon"></i>
   </button>
 </div>
 
+<!-- Confirm Password Field -->
 <div class="mb-3 position-relative">
   <input type="password" class="form-control" name="confirm_password" id="confirmPasswordInput" placeholder="Confirm Password" required>
   <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="toggleConfirmPassword" tabindex="-1" style="border: none; background: none;">
     <i class="bi bi-eye" id="toggleConfirmPasswordIcon"></i>
   </button>
 </div>
+
 
             <button type="submit" class="btn btn-primary w-100 fw-bold">REGISTER</button>
           </form>
