@@ -64,22 +64,6 @@
 
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Login Successful',
-        text: 'You have successfully logged in!',
-        confirmButtonColor: '#e68a2e',
-        confirmButtonText: 'Go to Home'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = 'index.php';
-        }
-      });
-    });
-  </script>
+  <script src="js/login.js"></script>
 </body>
 </html>

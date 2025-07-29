@@ -1,6 +1,7 @@
 <?php
-// header.php content merged into navbar.php
+if (session_status() === PHP_SESSION_NONE) session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,8 +65,21 @@
                     <li class="nav-item"><a class="nav-link" id="nav-donate" href="donate.php">Donate</a></li>
                     <li class="nav-item"><a class="nav-link" id="nav-sustainability" href="sustainability.php">Sustainability</a></li>
 
-                    <li class="nav-item"><a class="nav-link" id="nav-login" href="login.php">Login</a>
-                    
+                    <?php if (isset($_SESSION['user'])): ?>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-circle me-2"></i>
+      <?= htmlspecialchars($_SESSION['user']['fullname']) ?>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+      <li><a class="dropdown-item text-danger" href="logout.php">Logout</a></li>
+    </ul>
+  </li>
+<?php else: ?>
+  <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+<?php endif; ?>
+
                 </ul>
 
                 <div class="dropdown">
@@ -187,59 +201,6 @@
     color: var(--saffron);
 }
 
-/* Alert ticker styles */
-.alert-ticker-container {
-    display: flex;
-    align-items: center;
-    background-color: #800000;
-    color: var(--white);
-    font-size: 0.9rem;
-    font-family: var(--font-body);
-}
-
-.helpline { 
-    padding: 0.15rem 1rem; 
-    background-color: #c00; 
-    font-weight: bold; 
-    white-space: nowrap; 
-}
-
-.helpline i { 
-    margin-right: 0.5rem; 
-}
-
-.ticker-wrap {
-    flex-grow: 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.ticker {
-    display: inline-block;
-    white-space: nowrap;
-    animation: ticker-scroll 20s linear infinite;
-    display: flex;
-    align-items: center;
-    padding-left: 100%;
-}
-
-.ticker i { 
-    color: #FFD700; 
-    margin-right: 0.5rem; 
-}
-
-.ticker p {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    line-height: 1.5;
-}
-
-@keyframes ticker-scroll { 
-    0% { transform: translateX(0); } 
-    100% { transform: translateX(-100%); } 
-}
 
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
