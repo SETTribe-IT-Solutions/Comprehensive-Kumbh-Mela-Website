@@ -22,6 +22,14 @@ include 'include/navbar.php';
 
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+  .required-label::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+  }
+</style>
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -42,37 +50,54 @@ include 'include/navbar.php';
 
           <form id="registerForm" method="POST">
 
-            <div class="mb-3">
-              <input type="text" class="form-control" name="fullname" placeholder="Full Name">
-              <div class="form-text text-danger" id="fullnameError"></div>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" name="email" placeholder="Email">
-              <div class="form-text text-danger" id="emailError"></div>
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" name="username" placeholder="Username">
-              <div class="form-text text-danger" id="usernameError"></div>
-            </div>
-            <!-- Password Field -->
-<div class="mb-3 position-relative">
-  <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
-  <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
-    <i class="bi bi-eye" id="togglePasswordIcon"></i>
-  </button>
-</div>
-<div class="form-text text-danger" id="passwordError"></div>
-<!-- Confirm Password Field -->
-<div class="mb-3 position-relative">
-  <input type="password" class="form-control" name="confirm_password" id="confirmPasswordInput" placeholder="Confirm Password" required>
-  <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="toggleConfirmPassword" tabindex="-1" style="border: none; background: none;">
-    <i class="bi bi-eye" id="toggleConfirmPasswordIcon"></i>
-  </button>
-</div>
-<div class="form-text text-danger" id="confirmError"></div>
+  <!-- Full Name -->
+  <div class="mb-3">
+    <label for="fullname" class="required-label">Full Name</label>
+    <input type="text" class="form-control" id="fullname" name="fullname" required>
+    <div class="form-text text-danger" id="fullnameError"></div>
+  </div>
 
-            <button type="submit" class="btn btn-primary w-100 fw-bold">REGISTER</button>
-          </form>
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="email" class="required-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+    <div class="form-text text-danger" id="emailError"></div>
+  </div>
+
+  <!-- Username -->
+  <div class="mb-3">
+    <label for="username" class="required-label">Username</label>
+    <input type="text" class="form-control" id="username" name="username" required>
+    <div class="form-text text-danger" id="usernameError"></div>
+  </div>
+
+  <!-- Password -->
+  <div class="mb-3">
+    <label for="passwordInput" class="required-label">Password</label>
+    <div class="position-relative">
+      <input type="password" class="form-control" id="passwordInput" name="password" minlength="8" required>
+      <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
+        <i class="bi bi-eye" id="togglePasswordIcon"></i>
+      </button>
+    </div>
+    <div class="form-text text-danger" id="passwordError"></div>
+  </div>
+
+  <!-- Confirm Password -->
+  <div class="mb-3">
+    <label for="confirmPasswordInput" class="required-label">Confirm Password</label>
+    <div class="position-relative">
+      <input type="password" class="form-control" id="confirmPasswordInput" name="confirm_password" minlength="8" required>
+      <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="toggleConfirmPassword" tabindex="-1" style="border: none; background: none;">
+        <i class="bi bi-eye" id="toggleConfirmPasswordIcon"></i>
+      </button>
+    </div>
+    <div class="form-text text-danger" id="confirmError"></div>
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100 fw-bold">REGISTER</button>
+</form>
+
 
           <div class="text-center mt-4">
             Already have an account? 

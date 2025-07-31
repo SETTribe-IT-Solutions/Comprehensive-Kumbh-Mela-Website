@@ -39,11 +39,13 @@ if (!preg_match('/^[a-zA-Z0-9]{6,}$/', $username)) {
   exit;
 }
 
-// Password
-if (!preg_match('/^[a-zA-Z0-9]{6,}$/', $password)) {
-  echo json_encode(['status' => 'error', 'message' => 'Password must be at least 6 characters and alphanumeric.']);
+// Password: at least 8 chars, 1 letter, 1 number, 1 special char
+if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $password)) {
+  echo json_encode(['status' => 'error', 'message' => 'Password must be at least 8 characters long and include a letter, a number, and a special character.']);
   exit;
 }
+
+
 
 // Confirm Password
 if ($password !== $confirm_password) {

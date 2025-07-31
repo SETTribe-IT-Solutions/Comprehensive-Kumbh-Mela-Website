@@ -72,15 +72,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 confirmButtonColor: '#e68a2e'
               });
             } else if (result.message.toLowerCase().includes('username') || result.message.toLowerCase().includes('email')) {
-              usernameInput.value = '';
-              usernameInput.focus();
-              Swal.fire({
-                icon: 'warning',
-                title: 'Invalid Username or Email',
-                text: 'Please check your username or email.',
-                confirmButtonColor: '#e68a2e'
-              });
-            }
+          usernameInput.value = '';
+             usernameInput.focus();
+               // Just focus back, no second alert
+              }
+
           } else if (swalResult.dismiss === Swal.DismissReason.cancel) {
             window.location.href = 'register.php';
           }
