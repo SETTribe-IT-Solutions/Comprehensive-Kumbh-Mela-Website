@@ -285,26 +285,18 @@
 
 <!-- SCRIPT -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Visitor counter animation
-
-    const counter = document.getElementById('visitor-counter');
-    if (counter) {
-      let current = parseInt(counter.textContent.replace(/,/g, ''));
-      const target = current + Math.floor(Math.random() * 1000);
-      const increment = Math.ceil((target - current) / 100);
-
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          clearInterval(timer);
-          counter.textContent = target.toLocaleString();
-        } else {
-          counter.textContent = current.toLocaleString();
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("track_visit.php")
+      .then(res => res.json())
+      .then(data => {
+        const counter = document.getElementById("visitor-counter");
+        if (counter && data.count) {
+          counter.textContent = parseInt(data.count).toLocaleString();
         }
-      }, 50);
-    }
+      })
+      .catch(err => console.error("Visitor tracking error:", err));
   });
 </script>
+
 <!-- ... your entire existing <footer> code is above this ... -->
 
