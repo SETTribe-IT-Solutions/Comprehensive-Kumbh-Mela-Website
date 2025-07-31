@@ -34,23 +34,26 @@
           <p class="text-muted mb-4">Please login to continue</p>
 
           <form id="loginForm">
-            <div class="mb-3">
-              <input type="text" class="form-control" name="username" placeholder="Email or Username" required>
-            </div>
-            <div class="mb-3 position-relative">
-  <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
-  <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
-    <i class="bi bi-eye" id="togglePasswordIcon"></i>
-  </button>
-</div>
+  <div class="mb-3">
+    <label for="usernameInput" class="form-label fw-semibold">
+      Username or Email
+    </label>
+    <input type="text" class="form-control" name="username" id="usernameInput" required>
+  </div>
 
+  <div class="mb-3 position-relative">
+    <label for="passwordInput" class="form-label fw-semibold">
+      Password
+    </label>
+    <input type="password" class="form-control" name="password" id="passwordInput" required>
+    <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
+      <i class="bi bi-eye" id="togglePasswordIcon"></i>
+    </button>
+  </div>
 
-            <!-- <div class="d-flex justify-content-end mb-3">
-    <a href="forgot_password.php" class="text-primary text-decoration-none">Forgot Password?</a>
-  </div> -->
+  <button type="submit" class="btn btn-primary w-100 fw-bold">LOGIN</button>
+</form>
 
-            <button type="submit" class="btn btn-primary w-100 fw-bold">LOGIN</button>
-          </form>
 
           <div class="text-center mt-4">
             Don't have an account? 
