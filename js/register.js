@@ -58,11 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
       valid = false;
     }
 
-    const passwordPattern = /^[a-zA-Z0-9]{6,}$/;
-    if (!passwordPattern.test(password)) {
-      document.getElementById('passwordError').textContent = 'Password must be at least 6 characters and alphanumeric.';
-      valid = false;
-    }
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+     if (!passwordPattern.test(password)) {
+     document.getElementById('passwordError').textContent = 'Password must be at least 8 characters, include a letter, a number, and a special symbol.';
+     valid = false;
+       }
+
 
     if (confirmPassword !== password) {
       document.getElementById('confirmError').textContent = 'Passwords do not match.';
@@ -107,4 +108,26 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+});
+document.getElementById('registerForm').addEventListener('submit', function (e) {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('passwordInput').value.trim();
+
+  // Username: only alphanumeric
+  if (!/^[a-zA-Z0-9]+$/.test(username)) {
+    e.preventDefault();
+    document.getElementById('usernameError').textContent = 'Username must be alphanumeric only.';
+    return;
+  }
+
+  // Password: at least 8 chars, 1 letter, 1 number, 1 special char
+  if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(password)) {
+    e.preventDefault();
+    document.getElementById('passwordError').textContent = 'Password must be at least 8 characters, include a letter, a number, and a special symbol.';
+    return;
+  }
+
+  // Clear errors if valid
+  document.getElementById('usernameError').textContent = '';
+  document.getElementById('passwordError').textContent = '';
 });
