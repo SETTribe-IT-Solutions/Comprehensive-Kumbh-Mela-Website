@@ -40,7 +40,8 @@ include 'include/navbar.php';
           <h3 class="text-dark fw-bold mb-2">Register</h3>
           <p class="text-muted mb-4">Create your account</p>
 
-          <form id="registerForm" novalidate>
+          <form id="registerForm" method="POST">
+
             <div class="mb-3">
               <input type="text" class="form-control" name="fullname" placeholder="Full Name">
               <div class="form-text text-danger" id="fullnameError"></div>
@@ -60,7 +61,7 @@ include 'include/navbar.php';
     <i class="bi bi-eye" id="togglePasswordIcon"></i>
   </button>
 </div>
-
+<div class="form-text text-danger" id="passwordError"></div>
 <!-- Confirm Password Field -->
 <div class="mb-3 position-relative">
   <input type="password" class="form-control" name="confirm_password" id="confirmPasswordInput" placeholder="Confirm Password" required>
@@ -68,7 +69,7 @@ include 'include/navbar.php';
     <i class="bi bi-eye" id="toggleConfirmPasswordIcon"></i>
   </button>
 </div>
-
+<div class="form-text text-danger" id="confirmError"></div>
 
             <button type="submit" class="btn btn-primary w-100 fw-bold">REGISTER</button>
           </form>
