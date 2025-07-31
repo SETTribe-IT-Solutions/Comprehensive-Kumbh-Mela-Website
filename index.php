@@ -142,7 +142,7 @@
         <div class="media-card" data-type="video">
             <div class="media-card-img-container">
                 <video id="video1" width="320" height="240" style="cursor: pointer;">
-                    <source src="assets/videos/video1.mp4" type="video/mp4">
+                    <source src="assets\videos\12528317-hd_1920_1080_24fps.mp4" type="video/mp4">
                 </video>
 
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
@@ -159,7 +159,7 @@
        <div class="media-card" data-type="video">
             <div class="media-card-img-container">
                <video id="video1" width="320" height="240" style="cursor: pointer;">
-                    <source src="assets/videos/video2.mp4" type="video/mp4">
+                    <source src="assets/videos/istockphoto-2166266990-640_adpp_is.mp4" type="video/mp4">
                 </video>
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
@@ -268,7 +268,7 @@
         <div class="media-card" data-type="video">
             <div class="media-card-img-container">
                 <video id="video1" width="320" height="240" style="cursor: pointer;">
-                    <source src="assets/videos/video1.mp4" type="video/mp4">
+                    <source src="assets/videos/12528317-hd_1920_1080_24fps.mp4" type="video/mp4">
                 </video>
 
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
@@ -285,7 +285,7 @@
        <div class="media-card" data-type="video">
             <div class="media-card-img-container">
                 <video id="video2" width="320" height="240" style="cursor: pointer;">
-                    <source src="assets/videos/video1.mp4" type="video/mp4">
+                    <source src="assets/videos/istockphoto-2166266990-640_adpp_is.mp4" type="video/mp4">
                 </video>
                 <div class="media-card-overlay"><i class="bi bi-play-circle-fill"></i></div>
             </div>
