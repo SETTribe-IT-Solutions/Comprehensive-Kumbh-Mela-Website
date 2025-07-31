@@ -36,14 +36,14 @@
           <form id="loginForm">
   <div class="mb-3">
     <label for="usernameInput" class="form-label fw-semibold">
-      Username or Email
+      Username or Email <span class="text-danger">*</span>
     </label>
     <input type="text" class="form-control" name="username" id="usernameInput" required>
   </div>
 
   <div class="mb-3 position-relative">
     <label for="passwordInput" class="form-label fw-semibold">
-      Password
+      Password <span class="text-danger">*</span>
     </label>
     <input type="password" class="form-control" name="password" id="passwordInput" required>
     <button type="button" class="btn position-absolute top-0 end-0 mt-1 me-2" id="togglePassword" tabindex="-1" style="border: none; background: none;">
