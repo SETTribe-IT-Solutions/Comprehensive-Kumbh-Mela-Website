@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // =========================================================
-    // --- 1. COUNTDOWN TIMER LOGIC ---
-    // =========================================================
+    // --- 1. COUNTDOWN TIMER LOGIC (CORRECTED & SAFE) ---
+
     const countdownTimerEl = document.getElementById('countdown-timer');
-    // ** THE FIX IS HERE: Only run the countdown code if the timer exists on the page **
+    
+    // This 'if' statement is the main gatekeeper.
+    // It prevents this entire block from running on pages without a countdown timer.
     if (countdownTimerEl) {
+        
         const countdown = () => {
             const targetDate = new Date('July 14, 2027 00:00:00').getTime();
             const now = new Date().getTime();
@@ -17,25 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                // These elements are only searched for if the main timer exists
-                document.getElementById('days').innerText = String(days).padStart(3, '0');
-                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+                // These elements are now safely inside the main 'if' block.
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                // This second layer of checks ensures we don't get an error
+                // even if one of the inner elements is missing.
+                if (daysEl && hoursEl && minutesEl && secondsEl) {
+                    daysEl.innerText = String(days).padStart(3, '0');
+                    hoursEl.innerText = String(hours).padStart(2, '0');
+                    minutesEl.innerText = String(minutes).padStart(2, '0');
+                    secondsEl.innerText = String(seconds).padStart(2, '0');
+                }
+
             } else {
+                // This part is also safe because countdownTimerEl is guaranteed to exist here.
                 clearInterval(interval);
                 countdownTimerEl.innerHTML = "<h3 class='text-white'>The event has started!</h3>";
             }
         };
+        
         const interval = setInterval(countdown, 1000);
         countdown();
     }
 
-
-    // =========================================================
     // --- UNIVERSAL API-DRIVEN TRANSLATION ENGINE ---
     // This code will run on every page.
-    // =========================================================
+
     const languageOptions = document.querySelectorAll('.lang-option');
 
     // Only set up the engine if language options exist in the navbar
@@ -94,59 +106,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 3. IMAGE & VIDEO LIGHTBOX LOGIC (FOR TABS) ---
-
-       // =========================================================
-    // --- 3. SCROLLING GALLERY LIGHTBOX LOGIC ---
+          // =========================================================
+    // --- 3. FINAL & ROBUST IMAGE/VIDEO LIGHTBOX LOGIC ---
     // =========================================================
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const mediaCards = document.querySelectorAll('.media-card');
     const lightbox = document.getElementById('lightbox');
 
-    if (galleryItems.length > 0 && lightbox) {
+    if (mediaCards.length > 0 && lightbox) {
         
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxVideo = document.getElementById('lightbox-video');
+        const lightboxImg = document.getElementById('lightboxImg');
+        // Get the container, not the video itself
+        const lightboxVideoContainer = document.getElementById('lightboxVideoContainer');
         const closeBtn = document.querySelector('.lightbox-close');
 
-        if (lightboxImg && lightboxVideo && closeBtn) {
+        if (lightboxImg && lightboxVideoContainer && closeBtn) {
 
             const openLightbox = (e) => {
-                const item = e.currentTarget; // The .gallery-item div
-                const type = item.dataset.type;
-                
-                if (type === 'video') {
-                    const videoId = item.dataset.videoId;
-                    lightboxImg.style.display = 'none';
-                    lightboxVideo.style.display = 'block';
-                    lightboxVideo.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-                } else { // Assumes it's a photo if not a video
-                    const imgSrc = item.querySelector('img').src;
-                    lightboxVideo.style.display = 'none';
-                    lightboxImg.style.display = 'block';
-                    lightboxImg.src = imgSrc;
+            const clickedCard = e.currentTarget;
+            const type = clickedCard.dataset.type;
+
+            lightboxImg.style.display = 'none';
+            lightboxVideoContainer.style.display = 'none';
+            lightboxVideoContainer.innerHTML = '';
+
+            if (type === 'video') {
+                const videoEl = clickedCard.querySelector('video');
+                const videoSrc = videoEl?.querySelector('source')?.src || videoEl?.src;
+
+                if (videoSrc) {
+                    lightboxVideoContainer.style.display = 'block';
+                    lightboxVideoContainer.innerHTML = `<video class="lightbox-content" controls autoplay><source src="${videoSrc}" type="video/mp4"></video>`;
+
+                    // Attach close handler to video if desired
                 }
+                } else {
+                    const imgSrc = clickedCard.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightboxImg.style.display = 'block';
+
+                }
+
                 lightbox.classList.add('lightbox-active');
+                document.body.classList.add('lightbox-open'); // ✅ Prevent scroll
             };
 
             const closeLightbox = () => {
                 lightbox.classList.remove('lightbox-active');
-                // IMPORTANT: Stop the video when closing
-                lightboxVideo.innerHTML = '';
+                document.body.classList.remove('lightbox-open'); // ✅ Restore scroll
+                lightboxVideoContainer.innerHTML = '';
+                lightboxImg.src = '';
             };
 
-            galleryItems.forEach(item => {
-                item.addEventListener('click', openLightbox);
-            });
+            mediaCards.forEach(card => {
+                    card.addEventListener('click', openLightbox);
+                });
 
-            closeBtn.addEventListener('click', closeLightbox);
+                closeBtn.addEventListener('click', closeLightbox);
+                
             lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
+                const lightboxInner = document.querySelector('.lightbox-inner');
+                if (!lightboxInner.contains(e.target)) {
                     closeLightbox();
                 }
             });
-        }
-    }
 
+
+        }
+        
+    }
     
     // =========================================================
     // --- 4. ACCOMMODATION DATE VALIDATION ---
@@ -234,6 +261,131 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Date for Pooja cannot be in the past.");
                 poojaDateInput.value = '';
             }
+        });
+    }
+
+        // =========================================================
+    // --- 6. BOOTSTRAP FORM VALIDATION (FOR MODALS, ETC.) ---
+    // =========================================================
+    // This is a self-invoking function that finds all forms with the 'needs-validation' class
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+
+        // =========================================================
+    // --- 7. CULTURE PAGE ENROLLMENT FORM SUBMISSION ---
+    // =========================================================
+    const enrollmentForm = document.getElementById('enrollment-form');
+
+    // Only run this code if the enrollment form exists on the page
+    if (enrollmentForm) {
+
+        enrollmentForm.addEventListener('submit', function(event) {
+            // Stop the form from submitting the traditional way
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Check if the form is valid according to Bootstrap's rules
+            if (enrollmentForm.checkValidity()) {
+                
+                // If valid, show the success alert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Enrollment Successful!',
+                    text: 'Thank you for your interest. We will contact you with more details shortly.',
+                    confirmButtonColor: '#FF9933' // Using your theme's saffron color
+                }).then((result) => {
+                    // This code runs after the user clicks "OK"
+                    if (result.isConfirmed) {
+                        enrollmentForm.reset();
+                        enrollmentForm.classList.remove('was-validated');
+                        
+                        // Get the modal instance and hide it
+                        const enrollModalEl = document.getElementById('enrollModal');
+                        const modal = bootstrap.Modal.getInstance(enrollModalEl);
+                        if (modal) {
+                            modal.hide();
+                        }
+                    }
+                });
+
+            }
+
+            // This line adds the validation styles (e.g., green/red borders)
+            enrollmentForm.classList.add('was-validated');
+        });
+    }
+
+
+        // =========================================================
+    // --- CULTURE PAGE - SAINT SCHEDULE MODAL ---
+    // =========================================================
+    const scheduleButtons = document.querySelectorAll('.view-schedule-btn');
+    const scheduleModalTitle = document.getElementById('scheduleModalLabel');
+    const scheduleModalBody = document.getElementById('scheduleModalBody');
+
+    // Only run this code if the schedule buttons and modal elements exist on the page
+    if (scheduleButtons.length > 0 && scheduleModalTitle && scheduleModalBody) {
+
+        // Store the schedule data here. In a real app, this would come from an API.
+        const schedules = {
+            'saint-1': {
+                name: "Swami Avdheshanand Giri",
+                schedule: `
+                    <h6>Daily Pravachan (Discourse)</h6>
+                    <p><strong>Topic:</strong> The Path of Jnana Yoga (The Path of Knowledge)</p>
+                    <p><strong>Time:</strong> 4:00 PM - 5:00 PM Daily</p>
+                    <p><strong>Location:</strong> Juna Akhara Main Stage</p>
+                    <hr>
+                    <h6>Special Session:</h6>
+                    <p><strong>Topic:</strong> Meditation for Self-Realization</p>
+                    <p><strong>Date:</strong> 19th March 2027, 9:00 AM</p>
+                `
+            },
+            'saint-2': {
+                name: "Pujya Swami Chidanand Saraswati",
+                schedule: `
+                    <h6>Ganga Aarti & Satsang</h6>
+                    <p><strong>Topic:</strong> Seva, Karma and Dharma in modern life.</p>
+                    <p><strong>Time:</strong> 5:00 PM - 6:00 PM Daily</p>
+                    <p><strong>Location:</strong> Parmarth Niketan Ghat</p>
+                `
+            },
+            'saint-3': {
+                name: "Devi Chitralekha",
+                schedule: `
+                    <h6>Katha Vachan</h6>
+                    <p><strong>Topic:</strong> Discourses and Bhajans from Shrimad Bhagwatam</p>
+                    <p><strong>Time:</strong> 6:00 PM - 7:30 PM Daily</p>
+                    <p><strong>Location:</strong> Main Pravachan Hall</p>
+                `
+            }
+        };
+
+        scheduleButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const saintId = event.currentTarget.dataset.saintId;
+                const scheduleData = schedules[saintId];
+
+                if (scheduleData) {
+                    // Update the modal's title and body content
+                    scheduleModalTitle.textContent = `Schedule for ${scheduleData.name}`;
+                    scheduleModalBody.innerHTML = scheduleData.schedule;
+                } else {
+                    scheduleModalTitle.textContent = 'Schedule Not Available';
+                    scheduleModalBody.innerHTML = '<p>The schedule for this saint has not been updated yet. Please check back later.</p>';
+                }
+            });
         });
     }
 
