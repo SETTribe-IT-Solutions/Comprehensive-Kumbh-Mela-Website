@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         });
       }
+      
 
     } catch (err) {
       console.error("JSON parsing error", err);
